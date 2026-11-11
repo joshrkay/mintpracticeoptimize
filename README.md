@@ -1,7 +1,7 @@
 # Mint | Practice Optimization Partners
 
 Website for practiceoptimize.com, plus the pre-meeting practice questionnaire.
-Docs: [business plan](docs/PLAN.md), [competitive landscape](docs/COMPETITORS.md), [SEO and AEO](docs/SEO.md).
+Docs: [business plan](docs/PLAN.md), [competitive landscape](docs/COMPETITORS.md), [audience and page map](docs/AUDIENCE.md), [SEO and AEO](docs/SEO.md).
 
 ## Pages
 
@@ -11,6 +11,7 @@ Docs: [business plan](docs/PLAN.md), [competitive landscape](docs/COMPETITORS.md
 | `/services` | Operations, Revenue Opportunities, Marketing, Patient Messaging |
 | `/discovery` | The discovery offer and fee |
 | `/podiatry` | Podiatry landing page |
+| `/for-your-team` | For practice managers and staff |
 | `/compare` | Mint next to the other kinds of help a practice can hire |
 | `/faq` | Direct answers, with FAQ structured data |
 | `/contact` | Contact form |

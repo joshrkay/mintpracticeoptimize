@@ -6,6 +6,15 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = { alternates: { canonical: "/" } };
 
+const symptoms = [
+  { text: "The phone rings out while the front desk is checking someone in.", href: "/services#operations" },
+  { text: "Copays get billed after the visit, then chased for months.", href: "/services#operations" },
+  { text: "You finish your charts at the kitchen table.", href: "/services#operations" },
+  { text: "Orthotics sit in the back room waiting for a pickup nobody scheduled.", href: "/podiatry" },
+  { text: "Patients who qualify for more care are never told.", href: "/services#revenue" },
+  { text: "Your Google rating reflects your three angriest patients.", href: "/services#marketing" },
+];
+
 const steps = [
   {
     title: "Questionnaire",
@@ -45,6 +54,28 @@ export default function Home() {
               How discovery works
             </ButtonLink>
           </div>
+        </Container>
+      </section>
+
+      <section className="border-b border-line bg-white">
+        <Container className="py-20 sm:py-24">
+          <Eyebrow>Sound familiar?</Eyebrow>
+          <h2 className="mt-4 max-w-2xl font-display text-3xl text-balance sm:text-4xl">
+            Good medicine, held back by the way the day runs.
+          </h2>
+          <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {symptoms.map((s) => (
+              <li key={s.text}>
+                <Link
+                  href={s.href}
+                  className="flex h-full items-start gap-3 rounded-xl border border-line bg-paper p-5 text-lg leading-snug transition-colors hover:border-mint"
+                >
+                  <span aria-hidden="true" className="mt-2 size-2 shrink-0 rounded-full bg-mint" />
+                  {s.text}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </Container>
       </section>
 
@@ -124,6 +155,11 @@ export default function Home() {
             <p>
               We also do not sweep in, hand over recommendations and leave. We build the plan with
               you and stay to carry it out.
+            </p>
+            <p>
+              <Link href="/for-your-team" className="font-semibold text-mint-deep hover:underline">
+                What this means for your manager and staff &rarr;
+              </Link>
             </p>
           </div>
         </Container>

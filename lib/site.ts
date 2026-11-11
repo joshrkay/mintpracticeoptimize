@@ -13,6 +13,7 @@ export const footerNav = [
   { href: "/services", label: "Services" },
   { href: "/discovery", label: "Discovery" },
   { href: "/podiatry", label: "Podiatry" },
+  { href: "/for-your-team", label: "For your team" },
   { href: "/compare", label: "How we compare" },
   { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
