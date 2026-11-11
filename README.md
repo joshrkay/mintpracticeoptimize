@@ -1,7 +1,7 @@
 # Mint | Practice Optimization Partners
 
 Website for practiceoptimize.com, plus the pre-meeting practice questionnaire.
-Docs: [business plan](docs/PLAN.md), [competitive landscape](docs/COMPETITORS.md), [audience and page map](docs/AUDIENCE.md), [SEO and AEO](docs/SEO.md).
+Docs: [business plan](docs/PLAN.md), [competitive landscape](docs/COMPETITORS.md), [audience and page map](docs/AUDIENCE.md), [SEO and AEO](docs/SEO.md), [going live](docs/DEPLOY.md).
 
 ## Pages
 
