@@ -19,7 +19,7 @@ export default function Contact() {
       />
       <Container className="grid gap-12 py-16 sm:py-20 lg:grid-cols-[2fr_1fr]">
         <ContactForm />
-        <aside className="self-start rounded-2xl border border-line bg-white p-7">
+        <aside className="self-start rounded-3xl border border-line bg-white p-7">
           <h2 className="font-display text-xl">Prefer email?</h2>
           <a href={`mailto:${site.email}`} className="mt-2 block font-semibold text-mint-deep hover:underline">
             {site.email}

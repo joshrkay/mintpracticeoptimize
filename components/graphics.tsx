@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { cities } from "@/lib/cities";
 import { Icon, type IconName } from "./icons";
+import { LooseLeaf } from "./mint";
 
 const journey: { icon: IconName; step: string; today: string; mint: string }[] = [
   { icon: "phone", step: "Phone call", today: "Goes to voicemail", mint: "Answered or called back" },
@@ -33,13 +34,11 @@ export function BeforeAfterMap({ className = "" }: { className?: string }) {
               {row.step}
             </p>
             <p className="flex items-start gap-2 text-sm leading-snug text-muted">
-              <span aria-hidden="true" className="mt-1.5 size-2 shrink-0 rounded-full bg-amber-500" />
+              <LooseLeaf variant={2} className="wilted mt-0.5 w-3.5 shrink-0 rotate-[150deg]" />
               {row.today}
             </p>
             <p className="flex items-start gap-2 text-sm leading-snug font-medium">
-              <span className="mt-0.5 shrink-0 text-mint">
-                <Icon name="check" className="size-4" />
-              </span>
+              <LooseLeaf className="mt-0.5 w-3.5 shrink-0 rotate-[20deg]" />
               {row.mint}
             </p>
           </div>

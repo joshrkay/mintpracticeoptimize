@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { CallToAction, Container, PageHero } from "@/components/ui";
 import { BeforeAfterMap } from "@/components/graphics";
+import { LooseLeaf } from "@/components/mint";
 import { JsonLd } from "@/components/JsonLd";
 import { faqs } from "@/lib/faqs";
 import { site } from "@/lib/site";
@@ -54,17 +55,18 @@ export default function Discovery() {
       <section>
         <Container className="grid gap-10 py-16 sm:py-20 lg:grid-cols-[2fr_1fr] lg:gap-16">
           <div>
-            <h2 className="font-display text-3xl">What you get</h2>
+            <h2 className="font-display text-4xl leading-tight tracking-tight text-balance sm:text-5xl">What you get</h2>
             <div className="mt-8 grid gap-5 sm:grid-cols-2">
-              {deliverables.map((d) => (
-                <div key={d.title} className="lift rounded-2xl border border-line bg-white p-7">
+              {deliverables.map((d, i) => (
+                <div key={d.title} className="lift rounded-3xl border border-line bg-white p-7">
+                  <LooseLeaf variant={i + 1} className={`mb-4 w-9 ${i === 0 ? "wilted rotate-[150deg]" : "rotate-[20deg]"}`} />
                   <h3 className="font-display text-xl">{d.title}</h3>
                   <p className="mt-2 leading-relaxed text-muted">{d.body}</p>
                 </div>
               ))}
             </div>
           </div>
-          <aside className="self-start rounded-2xl bg-forest p-8 text-white">
+          <aside className="self-start rounded-3xl bg-forest p-8 text-white">
             <p className="text-sm font-semibold uppercase tracking-[0.14em] text-white/70">Flat fee</p>
             <p className="mt-2 font-display text-5xl">{site.discoveryFee}</p>
             <p className="mt-4 leading-relaxed text-white/80">
@@ -76,7 +78,7 @@ export default function Discovery() {
       <section className="border-t border-line bg-mint-soft/60">
         <Container className="grid items-center gap-10 py-16 sm:py-20 lg:grid-cols-[1fr_1.3fr] lg:gap-16">
           <div>
-            <h2 className="font-display text-3xl">See it before you change it</h2>
+            <h2 className="font-display text-4xl leading-tight tracking-tight text-balance sm:text-5xl">See it before you change it</h2>
             <p className="mt-4 text-lg leading-relaxed text-muted">
               The maps follow a patient through your practice, from the first phone call to the
               follow-up after the visit. Every step shows what happens today next to what it
@@ -88,7 +90,7 @@ export default function Discovery() {
       </section>
       <section className="border-t border-line bg-white">
         <Container className="py-16 sm:py-20">
-          <h2 className="font-display text-3xl">Common questions</h2>
+          <h2 className="font-display text-4xl leading-tight tracking-tight text-balance sm:text-5xl">Common questions</h2>
           <dl className="mt-8 grid gap-x-12 gap-y-8 md:grid-cols-2">
             {discoveryFaqs.map((f) => (
               <div key={f.q} className="border-t border-line pt-4">

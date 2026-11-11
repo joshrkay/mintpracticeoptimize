@@ -11,8 +11,8 @@
   --color-mint-deep: #17694c;
   --color-mint-soft: #dbf3e4;
   --color-forest: #0b2219;
-  --color-leaf: #35c48a;
-  --color-leaf-dark: #17875c;
+  --color-leaf: #3f9a4c;
+  --color-leaf-dark: #23703a;
   --color-lime: #cdf56a;
   --animate-rise: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
@@ -46,8 +46,17 @@ body {
   scale: clamp(0, calc((var(--grow) - var(--at, 0)) * 6), 1);
   transition: scale 0.35s cubic-bezier(0.3, 1.5, 0.5, 1);
 }
-.seed {
-  opacity: clamp(0, calc(1 - var(--grow) * 5), 1);
+.ground {
+  fill: rgba(11, 34, 25, 0.16);
+  filter: blur(7px);
+  transform-origin: 200px 478px;
+  scale: clamp(0.15, var(--grow), 1) 1;
+}
+/* The leaf sprouting from the headline. */
+.h1-leaf {
+  transform-origin: 50% 95%;
+  rotate: 38deg;
+  scale: clamp(0, calc((var(--grow) - 0.3) * 3), 1);
 }
 .plant-tag {
   opacity: clamp(0, calc((var(--grow) - var(--at, 0)) * 9), 1);
@@ -61,12 +70,25 @@ body {
 .grow-on-load {
   animation: grow 3.4s cubic-bezier(0.3, 0.6, 0.2, 1) 0.2s both;
 }
-.reveal-ready [data-reveal] .grow-on-reveal {
+.reveal-ready [data-reveal] .grow-on-reveal,
+.reveal-ready .grow-on-reveal[data-reveal] {
   --grow: 0;
   transition: --grow 2s cubic-bezier(0.3, 0.6, 0.2, 1) 0.2s;
 }
-.reveal-ready [data-reveal].in .grow-on-reveal {
+.reveal-ready [data-reveal].in .grow-on-reveal,
+.reveal-ready .grow-on-reveal[data-reveal].in {
   --grow: 1;
+}
+/* A plant that reveals itself grows in place; it does not slide. */
+.reveal-ready .grow-on-reveal[data-reveal] {
+  opacity: 1;
+  transform: none;
+  transition: --grow 2s cubic-bezier(0.3, 0.6, 0.2, 1) 0.2s;
+}
+
+/* A leaf past its best: yellowed. */
+.wilted {
+  filter: sepia(1) saturate(1.5) hue-rotate(-12deg) brightness(1.15);
 }
 
 @keyframes grow {
@@ -106,13 +128,13 @@ body {
 }
 @keyframes fall {
   0% {
-    transform: translate3d(0, -10vh, 0) rotate(0deg);
+    transform: translate3d(0, -10vh, 0) rotate3d(1, 0.3, 0.6, 0deg);
   }
   50% {
-    transform: translate3d(var(--drift), 55vh, 0) rotate(200deg);
+    transform: translate3d(var(--drift), 55vh, 0) rotate3d(1, 0.3, 0.6, 260deg);
   }
   100% {
-    transform: translate3d(calc(var(--drift) * -0.4), 120vh, 0) rotate(420deg);
+    transform: translate3d(calc(var(--drift) * -0.4), 120vh, 0) rotate3d(1, 0.3, 0.6, 540deg);
   }
 }
 
@@ -129,10 +151,10 @@ body {
 .symptom-leaf {
   transform-origin: 50% 55%;
   rotate: 150deg;
-  fill: #b6a34f;
+  filter: sepia(1) saturate(1.5) hue-rotate(-12deg) brightness(1.15);
   transition:
     rotate 0.7s cubic-bezier(0.3, 1.6, 0.5, 1),
-    fill 0.5s ease;
+    filter 0.6s ease;
 }
 .symptom-today,
 .symptom-mint {
@@ -145,8 +167,8 @@ body {
   translate: 0 14px;
 }
 .symptom:is(:hover, [aria-pressed="true"]) .symptom-leaf {
-  rotate: 0deg;
-  fill: var(--color-leaf);
+  rotate: 20deg;
+  filter: none;
 }
 .symptom:is(:hover, [aria-pressed="true"]) .symptom-today {
   opacity: 0;
@@ -219,7 +241,8 @@ body {
     opacity: 1;
     transform: none;
   }
-  .reveal-ready [data-reveal] .grow-on-reveal {
+  .reveal-ready [data-reveal] .grow-on-reveal,
+  .reveal-ready .grow-on-reveal[data-reveal] {
     --grow: 1;
   }
   .falling-leaf {

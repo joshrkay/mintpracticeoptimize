@@ -58,7 +58,7 @@ export function PageHero({ eyebrow, title, lede }: { eyebrow: string; title: str
             {lede}
           </p>
         </div>
-        <GrowingMint id="page-hero" className="grow-on-load relative -mb-10 hidden w-56 lg:block" />
+        <GrowingMint className="grow-on-load relative -mb-10 hidden w-56 lg:block" />
       </Container>
     </section>
   );

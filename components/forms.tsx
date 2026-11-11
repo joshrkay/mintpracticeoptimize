@@ -3,6 +3,7 @@
 import { useActionState } from "react";
 import { submitContact, submitQuestionnaire, type FormState } from "@/app/actions";
 import type { Question, Questionnaire } from "@/lib/questionnaire/types";
+import { GrowingMint } from "./mint";
 
 const initial: FormState = { status: "idle" };
 const inputClass =
@@ -30,9 +31,12 @@ function Alert({ state }: { state: FormState }) {
 
 function Success({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <div role="status" className="rounded-2xl border border-line bg-mint-soft p-8">
-      <h2 className="font-display text-2xl">{title}</h2>
-      <p className="mt-2 text-muted">{children}</p>
+    <div role="status" className="flex items-center gap-6 rounded-3xl border border-line bg-mint-soft p-8">
+      <GrowingMint className="grow-on-load relative w-24 shrink-0" />
+      <div>
+        <h2 className="font-display text-3xl">{title}</h2>
+        <p className="mt-2 text-lg text-muted">{children}</p>
+      </div>
     </div>
   );
 }

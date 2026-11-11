@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { LeafBullet } from "@/components/mint";
 import { CallToAction, Container, PageHero } from "@/components/ui";
 
 export const metadata: Metadata = {
@@ -41,9 +42,12 @@ export default function ForYourTeam() {
       />
       <Container className="max-w-4xl py-16 sm:py-20">
         <dl className="divide-y divide-line border-y border-line">
-          {points.map((p) => (
+          {points.map((p, i) => (
             <div key={p.title} className="grid gap-2 py-7 md:grid-cols-[1fr_1.4fr] md:gap-10">
-              <dt className="font-display text-xl">{p.title}</dt>
+              <dt className="flex gap-3 font-display text-2xl">
+                <LeafBullet index={i} />
+                {p.title}
+              </dt>
               <dd className="text-lg leading-relaxed text-muted">{p.body}</dd>
             </div>
           ))}

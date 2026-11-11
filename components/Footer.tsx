@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { footerNav, site } from "@/lib/site";
+import { LogoLockup } from "./Logo";
 import { Container } from "./ui";
 
 export function Footer() {
@@ -7,8 +8,7 @@ export function Footer() {
     <footer className="border-t border-line">
       <Container className="flex flex-col gap-6 py-10 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <p className="font-display text-xl font-semibold text-mint-deep">{site.brand}</p>
-          <p>{site.descriptor}</p>
+          <LogoLockup />
         </div>
         <div className="flex flex-wrap gap-x-6 gap-y-2">
           {footerNav.map((item) => (

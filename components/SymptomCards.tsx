@@ -1,9 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { leafPath } from "@/lib/leaf";
-
-const LEAF = leafPath(40, 14, 5);
+import { LooseLeaf } from "./mint";
 
 export type Symptom = { today: string; mint: string };
 
@@ -21,9 +19,7 @@ export function SymptomCards({ items }: { items: Symptom[] }) {
             onClick={() => setRevived((r) => ({ ...r, [i]: !r[i] }))}
             className="symptom group relative flex size-full min-h-48 flex-col items-start overflow-hidden rounded-3xl border border-line bg-paper p-6 text-left transition-colors duration-500 hover:border-leaf hover:bg-mint-soft aria-pressed:border-leaf aria-pressed:bg-mint-soft"
           >
-            <svg viewBox="-20 -46 40 50" aria-hidden="true" className="symptom-leaf w-11 shrink-0">
-              <path d={LEAF} />
-            </svg>
+            <LooseLeaf variant={i + 1} className="symptom-leaf w-9 shrink-0" />
             <span className="mt-4 grid text-xl leading-snug">
               <span className="symptom-today col-start-1 row-start-1">
                 <span className="sr-only">Today: </span>

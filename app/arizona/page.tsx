@@ -21,7 +21,7 @@ export default function Arizona() {
         lede={`Mint works with independent medical practices, solo and group, in ${listNames(cityNames)}. We are starting in the Valley so we can be in your office, not on a video call.`}
       />
       <Container className="py-16 sm:py-20">
-        <h2 className="font-display text-3xl">Where we work</h2>
+        <h2 className="font-display text-4xl leading-tight tracking-tight text-balance sm:text-5xl">Where we work</h2>
         <ValleyMap className="mx-auto mt-6 max-w-3xl" />
         <div className="mt-8 grid gap-8 md:grid-cols-3">
           {areas.map((area) => (

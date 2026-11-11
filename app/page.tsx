@@ -104,11 +104,10 @@ export default function Home() {
               Your practice,
               <br />
               in{" "}
-              <span className="relative inline-block text-leaf-dark italic">
+              <span className="relative inline-block text-mint-deep italic">
                 mint
                 <LooseLeaf
-                  id="h1-leaf"
-                  className="grow-on-load leaf absolute -top-[0.28em] -right-[0.34em] w-[0.36em] rotate-[38deg]"
+                  className="h1-leaf grow-on-load absolute -top-[0.3em] -right-[0.3em] w-[0.3em]"
                 />
               </span>{" "}
               condition.
@@ -130,9 +129,8 @@ export default function Home() {
           </div>
           <div className="pointer-events-none absolute right-3 bottom-0 lg:static lg:flex lg:justify-center">
             <GrowingMint
-              id="hero"
               tags
-              soil
+              ground
               className="grow-on-load relative w-32 sm:w-52 lg:w-[min(27rem,58vh)]"
             />
           </div>
@@ -166,7 +164,6 @@ export default function Home() {
                 className="lift group relative flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-paper p-7 hover:border-leaf"
               >
                 <GrowingMint
-                  id={`pillar-${pillar.id}`}
                   className="grow-on-reveal absolute -top-2 -right-3 w-28"
                 />
                 <span className="font-display text-6xl leading-none text-leaf">0{i + 1}</span>

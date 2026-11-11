@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ValleyMap } from "@/components/graphics";
+import { GrowingMint } from "@/components/mint";
 import { IconBadge } from "@/components/icons";
 import { JsonLd } from "@/components/JsonLd";
 import { ButtonLink, CallToAction, Container, PageHero } from "@/components/ui";
@@ -60,7 +61,7 @@ export default async function CityPage({ params }: PageProps<"/arizona/[city]">)
           <div>
             <dl className="grid grid-cols-2 gap-4">
               {city.stats.map(([value, label]) => (
-                <div key={label} className="lift rounded-2xl bg-gradient-to-br from-mint-soft to-[#c9f1dd] p-6">
+                <div key={label} className="lift rounded-3xl bg-gradient-to-br from-mint-soft to-[#c9f1dd] p-6">
                   <dt className="sr-only">{label}</dt>
                   <dd>
                     <span className="block font-display text-4xl text-mint-deep sm:text-5xl">{value}</span>
@@ -91,12 +92,12 @@ export default async function CityPage({ params }: PageProps<"/arizona/[city]">)
       </section>
       <section className="border-b border-line">
         <Container className="py-16 sm:py-20">
-          <h2 className="font-display text-3xl">Where we would look first in a {city.name} practice</h2>
+          <h2 className="font-display text-4xl leading-tight tracking-tight text-balance sm:text-5xl">Where we would look first in a {city.name} practice</h2>
           <dl className="mt-8 grid gap-5 md:grid-cols-3">
             {city.focus.map((f, i) => (
-              <div key={f.title} className="lift rounded-2xl border border-line bg-white p-6">
-                <span aria-hidden="true" className="flex size-10 items-center justify-center rounded-full bg-mint-deep font-display text-lg text-white">
-                  {i + 1}
+              <div key={f.title} className="lift rounded-3xl border border-line bg-white p-6">
+                <span aria-hidden="true" className="font-display text-6xl leading-none text-leaf">
+                  0{i + 1}
                 </span>
                 <dt className="mt-4 font-display text-xl">{f.title}</dt>
                 <dd className="mt-2 leading-relaxed text-muted">{f.body}</dd>
@@ -110,7 +111,7 @@ export default async function CityPage({ params }: PageProps<"/arizona/[city]">)
       </section>
       <section>
         <Container className="py-16 sm:py-20">
-          <h2 className="font-display text-3xl">What Mint does</h2>
+          <h2 className="font-display text-4xl leading-tight tracking-tight text-balance sm:text-5xl">What Mint does</h2>
           <p className="mt-3 max-w-2xl text-lg leading-relaxed text-muted">
             Mint is a practice optimization partner for independent practices in {city.name}, solo
             and group. We evaluate how your practice runs, deliver a playbook, then execute on it
@@ -121,14 +122,15 @@ export default async function CityPage({ params }: PageProps<"/arizona/[city]">)
               <Link
                 key={p.id}
                 href={`/services#${p.id}`}
-                className="lift rounded-2xl border border-line bg-white p-7 hover:border-mint"
+                className="lift relative overflow-hidden rounded-3xl border border-line bg-white p-7 hover:border-leaf"
               >
-                <h3 className="font-display text-2xl">{p.name}</h3>
+                <GrowingMint className="grow-on-reveal absolute -top-2 -right-3 w-24" />
+                <h3 className="max-w-[11rem] font-display text-2xl">{p.name}</h3>
                 <p className="mt-3 leading-relaxed text-muted">{p.summary}</p>
               </Link>
             ))}
           </div>
-          <div className="mt-10 flex flex-col gap-4 rounded-2xl bg-mint-soft p-7 sm:flex-row sm:items-center sm:justify-between">
+          <div className="mt-10 flex flex-col gap-4 rounded-3xl bg-mint-soft p-7 sm:flex-row sm:items-center sm:justify-between">
             <p className="max-w-2xl text-lg">
               It starts with discovery: a flat <strong>{site.discoveryFee}</strong> evaluation of
               your {city.name} practice. Sign on and the fee rolls into your first month.
@@ -140,7 +142,7 @@ export default async function CityPage({ params }: PageProps<"/arizona/[city]">)
       <section className="border-t border-line bg-white">
         <Container className="grid gap-10 py-16 sm:py-20 md:grid-cols-2 md:gap-16">
           <div>
-            <h2 className="font-display text-3xl">On site across {where}</h2>
+            <h2 className="font-display text-4xl leading-tight tracking-tight text-balance sm:text-5xl">On site across {where}</h2>
             <p className="mt-4 text-lg leading-relaxed text-muted">
               We work in your office with your team. Alongside {city.name}, we serve practices in{" "}
               {listNames(nearby.map((c) => c.name))}.
@@ -167,7 +169,7 @@ export default async function CityPage({ params }: PageProps<"/arizona/[city]">)
             </ul>
           </div>
           <div>
-            <h2 className="font-display text-3xl">Podiatry first</h2>
+            <h2 className="font-display text-4xl leading-tight tracking-tight text-balance sm:text-5xl">Podiatry first</h2>
             <p className="mt-4 text-lg leading-relaxed text-muted">
               Podiatry is the first specialty we built our process around, from orthotics handoffs
               to recall for routine foot care.

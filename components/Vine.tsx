@@ -2,9 +2,8 @@
 
 import { usePathname } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { leafPath } from "@/lib/leaf";
+import { LeafImage } from "./mint";
 
-const LEAF = leafPath(34, 12, 5);
 const xAt = (y: number) => 44 + 15 * Math.sin(y / 190) + 6 * Math.sin(y / 67);
 
 /**
@@ -82,18 +81,17 @@ export function Vine() {
         height={height}
         className="pointer-events-none absolute top-0 left-[max(0px,calc((100vw-72rem)/2-5.5rem))] z-10 hidden xl:block"
       >
-        <path d={path} pathLength="1" className="vine-stem fill-none stroke-leaf" strokeWidth="3.5" strokeLinecap="round" />
+        <path d={path} pathLength="1" className="vine-stem fill-none stroke-[#3f8a45]" strokeWidth="3.5" strokeLinecap="round" />
         {leaves.map((leaf) => (
           <g key={leaf.y} transform={`translate(${leaf.x.toFixed(1)} ${leaf.y}) rotate(${leaf.side * 112}) scale(${leaf.size})`}>
             <g className="vine-leaf" data-y={leaf.y}>
               <g className="sway" style={{ animationDelay: `${-(leaf.y % 5)}s` }}>
-                <path d={LEAF} className="fill-leaf" />
-                <path d="M0 0V-30" className="stroke-white/50" strokeWidth="1.2" />
+                <LeafImage length={42} variant={(leaf.y / 165) | 0} />
               </g>
             </g>
           </g>
         ))}
-        <circle className="vine-bud fill-lime stroke-leaf-dark" r="5" strokeWidth="2" />
+        <circle className="vine-bud fill-[#b9e08a] stroke-[#2f6f36]" r="4.5" strokeWidth="2" />
       </svg>
       <div
         ref={bar}
@@ -101,8 +99,8 @@ export function Vine() {
         className="pointer-events-none fixed inset-x-0 top-16 z-20 h-[3px] xl:hidden"
       >
         <div className="h-full origin-left scale-x-[var(--progress,0)] bg-leaf" />
-        <svg viewBox="-14 -36 28 38" className="absolute -top-2 left-[calc(var(--progress,0)*100%)] w-4 -translate-x-1/2 rotate-[100deg]">
-          <path d={LEAF} className="fill-leaf-dark" />
+        <svg viewBox="-12 -44 24 48" className="absolute -top-3 left-[calc(var(--progress,0)*100%)] w-4 -translate-x-1/2 rotate-[100deg]">
+          <LeafImage length={42} />
         </svg>
       </div>
     </>

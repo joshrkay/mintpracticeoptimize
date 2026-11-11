@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { IconBadge, type IconName } from "@/components/icons";
+import { GrowingMint } from "@/components/mint";
 import { ButtonLink, CallToAction, Container, PageHero } from "@/components/ui";
 
 export const metadata: Metadata = {
@@ -52,10 +53,15 @@ export default function Podiatry() {
       />
       <section>
         <Container className="py-16 sm:py-20">
-          <h2 className="font-display text-3xl">What we look at in a podiatry practice</h2>
+          <div className="flex items-end justify-between gap-8">
+            <h2 className="max-w-2xl font-display text-4xl leading-tight tracking-tight text-balance sm:text-5xl">
+              What we look at in a podiatry practice
+            </h2>
+            <GrowingMint className="grow-on-reveal relative hidden w-28 shrink-0 md:block" />
+          </div>
           <dl className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {areas.map((a) => (
-              <div key={a.title} className="lift rounded-2xl border border-line bg-white p-6">
+              <div key={a.title} className="lift rounded-3xl border border-line bg-white p-6">
                 <IconBadge name={a.icon} />
                 <dt className="mt-4 font-display text-xl">{a.title}</dt>
                 <dd className="mt-2 leading-relaxed text-muted">{a.body}</dd>

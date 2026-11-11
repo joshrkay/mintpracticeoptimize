@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { LooseLeaf } from "@/components/mint";
 import { CallToAction, Container, PageHero } from "@/components/ui";
 
 export const metadata: Metadata = {
@@ -57,7 +58,7 @@ export default function Compare() {
         lede="Each of these solves a real problem. The difference is how much of the practice they look at, and who is left doing the work."
       />
       <Container className="py-16 sm:py-20">
-        <div className="overflow-x-auto rounded-2xl border border-line bg-white">
+        <div className="overflow-x-auto rounded-3xl border border-line bg-white">
           <table className="w-full min-w-[720px] border-collapse text-left">
             <thead>
               <tr className="border-b border-line text-sm uppercase tracking-wider text-muted">
@@ -70,7 +71,12 @@ export default function Compare() {
             <tbody>
               {options.map((o) => (
                 <tr key={o.name} className={`border-b border-line align-top last:border-0 ${o.mint ? "bg-mint-soft" : ""}`}>
-                  <th scope="row" className="p-5 font-display text-lg font-normal">{o.name}</th>
+                  <th scope="row" className="p-5 font-display text-lg font-normal">
+                    <span className="flex items-start gap-3">
+                      <LooseLeaf className={`mt-0.5 w-4 shrink-0 ${o.mint ? "rotate-[20deg]" : "wilted rotate-[150deg]"}`} />
+                      {o.name}
+                    </span>
+                  </th>
                   <td className="p-5 leading-relaxed text-muted">{o.gives}</td>
                   <td className="p-5 leading-relaxed text-muted">{o.work}</td>
                   <td className="p-5 leading-relaxed text-muted">{o.covers}</td>

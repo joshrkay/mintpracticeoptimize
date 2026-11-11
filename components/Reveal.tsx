@@ -9,6 +9,7 @@ const TARGETS = [
   "main section:not([data-hero]) h2",
   "main section:not([data-hero]) :is(ul, ol, dl, .grid) > :is(li, div, a, figure, svg)",
   "main section:not([data-hero]) :is(figure, table)",
+  "main section:not([data-hero]) .grow-on-reveal",
 ].join(", ");
 
 export function Reveal() {

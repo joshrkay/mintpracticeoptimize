@@ -1,16 +1,3 @@
-/** Outline of a mint leaf: base at the origin, tip straight up, with a serrated edge. */
-export function leafPath(length: number, width: number, teeth = 6) {
-  const steps = teeth * 6;
-  const side = (dir: 1 | -1) =>
-    Array.from({ length: steps + 1 }, (_, i) => {
-      const t = dir === 1 ? i / steps : 1 - i / steps;
-      const profile = Math.sin(Math.PI * t ** 0.78) ** 0.9;
-      const tooth = t > 0.12 && t < 0.94 ? 1 + 0.085 * ((t * teeth) % 1) : 1;
-      return `${(dir * width * profile * tooth).toFixed(1)} ${(-length * t).toFixed(1)}`;
-    });
-  return `M${[...side(1), ...side(-1)].join("L")}Z`;
-}
-
 type Point = [number, number];
 
 /** Position and heading (degrees) at `t` along a cubic curve. */

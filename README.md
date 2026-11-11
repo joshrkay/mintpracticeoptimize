@@ -32,6 +32,15 @@ npm run dev
   `podiatry.ts` the podiatry additions. To add a specialty, create its sections file and
   register it in `lib/questionnaire/index.ts`; the page appears at `/questionnaire/<slug>`.
 
+## Brand and leaf artwork
+
+- Logo: `components/Logo.tsx` (wordmark, symbol and lockup). Exported files are in
+  `public/brand/`, and `/brand` is an unlisted reference sheet.
+- Every leaf on the site is drawn from three files, `public/leaves/leaf-1.webp` to
+  `leaf-3.webp` (480 x 660, transparent, leaf base at the bottom centre, tip at the top).
+  They are computer-rendered by `scripts/render-leaves.mjs`. To use photographs, replace
+  those three files with cut-out photos of the same proportions.
+
 ## Form delivery
 
 Both forms email their submissions through [Resend](https://resend.com). Set the variables
