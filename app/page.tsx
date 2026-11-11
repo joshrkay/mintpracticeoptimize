@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ButtonLink, CallToAction, Container, Eyebrow } from "@/components/ui";
+import { cityNames, listNames } from "@/lib/cities";
 import { pillars } from "@/lib/services";
 import { site } from "@/lib/site";
 
@@ -181,7 +182,7 @@ export default function Home() {
         <Container className="py-20 sm:py-24">
           <Eyebrow>Who we work with</Eyebrow>
           <h2 className="mt-4 max-w-2xl font-display text-3xl text-balance sm:text-4xl">
-            Independent practices across Arizona, solo and group.
+            Independent practices across the Phoenix area, solo and group.
           </h2>
           <div className="mt-10 grid gap-5 md:grid-cols-2">
             {sizes.map((s) => (
@@ -191,6 +192,12 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <p className="mt-8 text-lg text-muted">
+            On site in {listNames(cityNames)}.{" "}
+            <Link href="/arizona" className="font-semibold text-mint-deep hover:underline">
+              Where we work &rarr;
+            </Link>
+          </p>
         </Container>
       </section>
 

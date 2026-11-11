@@ -2,12 +2,13 @@
 
 > Mint is a practice optimization partner for independent medical practices in Arizona, both solo and group. Mint evaluates how a practice runs, delivers a playbook of optimization opportunities, then executes on it with the practice team. Mint is not a management services organization (MSO) and takes no ownership in client practices.
 
-Mint works across three pillars: operations, revenue opportunities and marketing. Every engagement starts with discovery, a flat $1,500 evaluation that produces a current state map and an optimization opportunities map. The fee rolls into the first month if the practice signs on. Mint is starting with podiatry practices.
+Mint works across three pillars: operations, revenue opportunities and marketing. Every engagement starts with discovery, a flat $1,500 evaluation that produces a current state map and an optimization opportunities map. The fee rolls into the first month if the practice signs on. Mint is starting with podiatry practices in the Phoenix area: Phoenix, Scottsdale, Mesa, Glendale, Tempe, Chandler, Gilbert, Goodyear and Peoria.
 
 ## Pages
 
 - [Services](https://practiceoptimize.com/services): What Mint does in operations, revenue opportunities, marketing and patient messaging.
 - [Discovery](https://practiceoptimize.com/discovery): The discovery evaluation, its deliverables and its fee.
+- [Arizona](https://practiceoptimize.com/arizona): Where Mint works: Phoenix, Scottsdale, Mesa, Glendale, Tempe, Chandler, Gilbert, Goodyear and Peoria.
 - [Podiatry](https://practiceoptimize.com/podiatry): What Mint looks at in a podiatry practice.
 - [For your team](https://practiceoptimize.com/for-your-team): What working with Mint means for practice managers and staff.
 - [How Mint compares](https://practiceoptimize.com/compare): Mint next to coaching programs, marketing agencies, consultants, patient software and MSOs.

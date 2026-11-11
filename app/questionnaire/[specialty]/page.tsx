@@ -4,8 +4,8 @@ import { QuestionnaireForm } from "@/components/forms";
 import { Container, PageHero } from "@/components/ui";
 import { getQuestionnaire, specialtySlugs } from "@/lib/questionnaire";
 
-// The form is long and has no meaningful loading state, so render it in one piece.
-export const instant = false;
+// Unknown slugs are a real 404, not a page rendered on demand.
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return specialtySlugs.map((specialty) => ({ specialty }));

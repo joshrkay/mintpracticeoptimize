@@ -71,7 +71,8 @@ offer. Asks "how is this different from what I have?"
 ## Open questions
 
 - Answered: Mint starts in Arizona and targets both solo and group practices. The site
-  now says so. Which Arizona metros come first is still open.
+  now says so. First cities: Phoenix, Scottsdale, Mesa,
+  Glendale, Tempe, Chandler, Gilbert, Goodyear and Peoria.
 - Who usually makes first contact, the doctor or the manager?
 - Is the first wave insurance-based podiatry, or does it include cash-heavy practices?
 - Which three specialties follow podiatry?

@@ -1,3 +1,4 @@
+import { cityNames, listNames } from "./cities";
 import { site } from "./site";
 
 // Each answer leads with a direct, self-contained sentence so search engines and
@@ -41,7 +42,7 @@ export const faqs = [
   },
   {
     q: "Where does Mint work?",
-    a: `Mint works with independent medical practices in ${site.region}. We are starting there so we can be on site with the practices we serve.`,
+    a: `Mint works with independent medical practices in the Phoenix area of ${site.region}: ${listNames(cityNames)}. We are starting there so we can be on site with the practices we serve.`,
   },
   {
     q: "Does Mint work with solo practices or groups?",

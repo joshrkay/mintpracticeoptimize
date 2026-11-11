@@ -11,7 +11,8 @@ Working plan for Mint, Practice Optimization Partners. Internal; not published o
 
 ## Market
 
-- Starts in Arizona.
+- Starts in Arizona, in the Phoenix area: Phoenix, Scottsdale, Mesa, Glendale, Tempe,
+  Chandler, Gilbert, Goodyear and Peoria.
 - Targets both solo practices and groups.
 
 ## Domain and branding

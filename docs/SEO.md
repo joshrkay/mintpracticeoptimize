@@ -34,9 +34,11 @@ questions directly do well in both.
    site's description, then add their URLs to the Organization data in `app/layout.tsx`
    (`sameAs`).
 3. **Go deeper on location.** The site now says Arizona on the home, podiatry and FAQ
-   pages and in structured data. Next: a street address or city for the Google Business
-   Profile, and city pages (Phoenix, Tucson and so on) once you know which metros you
-   will serve in person.
+   pages and in structured data. There is a hub at `/arizona` and a page for each of the nine Phoenix-area
+   cities (edit the list in `lib/cities.ts`). The city pages share most of their text,
+   which search engines discount. Each gets stronger with something only that city has: a
+   client result, a local partner, a named practice. Add those as they come. Still
+   needed: a street address or city for the Google Business Profile.
 4. **Publish proof.** A case study with real numbers is the most-cited kind of page.
 5. **Write long-form articles**, one topic each, in the doctor's language: "How to
    collect copays at check-in", "Why QR codes get you bad Google reviews", "What to do

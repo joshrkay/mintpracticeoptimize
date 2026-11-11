@@ -11,6 +11,7 @@ Docs: [business plan](docs/PLAN.md), [competitive landscape](docs/COMPETITORS.md
 | `/services` | Operations, Revenue Opportunities, Marketing, Patient Messaging |
 | `/discovery` | The discovery offer and fee |
 | `/podiatry` | Podiatry landing page |
+| `/arizona`, `/arizona/<city>` | Service area hub and a page per city (`lib/cities.ts`) |
 | `/for-your-team` | For practice managers and staff |
 | `/compare` | Mint next to the other kinds of help a practice can hire |
 | `/faq` | Direct answers, with FAQ structured data |

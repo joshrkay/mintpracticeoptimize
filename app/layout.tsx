@@ -3,6 +3,7 @@ import { Fraunces, Geist } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
+import { cityNames } from "@/lib/cities";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -34,7 +35,11 @@ const organization = {
   logo: `${site.url}/icon.svg`,
   email: site.email,
   description: site.tagline,
-  areaServed: { "@type": "State", name: site.region },
+  areaServed: cityNames.map((name) => ({
+    "@type": "City",
+    name,
+    containedInPlace: { "@type": "State", name: site.region },
+  })),
   knowsAbout: [
     "Medical practice optimization",
     "Medical practice operations",
