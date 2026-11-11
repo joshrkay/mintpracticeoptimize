@@ -114,7 +114,7 @@ export function GrowStory({
               <div className="focus-subject">
                 <GrowingMint
                   ground
-                  className="relative w-[min(34vw,8.5rem)] sm:w-44 lg:w-[min(25rem,50vh)]"
+                  className="relative w-[5.5rem] sm:w-44 lg:w-[min(25rem,50vh)]"
                 />
               </div>
               <ol className="mt-3 flex gap-2 lg:mt-10" aria-hidden="true">
@@ -140,7 +140,7 @@ export function GrowStory({
               <li
                 key={stage.title}
                 data-stage
-                className={`flex min-h-[52vh] flex-col justify-center py-8 transition-opacity duration-500 lg:min-h-[78vh] ${
+                className={`flex min-h-[62svh] flex-col justify-center py-8 transition-opacity duration-500 lg:min-h-[78vh] ${
                   i === active ? "opacity-100" : "opacity-30"
                 }`}
               >

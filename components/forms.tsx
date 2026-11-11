@@ -68,7 +68,7 @@ function Field({ q, values }: { q: Question; values?: string[] }) {
           {q.options.map((option, i) => (
             <label
               key={option}
-              className="cursor-pointer rounded-full border border-line bg-white px-4 py-2 text-[15px] transition-colors hover:border-mint-deep has-checked:border-mint-deep has-checked:bg-mint-soft has-checked:font-medium has-focus-visible:outline-2 has-focus-visible:outline-mint-deep"
+              className="flex min-h-11 cursor-pointer items-center rounded-full border border-line bg-white px-4 py-2 text-base transition-colors hover:border-mint-deep has-checked:border-mint-deep has-checked:bg-mint-soft has-checked:font-medium has-focus-visible:outline-2 has-focus-visible:outline-mint-deep"
             >
               <input
                 type={q.type === "single" ? "radio" : "checkbox"}

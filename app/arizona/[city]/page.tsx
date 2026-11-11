@@ -152,7 +152,7 @@ export default async function CityPage({ params }: PageProps<"/arizona/[city]">)
                 <li key={c.slug}>
                   <Link
                     href={`/arizona/${c.slug}`}
-                    className="inline-block rounded-full border border-line px-4 py-2 text-[15px] hover:border-mint-deep"
+                    className="inline-flex min-h-11 items-center rounded-full border border-line px-4 text-base hover:border-mint-deep"
                   >
                     {c.name}
                   </Link>
@@ -161,7 +161,7 @@ export default async function CityPage({ params }: PageProps<"/arizona/[city]">)
               <li>
                 <Link
                   href="/arizona"
-                  className="inline-block rounded-full border border-line px-4 py-2 text-[15px] font-semibold text-mint-deep hover:border-mint-deep"
+                  className="inline-flex min-h-11 items-center rounded-full border border-line px-4 text-base font-semibold text-mint-deep hover:border-mint-deep"
                 >
                   All cities
                 </Link>

@@ -13,7 +13,7 @@ export function BeforeAfterWipe() {
   const layer = (kind: "today" | "mint") => (
     <div
       aria-hidden={kind === "mint" ? undefined : true}
-      className={`absolute inset-0 grid items-center gap-6 p-6 sm:p-10 lg:grid-cols-[1.25fr_1fr] ${
+      className={`absolute inset-0 grid items-center gap-6 p-5 sm:p-10 lg:grid-cols-[1.25fr_1fr] ${
         kind === "today" ? "bg-[#e7e9e2] text-ink" : "wipe-top bg-forest text-white"
       }`}
     >
@@ -27,11 +27,11 @@ export function BeforeAfterWipe() {
         <p className={`text-sm font-semibold tracking-[0.14em] uppercase ${kind === "today" ? "text-muted" : "text-lime"}`}>
           {kind === "today" ? "Today" : "With Mint"}
         </p>
-        <dl className="mt-4 divide-y divide-current/15 border-y border-current/15">
+        <dl className="mt-2 divide-y divide-current/15 border-y border-current/15 sm:mt-4">
           {journey.map((row) => (
-            <div key={row.step} className="grid grid-cols-[6.5rem_1fr] gap-4 py-2.5 sm:grid-cols-[9rem_1fr] sm:py-3">
-              <dt className="text-sm font-semibold opacity-70 sm:text-base">{row.step}</dt>
-              <dd className="font-display text-lg leading-snug sm:text-2xl">{kind === "today" ? row.today : row.mint}</dd>
+            <div key={row.step} className="grid grid-cols-[5.25rem_1fr] items-baseline gap-3 py-1.5 sm:grid-cols-[9rem_1fr] sm:gap-4 sm:py-3">
+              <dt className="text-[13px] font-semibold opacity-70 sm:text-base">{row.step}</dt>
+              <dd className="font-display text-base leading-snug sm:text-2xl">{kind === "today" ? row.today : row.mint}</dd>
             </div>
           ))}
         </dl>
@@ -53,15 +53,15 @@ export function BeforeAfterWipe() {
     <Pinned vh={210} className="wipe">
       <Container className="flex h-full flex-col justify-center py-6">
         <div className="max-w-3xl">
-          <h2 className="font-display text-4xl leading-tight tracking-tight text-balance sm:text-6xl">
+          <h2 className="font-display text-3xl leading-tight tracking-tight text-balance sm:text-6xl">
             See it before you change it.
           </h2>
-          <p className="mt-4 max-w-xl text-lg text-muted">
+          <p className="mt-2 max-w-xl text-base text-muted sm:mt-4 sm:text-lg">
             Discovery maps your practice as it runs today, then the same day with the
             opportunities taken.
           </p>
         </div>
-        <div className="relative mt-7 h-[min(60vh,30rem)] overflow-hidden rounded-3xl">
+        <div className="relative mt-5 h-[min(60svh,27rem)] overflow-hidden rounded-3xl sm:mt-7 sm:h-[min(60vh,30rem)]">
           {layer("today")}
           {layer("mint")}
           <div aria-hidden="true" className="wipe-line absolute inset-y-0 w-0.5 bg-lime" />

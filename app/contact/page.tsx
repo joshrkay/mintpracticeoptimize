@@ -21,7 +21,7 @@ export default function Contact() {
         <ContactForm />
         <aside className="self-start rounded-3xl border border-line bg-white p-7">
           <h2 className="font-display text-xl">Prefer email?</h2>
-          <a href={`mailto:${site.email}`} className="mt-2 block font-semibold text-mint-deep hover:underline">
+          <a href={`mailto:${site.email}`} className="mt-1 flex min-h-11 items-center font-semibold break-all text-mint-deep hover:underline">
             {site.email}
           </a>
         </aside>

@@ -10,13 +10,13 @@ export function Footer() {
         <div>
           <LogoLockup tone="dark" />
         </div>
-        <div className="flex flex-wrap gap-x-6 gap-y-2">
+        <div className="flex flex-wrap gap-x-6 gap-y-0">
           {footerNav.map((item) => (
-            <Link key={item.href} href={item.href} className="hover:text-lime">
+            <Link key={item.href} href={item.href} className="inline-flex min-h-11 items-center hover:text-lime">
               {item.label}
             </Link>
           ))}
-          <a href={`mailto:${site.email}`} className="hover:text-lime">
+          <a href={`mailto:${site.email}`} className="inline-flex min-h-11 items-center hover:text-lime">
             {site.email}
           </a>
         </div>

@@ -27,12 +27,12 @@ export default function Arizona() {
           {areas.map((area) => (
             <div key={area} className="border-t-2 border-mint-deep pt-4">
               <h3 className="font-display text-xl">{area}</h3>
-              <ul className="mt-3 space-y-2 text-lg">
+              <ul className="mt-2 text-lg">
                 {cities
                   .filter((c) => c.area === area)
                   .map((c) => (
                     <li key={c.slug}>
-                      <Link href={`/arizona/${c.slug}`} className="text-mint-deep hover:underline">
+                      <Link href={`/arizona/${c.slug}`} className="inline-flex min-h-11 items-center text-mint-deep hover:underline">
                         {c.name}
                       </Link>
                     </li>

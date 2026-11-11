@@ -36,7 +36,8 @@ export function Vine() {
 
   const { path, nodes } = useMemo(() => {
     const points: string[] = [];
-    for (let y = 0; y <= height; y += 20) points.push(`${xAt(y).toFixed(1)} ${y}`);
+    for (let y = 0; y <= height; y += 20)
+      points.push(`${xAt(y).toFixed(1)} ${y}`);
     const nodes = [];
     for (let y = 170, i = 0; y < height - 80; y += NODE_GAP, i++) {
       nodes.push({ y, x: xAt(y), turned: i % 2 === 1, variant: i });
@@ -57,15 +58,26 @@ export function Vine() {
     const update = () => {
       frame = 0;
       const top = main.getBoundingClientRect().top;
-      const reach = still ? height : Math.max(0, Math.min(height, innerHeight * 0.62 - top));
-      for (const stem of stems) stem.style.setProperty("stroke-dashoffset", String(1 - reach / height));
+      const reach = still
+        ? height
+        : Math.max(0, Math.min(height, innerHeight * 0.62 - top));
+      for (const stem of stems)
+        stem.style.setProperty("stroke-dashoffset", String(1 - reach / height));
       // New growth leans the way the stem is heading.
-      const lean = (Math.atan2(xAt(reach + 12) - xAt(reach - 12), 24) * -180) / Math.PI;
-      tip?.setAttribute("transform", `translate(${xAt(reach).toFixed(1)} ${reach.toFixed(1)}) rotate(${lean.toFixed(1)})`);
-      for (const el of nodeEls) el.classList.toggle("on", Number(el.dataset.y) < reach - 10);
+      const lean =
+        (Math.atan2(xAt(reach + 12) - xAt(reach - 12), 24) * -180) / Math.PI;
+      tip?.setAttribute(
+        "transform",
+        `translate(${xAt(reach).toFixed(1)} ${reach.toFixed(1)}) rotate(${lean.toFixed(1)})`,
+      );
+      for (const el of nodeEls)
+        el.classList.toggle("on", Number(el.dataset.y) < reach - 10);
       const page = document.documentElement;
       const progress = scrollY / Math.max(1, page.scrollHeight - innerHeight);
-      bar.current?.style.setProperty("--progress", String(still ? 1 : progress));
+      bar.current?.style.setProperty(
+        "--progress",
+        String(still ? 1 : progress),
+      );
     };
     const onScroll = () => {
       frame ||= requestAnimationFrame(update);
@@ -92,16 +104,45 @@ export function Vine() {
         className="pointer-events-none absolute top-0 left-[max(0px,calc((100vw-72rem)/2-5.75rem))] z-10 hidden overflow-visible xl:block"
       >
         {/* The stem: a dark edge with a lighter core, like the one in the photographs. */}
-        <path d={path} pathLength="1" className="vine-stem fill-none stroke-[#46601f]" strokeWidth="5" strokeLinecap="round" />
-        <path d={path} pathLength="1" className="vine-stem fill-none stroke-[#8fae4a]" strokeWidth="2" strokeLinecap="round" />
+        <path
+          d={path}
+          pathLength="1"
+          className="vine-stem fill-none stroke-[#46601f]"
+          strokeWidth="5"
+          strokeLinecap="round"
+        />
+        <path
+          d={path}
+          pathLength="1"
+          className="vine-stem fill-none stroke-[#8fae4a]"
+          strokeWidth="2"
+          strokeLinecap="round"
+        />
         {nodes.map((node) => (
-          <g key={node.y} className="vine-node" data-y={node.y} transform={`translate(${node.x.toFixed(1)} ${node.y})`}>
+          <g
+            key={node.y}
+            className="vine-node"
+            data-y={node.y}
+            transform={`translate(${node.x.toFixed(1)} ${node.y})`}
+          >
             <circle r="4" className="vine-joint fill-[#46601f]" />
             {[1, -1].map((side) => (
-              <g key={side} transform={`rotate(${side * (node.turned ? 138 : 108)})`}>
-                <g className="vine-leaf" style={{ transitionDelay: side === 1 ? "0ms" : "90ms" }}>
-                  <g className="sway" style={{ animationDelay: `${-((node.y + side) % 5)}s` }}>
-                    <LeafImage length={node.turned ? 27 : 40} variant={node.variant + (side === 1 ? 0 : 1)} />
+              <g
+                key={side}
+                transform={`rotate(${side * (node.turned ? 138 : 108)})`}
+              >
+                <g
+                  className="vine-leaf"
+                  style={{ transitionDelay: side === 1 ? "0ms" : "90ms" }}
+                >
+                  <g
+                    className="sway"
+                    style={{ animationDelay: `${-((node.y + side) % 5)}s` }}
+                  >
+                    <LeafImage
+                      length={node.turned ? 27 : 40}
+                      variant={node.variant + (side === 1 ? 0 : 1)}
+                    />
                   </g>
                 </g>
               </g>
@@ -117,14 +158,12 @@ export function Vine() {
           ))}
         </g>
       </svg>
-      <div ref={bar} aria-hidden="true" className="pointer-events-none fixed inset-x-0 top-16 z-20 h-[3px] xl:hidden">
+      <div
+        ref={bar}
+        aria-hidden="true"
+        className="pointer-events-none fixed inset-x-0 top-16 z-20 h-[3px] xl:hidden"
+      >
         <div className="h-full origin-left scale-x-[var(--progress,0)] bg-[#46601f]" />
-        <svg
-          viewBox="-12 -44 24 48"
-          className="absolute -top-3 left-[calc(var(--progress,0)*100%)] w-4 -translate-x-1/2 rotate-[100deg]"
-        >
-          <LeafImage length={42} />
-        </svg>
       </div>
     </>
   );

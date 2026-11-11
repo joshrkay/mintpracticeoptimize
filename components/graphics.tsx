@@ -20,8 +20,8 @@ export function BeforeAfterMap({ className = "" }: { className?: string }) {
     >
       <div className="grid grid-cols-[1fr_1fr] gap-x-3 sm:grid-cols-[1.1fr_1fr_1fr] sm:gap-x-4">
         <div className="hidden sm:block" />
-        <p className="pb-3 text-xs font-semibold uppercase tracking-wider text-muted">Today</p>
-        <p className="pb-3 text-xs font-semibold uppercase tracking-wider text-mint-deep">With Mint</p>
+        <p className="pb-3 text-[13px] font-semibold uppercase tracking-wider text-muted">Today</p>
+        <p className="pb-3 text-[13px] font-semibold uppercase tracking-wider text-mint-deep">With Mint</p>
         {journey.map((row) => (
           <div
             key={row.step}
@@ -87,6 +87,8 @@ export function ValleyMap({ active, className = "" }: { active?: string; classNa
         const on = c.slug === active;
         return (
           <Link key={c.slug} href={`/arizona/${c.slug}`} className="group">
+            {/* A generous invisible area so the marker is easy to tap. */}
+            <rect x={p.label === "right" ? p.x - 16 : p.x - 96} y={p.y - 16} width="112" height="32" fill="transparent" />
             <circle
               cx={p.x}
               cy={p.y}
