@@ -53,7 +53,7 @@ export function GrowStory({ stages }: { stages: Stage[] }) {
     <div ref={scene} data-no-reveal className="lg:grid lg:grid-cols-2 lg:gap-16">
       <div className="sticky top-16 z-[5] -mx-5 border-b border-line bg-paper/95 px-5 pt-4 pb-3 backdrop-blur lg:border-0 sm:-mx-8 sm:px-8 lg:static lg:order-2 lg:m-0 lg:bg-transparent lg:p-0 lg:backdrop-blur-none">
         <div className="flex flex-col items-center lg:sticky lg:top-24 lg:h-[calc(100vh-7rem)] lg:justify-center">
-          <GrowingMint ground tags className="relative w-[min(34vw,8.5rem)] sm:w-44 lg:w-[min(24rem,48vh)]" />
+          <GrowingMint ground className="relative w-[min(34vw,8.5rem)] sm:w-44 lg:w-[min(24rem,48vh)]" />
           <ol className="mt-3 flex gap-2 lg:mt-8" aria-hidden="true">
             {stages.map((stage, i) => (
               <li
@@ -77,8 +77,8 @@ export function GrowStory({ stages }: { stages: Stage[] }) {
               i === active ? "opacity-100" : "opacity-30"
             }`}
           >
-            <span className="font-display text-7xl leading-none text-mint-deep sm:text-8xl">0{i + 1}</span>
-            <h3 className="mt-4 font-display text-4xl sm:text-5xl">{stage.title}</h3>
+            <span className="text-sm font-semibold tracking-[0.14em] text-mint-deep uppercase">{stage.name}</span>
+            <h3 className="mt-3 font-display text-5xl sm:text-6xl">{stage.title}</h3>
             <p className="mt-4 max-w-md text-xl leading-relaxed text-muted">{stage.body}</p>
             {stage.note && (
               <p className="mt-5 inline-block self-start rounded-full bg-lime px-4 py-2 font-semibold text-forest">

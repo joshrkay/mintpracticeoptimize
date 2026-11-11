@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { DepthHero } from "@/components/DepthHero";
 import { ValleyMap } from "@/components/graphics";
 import { GrowStory, type Stage } from "@/components/GrowStory";
-import { Icon, IconBadge, type IconName } from "@/components/icons";
-import { GrowingMint, LooseLeaf, Marquee } from "@/components/mint";
+import { IconBadge, type IconName } from "@/components/icons";
 import { SymptomCards, type Symptom } from "@/components/SymptomCards";
 import { ButtonLink, CallToAction, Container, Eyebrow } from "@/components/ui";
 import { cityNames, listNames } from "@/lib/cities";
@@ -11,18 +11,6 @@ import { pillars } from "@/lib/services";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = { alternates: { canonical: "/" } };
-
-const marquee = [
-  "Phones and scheduling",
-  "Visit prep",
-  "Collections",
-  "Documentation",
-  "Patient follow-up",
-  "Census outreach",
-  "Newsletters",
-  "Google reviews",
-  "Local search",
-];
 
 const symptoms: Symptom[] = [
   {
@@ -91,30 +79,21 @@ const sizes: { icon: IconName; title: string; body: string }[] = [
 export default function Home() {
   return (
     <>
-      <section data-hero className="relative overflow-hidden bg-mint-soft/70">
-        <Container className="relative grid items-center gap-6 pt-14 pb-12 sm:pt-20 lg:min-h-[calc(100vh-4rem)] lg:grid-cols-[1.12fr_1fr] lg:pb-16">
-          <div>
+      <DepthHero pinned>
+        <Container className="pt-14 pb-48 lg:py-16">
+          <div className="max-w-[40rem]">
             <div className="animate-rise">
               <Eyebrow>{site.descriptor}</Eyebrow>
             </div>
             <h1
               style={{ animationDelay: "120ms" }}
-              className="mt-5 animate-rise font-display text-[clamp(3.1rem,6.6vw,6.2rem)] leading-[0.95] tracking-tight"
+              className="mt-5 animate-rise font-display text-[clamp(3.1rem,7vw,6.6rem)] leading-[0.95] tracking-tight"
             >
-              Your practice,
-              <br />
-              in{" "}
-              <span className="relative inline-block text-mint-deep italic">
-                mint
-                <LooseLeaf
-                  className="h1-leaf grow-on-load absolute -top-[0.3em] -right-[0.3em] w-[0.3em]"
-                />
-              </span>{" "}
-              condition.
+              Your practice, in <span className="text-lime italic">mint</span> condition.
             </h1>
             <p
               style={{ animationDelay: "260ms" }}
-              className="mt-7 max-w-xl animate-rise text-xl leading-relaxed text-muted"
+              className="mt-7 max-w-xl animate-rise text-xl leading-relaxed text-white/80"
             >
               Mint is a practice optimization partner for independent medical practices in
               Arizona, solo and group. We find what is holding your practice back, write the
@@ -127,56 +106,36 @@ export default function Home() {
               </ButtonLink>
             </div>
           </div>
-          <div className="pointer-events-none absolute right-3 bottom-0 lg:static lg:flex lg:justify-end lg:pr-24 lg:pl-36">
-            <GrowingMint
-              photo="crown"
-              tags
-              ground
-              priority
-              className="grow-on-load relative w-36 sm:w-56 lg:w-[min(25rem,50vh)]"
-            />
-          </div>
         </Container>
-      </section>
-
-      <Marquee words={marquee} />
+      </DepthHero>
 
       <section>
         <Container className="py-20 sm:py-28">
-          <Eyebrow>Sound familiar?</Eyebrow>
-          <h2 className="mt-4 max-w-3xl font-display text-4xl leading-tight tracking-tight text-balance sm:text-6xl">
-            Good medicine, wilting under the way the day runs.
+          <h2 className="max-w-3xl font-display text-4xl leading-tight tracking-tight text-balance sm:text-6xl">
+            Good medicine, held back by the way the day runs.
           </h2>
-          <p className="mt-5 text-lg text-muted">Hover or tap a card to see it with Mint.</p>
+          <p className="mt-5 text-lg text-muted">Hover or tap a line to see it with Mint.</p>
           <SymptomCards items={symptoms} />
         </Container>
       </section>
 
       <section className="bg-mint-soft">
         <Container className="py-20 sm:py-28">
-          <Eyebrow>Three pillars</Eyebrow>
-          <h2 className="mt-4 max-w-3xl font-display text-4xl leading-tight tracking-tight text-balance sm:text-6xl">
+          <h2 className="max-w-3xl font-display text-4xl leading-tight tracking-tight text-balance sm:text-6xl">
             Where we look, and where we work.
           </h2>
           <div className="mt-12 grid gap-5 md:grid-cols-3">
-            {pillars.map((pillar, i) => (
+            {pillars.map((pillar) => (
               <Link
                 key={pillar.id}
                 href={`/services#${pillar.id}`}
                 className="lift group relative flex h-full flex-col overflow-hidden rounded-3xl bg-white p-7"
               >
-                <GrowingMint
-                  className="grow-on-reveal absolute -top-1 -right-2 w-24"
-                />
-                <span className="font-display text-6xl leading-none text-mint-deep">0{i + 1}</span>
-                <h3 className="mt-6 max-w-[11rem] font-display text-3xl leading-tight">{pillar.name}</h3>
+                <h3 className="font-display text-3xl leading-tight">{pillar.name}</h3>
                 <p className="mt-3 leading-relaxed text-muted">{pillar.summary}</p>
-                <ul className="mt-5 space-y-1.5 text-[15px]">
+                <ul className="mt-6 divide-y divide-line border-y border-line text-[15px]">
                   {pillar.items.slice(0, 4).map((item) => (
-                    <li key={item.title} className="flex items-center gap-2">
-                      <span className="text-mint-deep">
-                        <Icon name="check" className="size-4" />
-                      </span>
+                    <li key={item.title} className="py-2.5">
                       {item.title}
                     </li>
                   ))}
@@ -229,8 +188,7 @@ export default function Home() {
 
       <section>
         <Container className="py-20 sm:py-28">
-          <Eyebrow>Who we work with</Eyebrow>
-          <h2 className="mt-4 max-w-3xl font-display text-4xl leading-tight tracking-tight text-balance sm:text-6xl">
+          <h2 className="max-w-3xl font-display text-4xl leading-tight tracking-tight text-balance sm:text-6xl">
             Independent practices across the Phoenix area.
           </h2>
           <div className="mt-12 grid items-center gap-10 lg:grid-cols-2">

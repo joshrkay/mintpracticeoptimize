@@ -1,34 +1,30 @@
 "use client";
 
 import { useState } from "react";
-import { LooseLeaf } from "./mint";
 
 export type Symptom = { today: string; mint: string };
 
-/** Problem cards that start wilted and revive into the fix on hover or tap. */
+/** A list of problems; each line turns into the fix on hover or tap. */
 export function SymptomCards({ items }: { items: Symptom[] }) {
-  const [revived, setRevived] = useState<Record<number, boolean>>({});
+  const [shown, setShown] = useState<Record<number, boolean>>({});
 
   return (
-    <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <ul className="mt-10 border-t border-line">
       {items.map((item, i) => (
-        <li key={item.today}>
+        <li key={item.today} className="border-b border-line">
           <button
             type="button"
-            aria-pressed={!!revived[i]}
-            onClick={() => setRevived((r) => ({ ...r, [i]: !r[i] }))}
-            className="symptom group relative flex size-full min-h-48 flex-col items-start overflow-hidden rounded-3xl border border-line bg-paper p-6 text-left transition-colors duration-500 hover:border-mint-deep hover:bg-mint-soft aria-pressed:border-mint-deep aria-pressed:bg-mint-soft"
+            aria-pressed={!!shown[i]}
+            onClick={() => setShown((r) => ({ ...r, [i]: !r[i] }))}
+            className="symptom group grid w-full gap-x-10 gap-y-1 py-6 text-left sm:grid-cols-[7rem_1fr] sm:py-7"
           >
-            <LooseLeaf variant={i + 1} className="symptom-leaf w-9 shrink-0" />
-            <span className="mt-4 grid text-xl leading-snug">
-              <span className="symptom-today col-start-1 row-start-1">
-                <span className="sr-only">Today: </span>
-                {item.today}
-              </span>
-              <span className="symptom-mint col-start-1 row-start-1 font-semibold text-forest">
-                <span className="sr-only">With Mint: </span>
-                {item.mint}
-              </span>
+            <span className="grid text-sm font-semibold tracking-[0.14em] uppercase sm:pt-2.5">
+              <span className="symptom-today col-start-1 row-start-1 text-muted">Today</span>
+              <span className="symptom-mint col-start-1 row-start-1 text-mint-deep">With Mint</span>
+            </span>
+            <span className="grid font-display text-2xl leading-snug sm:text-4xl">
+              <span className="symptom-today col-start-1 row-start-1 text-ink/70">{item.today}</span>
+              <span className="symptom-mint col-start-1 row-start-1 text-forest">{item.mint}</span>
             </span>
           </button>
         </li>

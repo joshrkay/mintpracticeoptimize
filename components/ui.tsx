@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { FallingLeaves, GrowingMint } from "./mint";
+import { DepthHero } from "./DepthHero";
+import { FallingLeaves } from "./mint";
 
 export function Container({ children, className = "" }: { children: ReactNode; className?: string }) {
   return <div className={`mx-auto w-full max-w-6xl px-5 sm:px-8 ${className}`}>{children}</div>;
@@ -41,28 +42,27 @@ export function ButtonLink({
 
 export function PageHero({ eyebrow, title, lede }: { eyebrow: string; title: string; lede: string }) {
   return (
-    <section data-hero className="relative overflow-hidden border-b border-line bg-mint-soft/70">
-      <Container className="relative grid items-end gap-8 pt-16 sm:pt-24 lg:grid-cols-[1fr_auto]">
-        <div className="pb-16 sm:pb-24">
+    <DepthHero>
+      <Container className="py-20 sm:py-28">
+        <div className="max-w-2xl">
           <div className="animate-rise">
             <Eyebrow>{eyebrow}</Eyebrow>
           </div>
           <h1
             style={{ animationDelay: "120ms" }}
-            className="mt-4 max-w-3xl animate-rise font-display text-5xl leading-[1.02] tracking-tight text-balance sm:text-7xl"
+            className="mt-4 animate-rise font-display text-5xl leading-[1.02] tracking-tight text-balance sm:text-6xl"
           >
             {title}
           </h1>
           <p
             style={{ animationDelay: "260ms" }}
-            className="mt-6 max-w-2xl animate-rise text-lg leading-relaxed text-muted sm:text-xl"
+            className="mt-6 animate-rise text-lg leading-relaxed text-white/80 sm:text-xl"
           >
             {lede}
           </p>
         </div>
-        <GrowingMint className="grow-on-load relative mb-0 hidden w-60 lg:block" />
       </Container>
-    </section>
+    </DepthHero>
   );
 }
 

@@ -182,15 +182,7 @@ body {
   }
 }
 
-/* Problem cards: wilted until hovered or pressed. */
-.symptom-leaf {
-  transform-origin: 50% 55%;
-  rotate: 150deg;
-  filter: sepia(1) saturate(1.5) hue-rotate(-12deg) brightness(1.15);
-  transition:
-    rotate 0.7s cubic-bezier(0.3, 1.6, 0.5, 1),
-    filter 0.6s ease;
-}
+/* Problem lines: each turns into the fix when hovered or pressed. */
 .symptom-today,
 .symptom-mint {
   transition:
@@ -201,10 +193,6 @@ body {
   opacity: 0;
   translate: 0 14px;
 }
-.symptom:is(:hover, [aria-pressed="true"]) .symptom-leaf {
-  rotate: 20deg;
-  filter: none;
-}
 .symptom:is(:hover, [aria-pressed="true"]) .symptom-today {
   opacity: 0;
   translate: 0 -14px;
@@ -212,6 +200,47 @@ body {
 .symptom:is(:hover, [aria-pressed="true"]) .symptom-mint {
   opacity: 1;
   translate: 0 0;
+}
+
+/* ---------- The layered hero ---------- */
+
+/* --p is scroll progress through the scene (0 to 1); --mx and --my follow the pointer (-1 to 1). */
+.depth {
+  --p: 0;
+  --mx: 0;
+  --my: 0;
+}
+.depth-back {
+  transform: translate3d(calc(var(--mx) * -10px), calc(var(--my) * -8px + var(--p) * -4%), 0)
+    scale(calc(1.12 - var(--p) * 0.1));
+}
+.depth-mid {
+  transform: translate3d(calc(var(--mx) * 14px), calc(var(--my) * 10px + var(--p) * -22vh), 0);
+}
+.depth-copy {
+  transform: translate3d(0, calc(var(--p) * -16vh), 0);
+  opacity: calc(1 - var(--p) * 1.7);
+}
+.depth-subject {
+  transform: translate3d(calc(var(--mx) * 22px), calc(var(--my) * 14px + var(--p) * -12vh), 0)
+    rotate(calc(var(--p) * -9deg)) scale(calc(1 + var(--p) * 0.1));
+  animation: settle 1.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+@media (min-width: 1024px) {
+  .depth-subject {
+    transform: translate3d(calc(var(--mx) * 22px), calc(-50% + var(--my) * 14px + var(--p) * -12vh), 0)
+      rotate(calc(var(--p) * -9deg)) scale(calc(1 + var(--p) * 0.1));
+  }
+}
+.depth-front {
+  transform: translate3d(calc(var(--mx) * 54px), calc(var(--my) * 34px + var(--p) * -70vh), 0);
+}
+@keyframes settle {
+  from {
+    opacity: 0;
+    scale: 0.82;
+    rotate: -10deg;
+  }
 }
 
 /* ---------- General motion ---------- */
