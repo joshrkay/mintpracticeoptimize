@@ -34,7 +34,7 @@ const organization = {
   logo: `${site.url}/icon.svg`,
   email: site.email,
   description: site.tagline,
-  areaServed: "US",
+  areaServed: { "@type": "State", name: site.region },
   knowsAbout: [
     "Medical practice optimization",
     "Medical practice operations",

@@ -32,7 +32,7 @@ const service = {
   description:
     "A full evaluation of a medical practice that produces a current state map and an optimization opportunities map.",
   provider: { "@id": `${site.url}/#organization` },
-  areaServed: "US",
+  areaServed: { "@type": "State", name: site.region },
   offers: {
     "@type": "Offer",
     price: site.discoveryFee.replace(/[^0-9.]/g, ""),

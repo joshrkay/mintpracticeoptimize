@@ -15,6 +15,17 @@ const symptoms = [
   { text: "Your Google rating reflects your three angriest patients.", href: "/services#marketing" },
 ];
 
+const sizes = [
+  {
+    title: "Solo practices",
+    body: "You are the doctor, the owner and often the manager. We take the business work off your plate so your time goes to patients.",
+  },
+  {
+    title: "Group practices",
+    body: "More providers and locations mean more ways of doing the same thing. We get everyone running one way, with a plan every partner has seen.",
+  },
+];
+
 const steps = [
   {
     title: "Questionnaire",
@@ -44,7 +55,8 @@ export default function Home() {
             Your practice, in <span className="text-mint-deep italic">mint</span> condition.
           </h1>
           <p className="mt-6 max-w-2xl text-xl leading-relaxed text-muted">
-            Mint is a practice optimization partner for independent medical practices. We start
+            Mint is a practice optimization partner for independent medical practices in Arizona,
+            solo and group. We start
             with a full evaluation of the opportunities in your practice, deliver a playbook, then
             execute on it with you.
           </p>
@@ -166,6 +178,23 @@ export default function Home() {
       </section>
 
       <section className="border-t border-line bg-white">
+        <Container className="py-20 sm:py-24">
+          <Eyebrow>Who we work with</Eyebrow>
+          <h2 className="mt-4 max-w-2xl font-display text-3xl text-balance sm:text-4xl">
+            Independent practices across Arizona, solo and group.
+          </h2>
+          <div className="mt-10 grid gap-5 md:grid-cols-2">
+            {sizes.map((s) => (
+              <div key={s.title} className="rounded-2xl border border-line bg-paper p-7">
+                <h3 className="font-display text-2xl">{s.title}</h3>
+                <p className="mt-3 text-lg leading-relaxed text-muted">{s.body}</p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-t border-line">
         <Container className="flex flex-col gap-5 py-14 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <Eyebrow>Specialties</Eyebrow>

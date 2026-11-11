@@ -40,6 +40,14 @@ export const faqs = [
     a: "A marketing agency brings in new patients. Mint also works on what happens once they call: whether the phone is answered, the visit is prepared and the copay is collected. Marketing is one of our three pillars, alongside operations and revenue opportunities.",
   },
   {
+    q: "Where does Mint work?",
+    a: `Mint works with independent medical practices in ${site.region}. We are starting there so we can be on site with the practices we serve.`,
+  },
+  {
+    q: "Does Mint work with solo practices or groups?",
+    a: "Both. For a solo practice, Mint takes work off a doctor who is also the owner and the manager. For a group, Mint gets every provider and location running the same way, with a plan the partners have all seen.",
+  },
+  {
     q: "Which specialties does Mint work with?",
     a: "Mint is starting with podiatry and building out to other specialties. Most of what makes a practice run well is common across specialties, so the approach carries over.",
   },

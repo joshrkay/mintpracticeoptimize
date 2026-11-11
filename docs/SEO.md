@@ -33,8 +33,10 @@ questions directly do well in both.
    Google Business Profile and a LinkedIn company page with that exact name and the
    site's description, then add their URLs to the Organization data in `app/layout.tsx`
    (`sameAs`).
-3. **Add a location.** The site names no city or service area. If Mint sells regionally,
-   say so on the page and in structured data; local intent is the easiest to rank for.
+3. **Go deeper on location.** The site now says Arizona on the home, podiatry and FAQ
+   pages and in structured data. Next: a street address or city for the Google Business
+   Profile, and city pages (Phoenix, Tucson and so on) once you know which metros you
+   will serve in person.
 4. **Publish proof.** A case study with real numbers is the most-cited kind of page.
 5. **Write long-form articles**, one topic each, in the doctor's language: "How to
    collect copays at check-in", "Why QR codes get you bad Google reviews", "What to do
@@ -47,7 +49,7 @@ questions directly do well in both.
 
 ## Target queries
 
-- podiatry practice consultant / podiatry practice management help
+- podiatry practice consultant Arizona / Phoenix podiatry practice management help
 - medical practice optimization
 - how to get more Google reviews for a medical practice
 - how to improve copay collections at the front desk

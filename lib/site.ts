@@ -5,8 +5,9 @@ export const site = {
   // Placeholder inbox until the domain and mailboxes are set up.
   email: "hello@practiceoptimize.com",
   discoveryFee: "$1,500",
+  region: "Arizona",
   tagline:
-    "Mint is a practice optimization partner for independent medical practices. We evaluate your operations, revenue opportunities and marketing, deliver a playbook, then execute on it with you.",
+    "Mint is a practice optimization partner for independent medical practices in Arizona, solo and group. We evaluate your operations, revenue opportunities and marketing, deliver a playbook, then execute on it with you.",
 };
 
 export const footerNav = [

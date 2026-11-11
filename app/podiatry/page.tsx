@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { ButtonLink, CallToAction, Container, PageHero } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "Podiatry Practice Optimization",
+  title: "Podiatry Practice Optimization in Arizona",
   description:
-    "What Mint looks at in a podiatry practice: orthotics and DME handoffs, collections, recall, patient outreach, reviews and local marketing.",
+    "What Mint looks at in an Arizona podiatry practice, solo or group: orthotics and DME handoffs, collections, recall, patient outreach, reviews and local marketing.",
   alternates: { canonical: "/podiatry" },
 };
 
@@ -40,8 +40,8 @@ export default function Podiatry() {
     <>
       <PageHero
         eyebrow="Podiatry"
-        title="Practice optimization for podiatry practices."
-        lede="Mint helps podiatry practices tighten operations, find revenue opportunities in their existing patient base and market locally. Podiatry is the first specialty we built our process around."
+        title="Practice optimization for Arizona podiatry practices."
+        lede="Mint helps solo and group podiatry practices in Arizona tighten operations, find revenue opportunities in their existing patient base and market locally. Podiatry is the first specialty we built our process around."
       />
       <section>
         <Container className="py-16 sm:py-20">

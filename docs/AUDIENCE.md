@@ -8,7 +8,8 @@ The open questions at the end are the ones that would change the site.
 
 ### 1. The owner-doctor (the buyer)
 
-A podiatrist who owns a solo or small group practice. Clinically confident, short on
+A podiatrist in Arizona who owns a solo practice or is a partner in a group. Both are
+targets. Clinically confident, short on
 time, not trained in business. Has been pitched by agencies, software reps and private
 equity, and is wary of all three.
 
@@ -52,7 +53,7 @@ offer. Asks "how is this different from what I have?"
 | `/compare` | Comparison shopper | How is this different from an agency, coach or MSO? | Built |
 | `/faq` | Everyone, and AI assistants | Quick direct answers | Built |
 | `/questionnaire/podiatry` | Qualified prospect | Pre-meeting intake | Built, questions need review |
-| `/about` | Everyone | Who is behind Mint and why should I trust them? | **Missing. Needs names, backgrounds, photos** |
+| `/about` | Everyone | Who is behind Mint and why should I trust them? | **Deferred by decision; build later. Needs names, backgrounds, photos** |
 | `/results` | Owner-doctor | Has this worked for someone like me? | **Missing. Needs a first client result** |
 | Pricing after discovery | Owner-doctor | What does the monthly engagement cost? | **Missing. Needs a decision** |
 
@@ -69,8 +70,8 @@ offer. Asks "how is this different from what I have?"
 
 ## Open questions
 
-- Who is the target practice: solo, or two to five providers? What revenue range?
-- Is Mint regional (which metro or state) or national?
+- Answered: Mint starts in Arizona and targets both solo and group practices. The site
+  now says so. Which Arizona metros come first is still open.
 - Who usually makes first contact, the doctor or the manager?
 - Is the first wave insurance-based podiatry, or does it include cash-heavy practices?
 - Which three specialties follow podiatry?

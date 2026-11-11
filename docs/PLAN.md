@@ -9,6 +9,11 @@ Working plan for Mint, Practice Optimization Partners. Internal; not published o
 - "Partners", not "consultants". Consultants sweep in and leave.
 - Staffing is out of scope: it triggers MSO classification.
 
+## Market
+
+- Starts in Arizona.
+- Targets both solo practices and groups.
+
 ## Domain and branding
 
 - Website: practiceoptimize.com. Email on the same domain.
