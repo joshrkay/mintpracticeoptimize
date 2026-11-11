@@ -3,14 +3,18 @@
 @theme inline {
   --font-sans: var(--font-geist-sans);
   --font-display: var(--font-fraunces);
-  --color-paper: #f6faf7;
-  --color-ink: #10291f;
-  --color-muted: #4d6359;
-  --color-line: #d5e5dc;
+  --color-paper: #f4f8f1;
+  --color-ink: #0d2419;
+  --color-muted: #4a6156;
+  --color-line: #d3e3d8;
   --color-mint: #2f9e77;
-  --color-mint-deep: #1d6f53;
-  --color-mint-soft: #dff2e8;
-  --color-forest: #0f2a20;
+  --color-mint-deep: #17694c;
+  --color-mint-soft: #dbf3e4;
+  --color-forest: #0b2219;
+  --color-leaf: #35c48a;
+  --color-leaf-dark: #17875c;
+  --color-lime: #cdf56a;
+  --animate-rise: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
 
 body {
@@ -23,36 +27,174 @@ body {
   outline-offset: 2px;
 }
 
-/* ---------- Motion ---------- */
+/* ---------- The plant ---------- */
 
-@theme inline {
-  --animate-rise: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
-  --animate-drift: drift 16s ease-in-out infinite alternate;
-  --animate-drift-slow: drift 24s ease-in-out infinite alternate-reverse;
-  --animate-sheen: sheen 6s linear infinite;
-  --animate-ping-slow: ping-slow 2.6s cubic-bezier(0, 0, 0.2, 1) infinite;
-  --animate-bob: bob 7s ease-in-out infinite;
-  --color-glow: #7fe0b8;
+/* How grown a plant is, from 0 (seed) to 1 (full). Registered so it can animate. */
+@property --grow {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 1;
 }
+
+.stem {
+  stroke-dasharray: 1;
+  stroke-dashoffset: calc(1 - var(--grow));
+}
+/* Each leaf opens once growth passes its place on the stem (--at). */
+.leaf {
+  transform-origin: 0 0;
+  scale: clamp(0, calc((var(--grow) - var(--at, 0)) * 6), 1);
+  transition: scale 0.35s cubic-bezier(0.3, 1.5, 0.5, 1);
+}
+.seed {
+  opacity: clamp(0, calc(1 - var(--grow) * 5), 1);
+}
+.plant-tag {
+  opacity: clamp(0, calc((var(--grow) - var(--at, 0)) * 9), 1);
+  scale: clamp(0.6, calc(0.6 + (var(--grow) - var(--at, 0)) * 4), 1);
+}
+.sway {
+  transform-origin: 0 0;
+  animation: sway 4.6s ease-in-out infinite alternate;
+}
+
+.grow-on-load {
+  animation: grow 3.4s cubic-bezier(0.3, 0.6, 0.2, 1) 0.2s both;
+}
+.reveal-ready [data-reveal] .grow-on-reveal {
+  --grow: 0;
+  transition: --grow 2s cubic-bezier(0.3, 0.6, 0.2, 1) 0.2s;
+}
+.reveal-ready [data-reveal].in .grow-on-reveal {
+  --grow: 1;
+}
+
+@keyframes grow {
+  from {
+    --grow: 0;
+  }
+  to {
+    --grow: 1;
+  }
+}
+@keyframes sway {
+  from {
+    rotate: -4deg;
+  }
+  to {
+    rotate: 4deg;
+  }
+}
+
+/* The runner down the side of the page. */
+.vine-stem {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+.vine-leaf {
+  transform-origin: 0 0;
+  scale: 0;
+  transition: scale 0.7s cubic-bezier(0.3, 1.7, 0.5, 1);
+}
+.vine-leaf.on {
+  scale: 1;
+}
+
+/* Leaves drifting down. */
+.falling-leaf {
+  animation: fall linear infinite;
+}
+@keyframes fall {
+  0% {
+    transform: translate3d(0, -10vh, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(var(--drift), 55vh, 0) rotate(200deg);
+  }
+  100% {
+    transform: translate3d(calc(var(--drift) * -0.4), 120vh, 0) rotate(420deg);
+  }
+}
+
+.marquee {
+  animation: marquee 38s linear infinite;
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Problem cards: wilted until hovered or pressed. */
+.symptom-leaf {
+  transform-origin: 50% 55%;
+  rotate: 150deg;
+  fill: #b6a34f;
+  transition:
+    rotate 0.7s cubic-bezier(0.3, 1.6, 0.5, 1),
+    fill 0.5s ease;
+}
+.symptom-today,
+.symptom-mint {
+  transition:
+    opacity 0.4s ease,
+    translate 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.symptom-mint {
+  opacity: 0;
+  translate: 0 14px;
+}
+.symptom:is(:hover, [aria-pressed="true"]) .symptom-leaf {
+  rotate: 0deg;
+  fill: var(--color-leaf);
+}
+.symptom:is(:hover, [aria-pressed="true"]) .symptom-today {
+  opacity: 0;
+  translate: 0 -14px;
+}
+.symptom:is(:hover, [aria-pressed="true"]) .symptom-mint {
+  opacity: 1;
+  translate: 0 0;
+}
+
+/* ---------- General motion ---------- */
 
 @keyframes rise {
   from {
     opacity: 0;
-    transform: translateY(22px);
+    transform: translateY(28px);
   }
 }
-@keyframes drift {
-  from {
-    transform: translate3d(-6%, -4%, 0) scale(1);
-  }
-  to {
-    transform: translate3d(8%, 6%, 0) scale(1.25);
-  }
+
+.lift {
+  transition:
+    transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1),
+    box-shadow 0.4s ease,
+    border-color 0.2s ease;
 }
-@keyframes sheen {
-  to {
-    background-position: 200% center;
-  }
+.lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 50px -28px rgba(11, 34, 25, 0.4);
+}
+
+/* Scroll reveals. Hidden only once the script is running, so the page reads without it. */
+.reveal-ready [data-reveal] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.reveal-ready [data-reveal].in {
+  opacity: 1;
+  transform: none;
+}
+
+.map-ping {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: ping-slow 2.6s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 @keyframes ping-slow {
   0% {
@@ -65,54 +207,6 @@ body {
     opacity: 0;
   }
 }
-@keyframes bob {
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-/* Animated gradient lettering. */
-.text-sheen {
-  background: linear-gradient(100deg, #7fe0b8, #d9fbe9 30%, #45c493 55%, #7fe0b8 80%);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: var(--animate-sheen);
-}
-
-/* Cards lift toward the cursor. */
-.lift {
-  transition:
-    transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1),
-    box-shadow 0.35s ease,
-    border-color 0.2s ease;
-}
-.lift:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 24px 48px -24px rgba(15, 42, 32, 0.35);
-}
-
-/* Scroll reveals. Hidden only once the script is running, so the page reads without it. */
-.reveal-ready [data-reveal] {
-  opacity: 0;
-  transform: translateY(26px);
-  transition:
-    opacity 0.7s ease,
-    transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
-  transition-delay: var(--reveal-delay, 0ms);
-}
-.reveal-ready [data-reveal].in {
-  opacity: 1;
-  transform: none;
-}
-
-/* SVG map pulses scale from their own centre. */
-.map-ping {
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: var(--animate-ping-slow);
-}
 
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -124,5 +218,11 @@ body {
   .reveal-ready [data-reveal] {
     opacity: 1;
     transform: none;
+  }
+  .reveal-ready [data-reveal] .grow-on-reveal {
+    --grow: 1;
+  }
+  .falling-leaf {
+    display: none;
   }
 }

@@ -16,7 +16,7 @@ export function Reveal() {
 
   useEffect(() => {
     const els = [...document.querySelectorAll<HTMLElement>(TARGETS)].filter(
-      (el) => !el.parentElement?.closest("[data-reveal]"),
+      (el) => !el.parentElement?.closest("[data-reveal]") && !el.closest("[data-no-reveal]"),
     );
     const viewport = window.innerHeight;
     for (const el of els) {

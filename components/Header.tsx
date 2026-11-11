@@ -18,7 +18,7 @@ export function Header() {
           ))}
           <Link
             href="/contact"
-            className="rounded-full bg-mint-deep px-4 py-2 text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-forest hover:shadow-[0_10px_24px_-10px_rgba(47,158,119,0.9)]"
+            className="rounded-full bg-forest px-4 py-2 text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-mint-deep"
           >
             Contact
           </Link>

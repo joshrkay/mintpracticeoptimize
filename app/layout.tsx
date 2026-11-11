@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
 import { Reveal } from "@/components/Reveal";
+import { Vine } from "@/components/Vine";
 import { cityNames } from "@/lib/cities";
 import { site } from "@/lib/site";
 import "./globals.css";
@@ -59,7 +60,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="flex min-h-full flex-col font-sans">
         <JsonLd data={organization} />
         <Header />
-        <main className="flex-1">{children}</main>
+        <main className="relative flex-1">
+          <Vine />
+          {children}
+        </main>
         <Footer />
         <Reveal />
       </body>
