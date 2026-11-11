@@ -2,6 +2,8 @@ export type City = {
   slug: string;
   name: string;
   area: string;
+  /** Two headline local facts, shown as large figures. */
+  stats: [value: string, label: string][];
   /** One line for the meta description. */
   summary: string;
   /** Hospitals, health systems and schools that shape local medicine. */
@@ -17,6 +19,10 @@ export type City = {
 export const cities: City[] = [
   {
     slug: "phoenix",
+    stats: [
+      ["1 in 8", "residents are 65 or older"],
+      ["5th", "largest city in the United States"],
+    ],
     name: "Phoenix",
     area: "Central Phoenix",
     summary:
@@ -42,6 +48,10 @@ export const cities: City[] = [
   },
   {
     slug: "scottsdale",
+    stats: [
+      ["1 in 4", "residents are 65 or older"],
+      ["3", "HonorHealth hospitals in the city"],
+    ],
     name: "Scottsdale",
     area: "East Valley",
     summary:
@@ -67,6 +77,10 @@ export const cities: City[] = [
   },
   {
     slug: "mesa",
+    stats: [
+      ["1 in 6", "residents are 65 or older"],
+      ["3rd", "largest city in Arizona"],
+    ],
     name: "Mesa",
     area: "East Valley",
     summary:
@@ -92,6 +106,10 @@ export const cities: City[] = [
   },
   {
     slug: "tempe",
+    stats: [
+      ["1 in 9", "residents are 65 or older"],
+      ["51,000", "students on ASU's Tempe campus"],
+    ],
     name: "Tempe",
     area: "East Valley",
     summary:
@@ -117,6 +135,10 @@ export const cities: City[] = [
   },
   {
     slug: "chandler",
+    stats: [
+      ["1 in 8", "residents are 65 or older"],
+      ["10,000", "Intel employees in the city"],
+    ],
     name: "Chandler",
     area: "East Valley",
     summary:
@@ -142,6 +164,10 @@ export const cities: City[] = [
   },
   {
     slug: "gilbert",
+    stats: [
+      ["1 in 10", "residents are 65 or older"],
+      ["Under 1%", "population growth a year"],
+    ],
     name: "Gilbert",
     area: "East Valley",
     summary:
@@ -167,6 +193,10 @@ export const cities: City[] = [
   },
   {
     slug: "glendale",
+    stats: [
+      ["1 in 8", "residents are 65 or older"],
+      ["1", "podiatric medical school in Arizona, and it is here"],
+    ],
     name: "Glendale",
     area: "West Valley",
     summary:
@@ -192,6 +222,10 @@ export const cities: City[] = [
   },
   {
     slug: "peoria",
+    stats: [
+      ["1 in 5", "residents are 65 or older"],
+      ["42%", "growth in residents 65 and older in five years"],
+    ],
     name: "Peoria",
     area: "West Valley",
     summary:
@@ -217,6 +251,10 @@ export const cities: City[] = [
   },
   {
     slug: "goodyear",
+    stats: [
+      ["18%", "of residents are 65 or older"],
+      ["5%", "population growth a year"],
+    ],
     name: "Goodyear",
     area: "West Valley",
     summary:

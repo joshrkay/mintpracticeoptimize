@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BeforeAfterMap, HeroBackdrop, ValleyMap } from "@/components/graphics";
+import { Icon, IconBadge, type IconName } from "@/components/icons";
 import { ButtonLink, CallToAction, Container, Eyebrow } from "@/components/ui";
 import { cityNames, listNames } from "@/lib/cities";
 import { pillars } from "@/lib/services";
@@ -7,21 +9,47 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = { alternates: { canonical: "/" } };
 
-const symptoms = [
-  { text: "The phone rings out while the front desk is checking someone in.", href: "/services#operations" },
-  { text: "Copays get billed after the visit, then chased for months.", href: "/services#operations" },
-  { text: "You finish your charts at the kitchen table.", href: "/services#operations" },
-  { text: "Orthotics sit in the back room waiting for a pickup nobody scheduled.", href: "/podiatry" },
-  { text: "Patients who qualify for more care are never told.", href: "/services#revenue" },
-  { text: "Your Google rating reflects your three angriest patients.", href: "/services#marketing" },
+const symptoms: { icon: IconName; text: string; href: string }[] = [
+  {
+    icon: "phone",
+    text: "The phone rings out while the front desk is checking someone in.",
+    href: "/services#operations",
+  },
+  {
+    icon: "card",
+    text: "Copays get billed after the visit, then chased for months.",
+    href: "/services#operations",
+  },
+  {
+    icon: "pen",
+    text: "You finish your charts at the kitchen table.",
+    href: "/services#operations",
+  },
+  {
+    icon: "box",
+    text: "Orthotics sit in the back room waiting for a pickup nobody scheduled.",
+    href: "/podiatry",
+  },
+  {
+    icon: "users",
+    text: "Patients who qualify for more care are never told.",
+    href: "/services#revenue",
+  },
+  {
+    icon: "star",
+    text: "Your Google rating reflects your three angriest patients.",
+    href: "/services#marketing",
+  },
 ];
 
-const sizes = [
+const sizes: { icon: IconName; title: string; body: string }[] = [
   {
+    icon: "user",
     title: "Solo practices",
     body: "You are the doctor, the owner and often the manager. We take the business work off your plate so your time goes to patients.",
   },
   {
+    icon: "users",
     title: "Group practices",
     body: "More providers and locations mean more ways of doing the same thing. We get everyone running one way, with a plan every partner has seen.",
   },
@@ -49,24 +77,29 @@ const steps = [
 export default function Home() {
   return (
     <>
-      <section className="bg-mint-soft/60">
-        <Container className="py-20 sm:py-28">
-          <Eyebrow>{site.descriptor}</Eyebrow>
-          <h1 className="mt-5 max-w-4xl font-display text-5xl leading-[1.05] text-balance sm:text-7xl">
-            Your practice, in <span className="text-mint-deep italic">mint</span> condition.
-          </h1>
-          <p className="mt-6 max-w-2xl text-xl leading-relaxed text-muted">
-            Mint is a practice optimization partner for independent medical practices in Arizona,
-            solo and group. We start
-            with a full evaluation of the opportunities in your practice, deliver a playbook, then
-            execute on it with you.
-          </p>
-          <div className="mt-9 flex flex-wrap gap-3">
-            <ButtonLink href="/contact">Start a conversation</ButtonLink>
-            <ButtonLink href="/discovery" variant="outline">
-              How discovery works
-            </ButtonLink>
+      <section className="relative overflow-hidden bg-mint-soft/60">
+        <HeroBackdrop />
+        <Container className="relative grid items-center gap-12 py-16 sm:py-24 lg:grid-cols-[1.05fr_1fr]">
+          <div>
+            <Eyebrow>{site.descriptor}</Eyebrow>
+            <h1 className="mt-5 max-w-4xl font-display text-5xl leading-[1.05] text-balance sm:text-6xl xl:text-7xl">
+              Your practice, in{" "}
+              <span className="text-mint-deep italic">mint</span> condition.
+            </h1>
+            <p className="mt-6 max-w-2xl text-xl leading-relaxed text-muted">
+              Mint is a practice optimization partner for independent medical
+              practices in Arizona, solo and group. We start with a full
+              evaluation of the opportunities in your practice, deliver a
+              playbook, then execute on it with you.
+            </p>
+            <div className="mt-9 flex flex-wrap gap-3">
+              <ButtonLink href="/contact">Start a conversation</ButtonLink>
+              <ButtonLink href="/discovery" variant="outline">
+                How discovery works
+              </ButtonLink>
+            </div>
           </div>
+          <BeforeAfterMap />
         </Container>
       </section>
 
@@ -81,10 +114,10 @@ export default function Home() {
               <li key={s.text}>
                 <Link
                   href={s.href}
-                  className="flex h-full items-start gap-3 rounded-xl border border-line bg-paper p-5 text-lg leading-snug transition-colors hover:border-mint"
+                  className="flex h-full items-start gap-4 rounded-2xl border border-line bg-paper p-5 text-lg leading-snug transition-colors hover:border-mint"
                 >
-                  <span aria-hidden="true" className="mt-2 size-2 shrink-0 rounded-full bg-mint" />
-                  {s.text}
+                  <IconBadge name={s.icon} />
+                  <span className="pt-0.5">{s.text}</span>
                 </Link>
               </li>
             ))}
@@ -105,14 +138,21 @@ export default function Home() {
                 href={`/services#${pillar.id}`}
                 className="group flex flex-col rounded-2xl border border-line bg-white p-7 transition-colors hover:border-mint"
               >
-                <span className="font-display text-lg text-mint-deep">0{i + 1}</span>
-                <h3 className="mt-3 font-display text-2xl">{pillar.name}</h3>
-                <p className="mt-3 leading-relaxed text-muted">{pillar.summary}</p>
+                <div className="flex items-center justify-between">
+                  <IconBadge name={pillar.icon} tone="solid" />
+                  <span className="font-display text-lg text-mint-deep">
+                    0{i + 1}
+                  </span>
+                </div>
+                <h3 className="mt-5 font-display text-2xl">{pillar.name}</h3>
+                <p className="mt-3 leading-relaxed text-muted">
+                  {pillar.summary}
+                </p>
                 <ul className="mt-5 space-y-1.5 text-[15px]">
                   {pillar.items.slice(0, 4).map((item) => (
-                    <li key={item.title} className="flex gap-2">
-                      <span aria-hidden="true" className="text-mint">
-                        &bull;
+                    <li key={item.title} className="flex items-center gap-2">
+                      <span className="text-mint">
+                        <Icon name="check" className="size-4" />
                       </span>
                       {item.title}
                     </li>
@@ -133,19 +173,27 @@ export default function Home() {
           <h2 className="mt-4 max-w-2xl font-display text-3xl text-balance sm:text-4xl">
             See the before and after, then decide.
           </h2>
-          <ol className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <ol className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {steps.map((step, i) => (
-              <li key={step.title} className="border-t-2 border-mint pt-5">
-                <span className="text-sm font-semibold text-mint-deep">Step {i + 1}</span>
-                <h3 className="mt-1 font-display text-xl">{step.title}</h3>
+              <li key={step.title} className="relative">
+                {i < steps.length - 1 && (
+                  <span
+                    aria-hidden="true"
+                    className="absolute top-6 left-14 hidden h-0.5 w-[calc(100%-2rem)] bg-line lg:block"
+                  />
+                )}
+                <span className="relative flex size-12 items-center justify-center rounded-full bg-mint-deep font-display text-xl text-white">
+                  {i + 1}
+                </span>
+                <h3 className="mt-4 font-display text-xl">{step.title}</h3>
                 <p className="mt-2 leading-relaxed text-muted">{step.body}</p>
               </li>
             ))}
           </ol>
           <div className="mt-12 flex flex-col gap-4 rounded-2xl bg-mint-soft p-7 sm:flex-row sm:items-center sm:justify-between">
             <p className="max-w-2xl text-lg">
-              Discovery is a flat <strong>{site.discoveryFee}</strong>. If you sign on, the fee
-              rolls into your first month.
+              Discovery is a flat <strong>{site.discoveryFee}</strong>. If you
+              sign on, the fee rolls into your first month.
             </p>
             <ButtonLink href="/discovery">About discovery</ButtonLink>
           </div>
@@ -162,15 +210,19 @@ export default function Home() {
           </div>
           <div className="space-y-4 text-lg leading-relaxed text-muted">
             <p>
-              We are not a management company and we do not take a stake in your practice. Your
-              team, your patients and your decisions stay with you.
+              We are not a management company and we do not take a stake in your
+              practice. Your team, your patients and your decisions stay with
+              you.
             </p>
             <p>
-              We also do not sweep in, hand over recommendations and leave. We build the plan with
-              you and stay to carry it out.
+              We also do not sweep in, hand over recommendations and leave. We
+              build the plan with you and stay to carry it out.
             </p>
             <p>
-              <Link href="/for-your-team" className="font-semibold text-mint-deep hover:underline">
+              <Link
+                href="/for-your-team"
+                className="font-semibold text-mint-deep hover:underline"
+              >
                 What this means for your manager and staff &rarr;
               </Link>
             </p>
@@ -184,20 +236,34 @@ export default function Home() {
           <h2 className="mt-4 max-w-2xl font-display text-3xl text-balance sm:text-4xl">
             Independent practices across the Phoenix area, solo and group.
           </h2>
-          <div className="mt-10 grid gap-5 md:grid-cols-2">
-            {sizes.map((s) => (
-              <div key={s.title} className="rounded-2xl border border-line bg-paper p-7">
-                <h3 className="font-display text-2xl">{s.title}</h3>
-                <p className="mt-3 text-lg leading-relaxed text-muted">{s.body}</p>
-              </div>
-            ))}
+          <div className="mt-10 grid items-center gap-10 lg:grid-cols-2">
+            <div className="grid gap-5">
+              {sizes.map((s) => (
+                <div
+                  key={s.title}
+                  className="flex gap-5 rounded-2xl border border-line bg-paper p-6"
+                >
+                  <IconBadge name={s.icon} />
+                  <div>
+                    <h3 className="font-display text-2xl">{s.title}</h3>
+                    <p className="mt-2 text-lg leading-relaxed text-muted">
+                      {s.body}
+                    </p>
+                  </div>
+                </div>
+              ))}
+              <p className="text-lg text-muted">
+                On site in {listNames(cityNames)}.{" "}
+                <Link
+                  href="/arizona"
+                  className="font-semibold text-mint-deep hover:underline"
+                >
+                  Where we work &rarr;
+                </Link>
+              </p>
+            </div>
+            <ValleyMap />
           </div>
-          <p className="mt-8 text-lg text-muted">
-            On site in {listNames(cityNames)}.{" "}
-            <Link href="/arizona" className="font-semibold text-mint-deep hover:underline">
-              Where we work &rarr;
-            </Link>
-          </p>
         </Container>
       </section>
 
@@ -206,8 +272,9 @@ export default function Home() {
           <div>
             <Eyebrow>Specialties</Eyebrow>
             <p className="mt-3 max-w-2xl text-lg text-muted">
-              We are starting with podiatry. See what we look at in a podiatry practice, or how
-              Mint compares with the other kinds of help a practice can hire.
+              We are starting with podiatry. See what we look at in a podiatry
+              practice, or how Mint compares with the other kinds of help a
+              practice can hire.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">

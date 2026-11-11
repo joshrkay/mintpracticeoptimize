@@ -1,5 +1,6 @@
 export type Pillar = {
   id: string;
+  icon: "flow" | "chart" | "megaphone" | "message";
   name: string;
   summary: string;
   items: { title: string; body: string }[];
@@ -8,6 +9,7 @@ export type Pillar = {
 export const pillars: Pillar[] = [
   {
     id: "operations",
+    icon: "flow",
     name: "Operations",
     summary:
       "The day-to-day mechanics of the practice: every call answered, every visit prepared, every dollar collected when it is due.",
@@ -40,6 +42,7 @@ export const pillars: Pillar[] = [
   },
   {
     id: "revenue",
+    icon: "chart",
     name: "Revenue Opportunities",
     summary:
       "Most practices already have the patients. We help make sure each one is offered the care they are eligible for.",
@@ -60,6 +63,7 @@ export const pillars: Pillar[] = [
   },
   {
     id: "marketing",
+    icon: "megaphone",
     name: "Marketing",
     summary:
       "Start with the patients who already trust you, then build a local presence that brings in new ones.",
@@ -93,6 +97,7 @@ export const pillars: Pillar[] = [
 ];
 
 export const messaging = {
+  icon: "message" as const,
   name: "Patient Messaging",
   summary:
     "A separate service line for practices that want to stay in touch between visits without asking patients to download an app.",

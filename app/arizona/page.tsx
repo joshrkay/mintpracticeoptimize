@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ValleyMap } from "@/components/graphics";
 import { ButtonLink, CallToAction, Container, PageHero } from "@/components/ui";
 import { cities, cityNames, listNames } from "@/lib/cities";
 
@@ -21,6 +22,7 @@ export default function Arizona() {
       />
       <Container className="py-16 sm:py-20">
         <h2 className="font-display text-3xl">Where we work</h2>
+        <ValleyMap className="mx-auto mt-6 max-w-3xl" />
         <div className="mt-8 grid gap-8 md:grid-cols-3">
           {areas.map((area) => (
             <div key={area} className="border-t-2 border-mint pt-4">

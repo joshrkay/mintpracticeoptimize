@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { CallToAction, Container, PageHero } from "@/components/ui";
+import { BeforeAfterMap } from "@/components/graphics";
 import { JsonLd } from "@/components/JsonLd";
 import { faqs } from "@/lib/faqs";
 import { site } from "@/lib/site";
@@ -70,6 +71,19 @@ export default function Discovery() {
               Sign on afterward and the fee rolls into your first month.
             </p>
           </aside>
+        </Container>
+      </section>
+      <section className="border-t border-line bg-mint-soft/60">
+        <Container className="grid items-center gap-10 py-16 sm:py-20 lg:grid-cols-[1fr_1.3fr] lg:gap-16">
+          <div>
+            <h2 className="font-display text-3xl">See it before you change it</h2>
+            <p className="mt-4 text-lg leading-relaxed text-muted">
+              The maps follow a patient through your practice, from the first phone call to the
+              follow-up after the visit. Every step shows what happens today next to what it
+              could be.
+            </p>
+          </div>
+          <BeforeAfterMap />
         </Container>
       </section>
       <section className="border-t border-line bg-white">

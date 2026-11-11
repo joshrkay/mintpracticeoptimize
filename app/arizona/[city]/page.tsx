@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ValleyMap } from "@/components/graphics";
+import { IconBadge } from "@/components/icons";
 import { JsonLd } from "@/components/JsonLd";
 import { ButtonLink, CallToAction, Container, PageHero } from "@/components/ui";
 import { cities, getCity, listNames } from "@/lib/cities";
@@ -54,24 +56,49 @@ export default async function CityPage({ params }: PageProps<"/arizona/[city]">)
         lede={city.summary}
       />
       <section className="border-b border-line bg-white">
-        <Container className="grid gap-10 py-16 sm:py-20 md:grid-cols-2 md:gap-16">
+        <Container className="grid items-center gap-10 py-16 sm:py-20 lg:grid-cols-2 lg:gap-16">
           <div>
-            <h2 className="font-display text-3xl">Medicine in {city.name}</h2>
-            <p className="mt-4 text-lg leading-relaxed text-muted">{city.landscape}</p>
+            <dl className="grid grid-cols-2 gap-4">
+              {city.stats.map(([value, label]) => (
+                <div key={label} className="rounded-2xl bg-mint-soft p-6">
+                  <dt className="sr-only">{label}</dt>
+                  <dd>
+                    <span className="block font-display text-4xl text-mint-deep sm:text-5xl">{value}</span>
+                    <span aria-hidden="true" className="mt-2 block leading-snug text-muted">
+                      {label}
+                    </span>
+                  </dd>
+                </div>
+              ))}
+            </dl>
+            <div className="mt-8 flex gap-4">
+              <IconBadge name="pin" />
+              <div>
+                <h2 className="font-display text-2xl sm:text-3xl">Medicine in {city.name}</h2>
+                <p className="mt-3 text-lg leading-relaxed text-muted">{city.landscape}</p>
+              </div>
+            </div>
+            <div className="mt-8 flex gap-4">
+              <IconBadge name="users" />
+              <div>
+                <h2 className="font-display text-2xl sm:text-3xl">The patients</h2>
+                <p className="mt-3 text-lg leading-relaxed text-muted">{city.patients}</p>
+              </div>
+            </div>
           </div>
-          <div>
-            <h2 className="font-display text-3xl">The patients</h2>
-            <p className="mt-4 text-lg leading-relaxed text-muted">{city.patients}</p>
-          </div>
+          <ValleyMap active={city.slug} />
         </Container>
       </section>
       <section className="border-b border-line">
         <Container className="py-16 sm:py-20">
           <h2 className="font-display text-3xl">Where we would look first in a {city.name} practice</h2>
-          <dl className="mt-8 grid gap-x-10 gap-y-8 md:grid-cols-3">
-            {city.focus.map((f) => (
-              <div key={f.title} className="border-t-2 border-mint pt-4">
-                <dt className="font-display text-xl">{f.title}</dt>
+          <dl className="mt-8 grid gap-5 md:grid-cols-3">
+            {city.focus.map((f, i) => (
+              <div key={f.title} className="rounded-2xl border border-line bg-white p-6">
+                <span aria-hidden="true" className="flex size-10 items-center justify-center rounded-full bg-mint-deep font-display text-lg text-white">
+                  {i + 1}
+                </span>
+                <dt className="mt-4 font-display text-xl">{f.title}</dt>
                 <dd className="mt-2 leading-relaxed text-muted">{f.body}</dd>
               </div>
             ))}
