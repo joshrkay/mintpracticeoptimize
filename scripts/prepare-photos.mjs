@@ -92,7 +92,8 @@ async function cutOut(file) {
     rgba[i * 4] = data[i * 3];
     rgba[i * 4 + 1] = data[i * 3 + 1];
     rgba[i * 4 + 2] = data[i * 3 + 2];
-    rgba[i * 4 + 3] = mask.data[i];
+    // Anything left of the backdrop must be fully clear, or it shows as a haze.
+    rgba[i * 4 + 3] = mask.data[i] < 40 ? 0 : mask.data[i];
   }
   return sharp(rgba, { raw: { width, height, channels: 4 } }).png().toBuffer();
 }
