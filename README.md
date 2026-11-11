@@ -14,6 +14,7 @@ Docs: [business plan](docs/PLAN.md), [competitive landscape](docs/COMPETITORS.md
 | `/arizona`, `/arizona/<city>` | Service area hub and a page per city (`lib/cities.ts`) |
 | `/for-your-team` | For practice managers and staff |
 | `/compare` | Mint next to the other kinds of help a practice can hire |
+| `/site-map` | A visible list of every page. The search-engine version is `/sitemap.xml` |
 | `/faq` | Direct answers, with FAQ structured data |
 | `/contact` | Contact form |
 | `/questionnaire/podiatry` | Pre-meeting questionnaire. Unlisted and not indexed; send the link directly. |

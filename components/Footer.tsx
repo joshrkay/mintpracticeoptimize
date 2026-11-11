@@ -16,6 +16,9 @@ export function Footer() {
               {item.label}
             </Link>
           ))}
+          <Link href="/site-map" className="inline-flex min-h-11 items-center hover:text-lime">
+            Sitemap
+          </Link>
           <a href={`mailto:${site.email}`} className="inline-flex min-h-11 items-center hover:text-lime">
             {site.email}
           </a>
