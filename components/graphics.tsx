@@ -14,13 +14,19 @@ const journey: { icon: IconName; step: string; today: string; mint: string }[] =
 /** An illustrative version of the two maps discovery produces. */
 export function BeforeAfterMap({ className = "" }: { className?: string }) {
   return (
-    <figure className={`rounded-3xl border border-line bg-white p-5 shadow-[0_30px_60px_-30px_rgba(15,42,32,0.35)] sm:p-7 ${className}`}>
+    <figure
+      className={`rounded-3xl border border-white/60 bg-white/95 p-5 text-ink shadow-[0_40px_80px_-30px_rgba(0,0,0,0.55)] backdrop-blur sm:p-7 ${className}`}
+    >
       <div className="grid grid-cols-[1fr_1fr] gap-x-3 sm:grid-cols-[1.1fr_1fr_1fr] sm:gap-x-4">
         <div className="hidden sm:block" />
         <p className="pb-3 text-xs font-semibold uppercase tracking-wider text-muted">Today</p>
         <p className="pb-3 text-xs font-semibold uppercase tracking-wider text-mint-deep">With Mint</p>
-        {journey.map((row) => (
-          <div key={row.step} className="col-span-full grid grid-cols-subgrid items-center border-t border-line py-3">
+        {journey.map((row, i) => (
+          <div
+            key={row.step}
+            style={{ animationDelay: `${500 + i * 140}ms` }}
+            className="col-span-full grid animate-rise grid-cols-subgrid items-center border-t border-line py-3"
+          >
             <p className="col-span-full flex items-center gap-2.5 pb-2 font-semibold sm:col-span-1 sm:pb-0">
               <span className="text-mint-deep">
                 <Icon name={row.icon} className="size-5" />
@@ -83,6 +89,13 @@ export function ValleyMap({ active, className = "" }: { active?: string; classNa
         const on = c.slug === active;
         return (
           <Link key={c.slug} href={`/arizona/${c.slug}`} className="group">
+            <circle
+              cx={p.x}
+              cy={p.y}
+              r="8"
+              style={{ animationDelay: `${(p.x % 7) * 300}ms` }}
+              className={`map-ping ${on ? "fill-mint" : "fill-mint/60"}`}
+            />
             {on && <circle cx={p.x} cy={p.y} r="17" className="fill-mint/25" />}
             <circle
               cx={p.x}
@@ -106,18 +119,14 @@ export function ValleyMap({ active, className = "" }: { active?: string; classNa
   );
 }
 
-/** Soft mint shapes behind a hero. */
-export function HeroBackdrop() {
+/** Slow-moving glow behind dark sections. */
+export function Aurora() {
   return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 1200 600"
-      preserveAspectRatio="xMidYMid slice"
-      className="pointer-events-none absolute inset-0 size-full"
-    >
-      <circle cx="1050" cy="80" r="260" className="fill-mint/15" />
-      <circle cx="140" cy="620" r="220" className="fill-mint/10" />
-      <path d="M900 600c40-150 150-250 320-280v280Z" className="fill-mint-deep/10" />
-    </svg>
+    <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
+      <div className="absolute -top-40 -left-32 size-[34rem] animate-drift rounded-full bg-mint/40 blur-[110px]" />
+      <div className="absolute top-10 right-[-10rem] size-[38rem] animate-drift-slow rounded-full bg-glow/25 blur-[130px]" />
+      <div className="absolute bottom-[-16rem] left-1/3 size-[30rem] animate-drift rounded-full bg-[#1f8f8a]/35 blur-[120px]" />
+      <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.09)_1px,transparent_1px)] [background-size:22px_22px] [mask-image:linear-gradient(to_bottom,black,transparent)]" />
+    </div>
   );
 }

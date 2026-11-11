@@ -60,7 +60,7 @@ export default async function CityPage({ params }: PageProps<"/arizona/[city]">)
           <div>
             <dl className="grid grid-cols-2 gap-4">
               {city.stats.map(([value, label]) => (
-                <div key={label} className="rounded-2xl bg-mint-soft p-6">
+                <div key={label} className="lift rounded-2xl bg-gradient-to-br from-mint-soft to-[#c9f1dd] p-6">
                   <dt className="sr-only">{label}</dt>
                   <dd>
                     <span className="block font-display text-4xl text-mint-deep sm:text-5xl">{value}</span>
@@ -94,7 +94,7 @@ export default async function CityPage({ params }: PageProps<"/arizona/[city]">)
           <h2 className="font-display text-3xl">Where we would look first in a {city.name} practice</h2>
           <dl className="mt-8 grid gap-5 md:grid-cols-3">
             {city.focus.map((f, i) => (
-              <div key={f.title} className="rounded-2xl border border-line bg-white p-6">
+              <div key={f.title} className="lift rounded-2xl border border-line bg-white p-6">
                 <span aria-hidden="true" className="flex size-10 items-center justify-center rounded-full bg-mint-deep font-display text-lg text-white">
                   {i + 1}
                 </span>
@@ -121,7 +121,7 @@ export default async function CityPage({ params }: PageProps<"/arizona/[city]">)
               <Link
                 key={p.id}
                 href={`/services#${p.id}`}
-                className="rounded-2xl border border-line bg-white p-7 transition-colors hover:border-mint"
+                className="lift rounded-2xl border border-line bg-white p-7 hover:border-mint"
               >
                 <h3 className="font-display text-2xl">{p.name}</h3>
                 <p className="mt-3 leading-relaxed text-muted">{p.summary}</p>

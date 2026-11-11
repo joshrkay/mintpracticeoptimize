@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { BeforeAfterMap, HeroBackdrop, ValleyMap } from "@/components/graphics";
+import { Aurora, BeforeAfterMap, ValleyMap } from "@/components/graphics";
 import { Icon, IconBadge, type IconName } from "@/components/icons";
 import { ButtonLink, CallToAction, Container, Eyebrow } from "@/components/ui";
 import { cityNames, listNames } from "@/lib/cities";
@@ -77,29 +77,39 @@ const steps = [
 export default function Home() {
   return (
     <>
-      <section className="relative overflow-hidden bg-mint-soft/60">
-        <HeroBackdrop />
+      <section data-hero className="relative overflow-hidden bg-forest text-white">
+        <Aurora />
         <Container className="relative grid items-center gap-12 py-16 sm:py-24 lg:grid-cols-[1.05fr_1fr]">
           <div>
-            <Eyebrow>{site.descriptor}</Eyebrow>
-            <h1 className="mt-5 max-w-4xl font-display text-5xl leading-[1.05] text-balance sm:text-6xl xl:text-7xl">
-              Your practice, in{" "}
-              <span className="text-mint-deep italic">mint</span> condition.
+            <div className="animate-rise">
+              <Eyebrow>{site.descriptor}</Eyebrow>
+            </div>
+            <h1
+              style={{ animationDelay: "120ms" }}
+              className="mt-5 max-w-4xl animate-rise font-display text-5xl leading-[1.05] text-balance sm:text-6xl xl:text-7xl"
+            >
+              Your practice, in <span className="text-sheen italic">mint</span> condition.
             </h1>
-            <p className="mt-6 max-w-2xl text-xl leading-relaxed text-muted">
-              Mint is a practice optimization partner for independent medical
-              practices in Arizona, solo and group. We start with a full
-              evaluation of the opportunities in your practice, deliver a
-              playbook, then execute on it with you.
+            <p
+              style={{ animationDelay: "260ms" }}
+              className="mt-6 max-w-2xl animate-rise text-xl leading-relaxed text-white/75"
+            >
+              Mint is a practice optimization partner for independent medical practices in
+              Arizona, solo and group. We start with a full evaluation of the opportunities in
+              your practice, deliver a playbook, then execute on it with you.
             </p>
-            <div className="mt-9 flex flex-wrap gap-3">
-              <ButtonLink href="/contact">Start a conversation</ButtonLink>
-              <ButtonLink href="/discovery" variant="outline">
+            <div style={{ animationDelay: "400ms" }} className="mt-9 flex animate-rise flex-wrap gap-3">
+              <ButtonLink href="/contact" variant="light">
+                Start a conversation
+              </ButtonLink>
+              <ButtonLink href="/discovery" variant="ghost">
                 How discovery works
               </ButtonLink>
             </div>
           </div>
-          <BeforeAfterMap />
+          <div style={{ animationDelay: "300ms" }} className="animate-rise">
+            <BeforeAfterMap className="animate-bob" />
+          </div>
         </Container>
       </section>
 
@@ -114,7 +124,7 @@ export default function Home() {
               <li key={s.text}>
                 <Link
                   href={s.href}
-                  className="flex h-full items-start gap-4 rounded-2xl border border-line bg-paper p-5 text-lg leading-snug transition-colors hover:border-mint"
+                  className="lift flex h-full items-start gap-4 rounded-2xl border border-line bg-paper p-5 text-lg leading-snug hover:border-mint"
                 >
                   <IconBadge name={s.icon} />
                   <span className="pt-0.5">{s.text}</span>
@@ -136,7 +146,7 @@ export default function Home() {
               <Link
                 key={pillar.id}
                 href={`/services#${pillar.id}`}
-                className="group flex flex-col rounded-2xl border border-line bg-white p-7 transition-colors hover:border-mint"
+                className="lift group flex h-full flex-col rounded-2xl border border-line bg-white p-7 hover:border-mint"
               >
                 <div className="flex items-center justify-between">
                   <IconBadge name={pillar.icon} tone="solid" />
@@ -190,7 +200,7 @@ export default function Home() {
               </li>
             ))}
           </ol>
-          <div className="mt-12 flex flex-col gap-4 rounded-2xl bg-mint-soft p-7 sm:flex-row sm:items-center sm:justify-between">
+          <div className="mt-12 flex flex-col gap-4 rounded-2xl bg-gradient-to-r from-mint-soft to-[#c9f1dd] p-7 sm:flex-row sm:items-center sm:justify-between">
             <p className="max-w-2xl text-lg">
               Discovery is a flat <strong>{site.discoveryFee}</strong>. If you
               sign on, the fee rolls into your first month.
@@ -241,7 +251,7 @@ export default function Home() {
               {sizes.map((s) => (
                 <div
                   key={s.title}
-                  className="flex gap-5 rounded-2xl border border-line bg-paper p-6"
+                  className="lift flex gap-5 rounded-2xl border border-line bg-paper p-6"
                 >
                   <IconBadge name={s.icon} />
                   <div>

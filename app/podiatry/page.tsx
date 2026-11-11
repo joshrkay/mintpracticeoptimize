@@ -55,7 +55,7 @@ export default function Podiatry() {
           <h2 className="font-display text-3xl">What we look at in a podiatry practice</h2>
           <dl className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {areas.map((a) => (
-              <div key={a.title} className="rounded-2xl border border-line bg-white p-6">
+              <div key={a.title} className="lift rounded-2xl border border-line bg-white p-6">
                 <IconBadge name={a.icon} />
                 <dt className="mt-4 font-display text-xl">{a.title}</dt>
                 <dd className="mt-2 leading-relaxed text-muted">{a.body}</dd>

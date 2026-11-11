@@ -57,7 +57,7 @@ export default function Discovery() {
             <h2 className="font-display text-3xl">What you get</h2>
             <div className="mt-8 grid gap-5 sm:grid-cols-2">
               {deliverables.map((d) => (
-                <div key={d.title} className="rounded-2xl border border-line bg-white p-7">
+                <div key={d.title} className="lift rounded-2xl border border-line bg-white p-7">
                   <h3 className="font-display text-xl">{d.title}</h3>
                   <p className="mt-2 leading-relaxed text-muted">{d.body}</p>
                 </div>
