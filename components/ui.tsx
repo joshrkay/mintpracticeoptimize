@@ -70,7 +70,7 @@ export function CallToAction() {
   return (
     <section className="relative overflow-hidden bg-lime text-forest">
       <FallingLeaves />
-      <Container className="relative py-14 text-center sm:py-20">
+      <Container className="relative flex min-h-[72svh] flex-col items-center justify-center py-16 text-center">
         <h2 className="mx-auto max-w-4xl font-display text-4xl leading-[1.02] tracking-tight text-balance sm:text-6xl">
           See what your practice could <span className="italic">grow</span> into.
         </h2>

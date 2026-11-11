@@ -31,6 +31,9 @@ export function Vine() {
     return () => observer.disconnect();
   }, [pathname]);
 
+  // The home page tells the growth story in photographs; the runner is for the other pages.
+  const hidden = pathname === "/";
+
   const { path, nodes } = useMemo(() => {
     const points: string[] = [];
     for (let y = 0; y <= height; y += 20) points.push(`${xAt(y).toFixed(1)} ${y}`);
@@ -76,6 +79,8 @@ export function Vine() {
       cancelAnimationFrame(frame);
     };
   }, [height, path]);
+
+  if (hidden) return null;
 
   return (
     <>

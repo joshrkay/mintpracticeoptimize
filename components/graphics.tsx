@@ -3,7 +3,7 @@ import { cities } from "@/lib/cities";
 import { Icon, type IconName } from "./icons";
 import { LooseLeaf } from "./mint";
 
-const journey: { icon: IconName; step: string; today: string; mint: string }[] = [
+export const journey: { icon: IconName; step: string; today: string; mint: string }[] = [
   { icon: "phone", step: "Phone call", today: "Goes to voicemail", mint: "Answered or called back" },
   { icon: "calendar", step: "Scheduling", today: "Phone only, office hours", mint: "Booked online, reminded by text" },
   { icon: "box", step: "Visit prep", today: "Orthotics hunted down mid-visit", mint: "Waiting at the front desk" },

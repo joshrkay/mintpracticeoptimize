@@ -5,6 +5,7 @@ import { ValleyMap } from "@/components/graphics";
 import { GrowStory, type Stage } from "@/components/GrowStory";
 import { IconBadge, type IconName } from "@/components/icons";
 import { SymptomCards, type Symptom } from "@/components/SymptomCards";
+import { BeforeAfterWipe, PillarsPan } from "@/components/scenes";
 import { ButtonLink, CallToAction, Container, Eyebrow } from "@/components/ui";
 import { cityNames, listNames } from "@/lib/cities";
 import { pillars } from "@/lib/services";
@@ -114,61 +115,20 @@ export default function Home() {
           <h2 className="max-w-3xl font-display text-4xl leading-tight tracking-tight text-balance sm:text-6xl">
             Good medicine, held back by the way the day runs.
           </h2>
-          <p className="mt-5 text-lg text-muted">Hover or tap a line to see it with Mint.</p>
-          <SymptomCards items={symptoms} />
+                    <SymptomCards items={symptoms} />
         </Container>
       </section>
 
-      <section className="bg-mint-soft">
-        <Container className="py-20 sm:py-28">
-          <h2 className="max-w-3xl font-display text-4xl leading-tight tracking-tight text-balance sm:text-6xl">
-            Where we look, and where we work.
+      <BeforeAfterWipe />
+
+      <PillarsPan pillars={pillars} />
+
+      <section className="bg-white">
+        <Container className="grid gap-10 py-28 sm:py-40 md:grid-cols-2 md:gap-16">
+          <h2 className="font-display text-5xl leading-[1.02] tracking-tight text-balance sm:text-7xl">
+            Your practice stays yours.
           </h2>
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
-            {pillars.map((pillar) => (
-              <Link
-                key={pillar.id}
-                href={`/services#${pillar.id}`}
-                className="lift group relative flex h-full flex-col overflow-hidden rounded-3xl bg-white p-7"
-              >
-                <h3 className="font-display text-3xl leading-tight">{pillar.name}</h3>
-                <p className="mt-3 leading-relaxed text-muted">{pillar.summary}</p>
-                <ul className="mt-6 divide-y divide-line border-y border-line text-[15px]">
-                  {pillar.items.slice(0, 4).map((item) => (
-                    <li key={item.title} className="py-2.5">
-                      {item.title}
-                    </li>
-                  ))}
-                </ul>
-                <span className="mt-auto pt-6 font-semibold text-mint-deep group-hover:underline">
-                  See {pillar.name.toLowerCase()} &rarr;
-                </span>
-              </Link>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      <section>
-        <Container className="pt-20 sm:pt-28">
-          <Eyebrow>How it works</Eyebrow>
-          <h2 className="mt-4 max-w-3xl font-display text-4xl leading-tight tracking-tight text-balance sm:text-6xl">
-            How a practice gets to mint.
-          </h2>
-          <GrowStory stages={stages} />
-        </Container>
-      </section>
-
-      <section data-dark className="relative bg-forest bg-[url(/photos/mint-dark.webp)] bg-cover bg-center text-white">
-        <div aria-hidden="true" className="absolute inset-0 bg-forest/75" />
-        <Container className="relative grid gap-10 py-24 sm:py-32 md:grid-cols-2 md:gap-16">
-          <div>
-            <Eyebrow>Partners, not consultants</Eyebrow>
-            <h2 className="mt-4 font-display text-4xl leading-tight tracking-tight text-balance sm:text-6xl">
-              Your practice stays yours.
-            </h2>
-          </div>
-          <div className="space-y-4 text-xl leading-relaxed text-white/75">
+          <div className="space-y-4 self-end text-xl leading-relaxed text-muted">
             <p>
               We are not a management company and we do not take a stake in your practice. Your
               team, your patients and your decisions stay with you.
@@ -178,13 +138,15 @@ export default function Home() {
               you and stay to carry it out.
             </p>
             <p>
-              <Link href="/for-your-team" className="font-semibold text-lime hover:underline">
+              <Link href="/for-your-team" className="font-semibold text-mint-deep hover:underline">
                 What this means for your manager and staff &rarr;
               </Link>
             </p>
           </div>
         </Container>
       </section>
+
+      <GrowStory heading="How a practice gets to mint." stages={stages} />
 
       <section>
         <Container className="py-20 sm:py-28">
@@ -210,26 +172,6 @@ export default function Home() {
               </p>
             </div>
             <ValleyMap />
-          </div>
-        </Container>
-      </section>
-
-      <section className="border-t border-line bg-white">
-        <Container className="flex flex-col gap-5 py-14 sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <Eyebrow>Specialties</Eyebrow>
-            <p className="mt-3 max-w-2xl text-lg text-muted">
-              We are starting with podiatry. See what we look at in a podiatry practice, or how
-              Mint compares with the other kinds of help a practice can hire.
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            <ButtonLink href="/podiatry" variant="outline">
-              Podiatry
-            </ButtonLink>
-            <ButtonLink href="/compare" variant="outline">
-              How we compare
-            </ButtonLink>
           </div>
         </Container>
       </section>

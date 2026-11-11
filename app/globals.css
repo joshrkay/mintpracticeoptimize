@@ -193,11 +193,11 @@ body {
   opacity: 0;
   translate: 0 14px;
 }
-.symptom:is(:hover, [aria-pressed="true"]) .symptom-today {
+.symptom:is(:hover, [aria-pressed="true"], [data-on]) .symptom-today {
   opacity: 0;
   translate: 0 -14px;
 }
-.symptom:is(:hover, [aria-pressed="true"]) .symptom-mint {
+.symptom:is(:hover, [aria-pressed="true"], [data-on]) .symptom-mint {
   opacity: 1;
   translate: 0 0;
 }
@@ -241,6 +241,43 @@ body {
     scale: 0.82;
     rotate: -10deg;
   }
+}
+
+/* ---------- Pinned scenes (driven by --p, 0 to 1) ---------- */
+
+/* The wipe: holds, crosses, holds. */
+.wipe {
+  --w: clamp(0, calc((var(--p) - 0.14) / 0.66), 1);
+}
+.wipe-top {
+  clip-path: inset(0 calc((1 - var(--w)) * 100%) 0 0);
+}
+.wipe-line {
+  left: calc(var(--w) * 100%);
+  opacity: clamp(0, calc(var(--w) * 20), 1);
+}
+
+/* The pan: the track slides until its last panel reaches the right margin. */
+@media (min-width: 1024px) {
+  .pan {
+    --q: clamp(0, calc((var(--p) - 0.06) / 0.86), 1);
+  }
+  .pan-track {
+    transform: translate3d(calc(var(--q) * (100vw - 100%)), 0, 0);
+  }
+}
+
+/* The growth scene: scrolling moves the focal plane from the near leaves to the plant. */
+.focus-subject {
+  filter: blur(calc((1 - clamp(0, calc(var(--grow) * 1.8), 1)) * 9px));
+}
+.focus-near {
+  filter: blur(calc(3px + var(--grow) * 16px));
+  transform: translate3d(0, calc(var(--grow) * -42vh), 0) scale(calc(1 + var(--grow) * 0.5));
+  opacity: calc(1 - var(--grow) * 0.35);
+}
+.focus-back {
+  transform: scale(calc(1.25 - var(--grow) * 0.12));
 }
 
 /* ---------- General motion ---------- */
