@@ -92,7 +92,7 @@ export default function Home() {
   return (
     <>
       <section data-hero className="relative overflow-hidden bg-mint-soft/70">
-        <Container className="relative grid items-center gap-6 pt-14 pb-12 sm:pt-20 lg:min-h-[calc(100vh-4rem)] lg:grid-cols-[1.15fr_1fr] lg:pb-16">
+        <Container className="relative grid items-center gap-6 pt-14 pb-12 sm:pt-20 lg:min-h-[calc(100vh-4rem)] lg:grid-cols-[1.12fr_1fr] lg:pb-16">
           <div>
             <div className="animate-rise">
               <Eyebrow>{site.descriptor}</Eyebrow>
@@ -127,11 +127,13 @@ export default function Home() {
               </ButtonLink>
             </div>
           </div>
-          <div className="pointer-events-none absolute right-3 bottom-0 lg:static lg:flex lg:justify-center">
+          <div className="pointer-events-none absolute right-3 bottom-0 lg:static lg:flex lg:justify-end lg:pr-24 lg:pl-36">
             <GrowingMint
+              photo="crown"
               tags
               ground
-              className="grow-on-load relative w-32 sm:w-52 lg:w-[min(27rem,58vh)]"
+              priority
+              className="grow-on-load relative w-36 sm:w-56 lg:w-[min(25rem,50vh)]"
             />
           </div>
         </Container>
@@ -150,7 +152,7 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="border-y border-line bg-white">
+      <section className="bg-mint-soft">
         <Container className="py-20 sm:py-28">
           <Eyebrow>Three pillars</Eyebrow>
           <h2 className="mt-4 max-w-3xl font-display text-4xl leading-tight tracking-tight text-balance sm:text-6xl">
@@ -161,10 +163,10 @@ export default function Home() {
               <Link
                 key={pillar.id}
                 href={`/services#${pillar.id}`}
-                className="lift group relative flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-paper p-7 hover:border-mint-deep"
+                className="lift group relative flex h-full flex-col overflow-hidden rounded-3xl bg-white p-7"
               >
                 <GrowingMint
-                  className="grow-on-reveal absolute -top-2 -right-3 w-28"
+                  className="grow-on-reveal absolute -top-1 -right-2 w-24"
                 />
                 <span className="font-display text-6xl leading-none text-mint-deep">0{i + 1}</span>
                 <h3 className="mt-6 max-w-[11rem] font-display text-3xl leading-tight">{pillar.name}</h3>
@@ -198,8 +200,9 @@ export default function Home() {
         </Container>
       </section>
 
-      <section data-dark className="bg-forest text-white">
-        <Container className="grid gap-10 py-20 sm:py-28 md:grid-cols-2 md:gap-16">
+      <section data-dark className="relative bg-forest bg-[url(/photos/mint-dark.webp)] bg-cover bg-center text-white">
+        <div aria-hidden="true" className="absolute inset-0 bg-forest/75" />
+        <Container className="relative grid gap-10 py-24 sm:py-32 md:grid-cols-2 md:gap-16">
           <div>
             <Eyebrow>Partners, not consultants</Eyebrow>
             <h2 className="mt-4 font-display text-4xl leading-tight tracking-tight text-balance sm:text-6xl">

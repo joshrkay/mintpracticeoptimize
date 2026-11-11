@@ -36,10 +36,14 @@ npm run dev
 
 - Logo: `components/Logo.tsx` (wordmark, symbol and lockup). Exported files are in
   `public/brand/`, and `/brand` is an unlisted reference sheet.
-- Every leaf on the site is drawn from three files, `public/leaves/leaf-1.webp` to
-  `leaf-3.webp` (480 x 660, transparent, leaf base at the bottom centre, tip at the top).
-  They are computer-rendered by `scripts/render-leaves.mjs`. To use photographs, replace
-  those three files with cut-out photos of the same proportions.
+- Plant photography: the originals are in `photos-source/`. `scripts/prepare-photos.mjs`
+  cuts them out of their backgrounds and writes the files the site uses: two sprigs and
+  a dark background in `public/photos/`, and a single leaf (three variants) in
+  `public/leaves/`. Replace an original and rerun the script to change the artwork.
+- **Licensing:** the files in `photos-source/` are stock photographs (iStock and Getty).
+  Confirm a licence covers each one before the site goes live.
+- Colour follows the 60-30-10 rule, documented at the top of `app/globals.css`.
+  `scripts/measure-colors.mjs` reports each page's split.
 
 ## Form delivery
 

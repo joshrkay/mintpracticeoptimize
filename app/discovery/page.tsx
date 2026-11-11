@@ -75,7 +75,7 @@ export default function Discovery() {
           </aside>
         </Container>
       </section>
-      <section className="border-t border-line bg-mint-soft/60">
+      <section className="border-t border-line bg-white">
         <Container className="grid items-center gap-10 py-16 sm:py-20 lg:grid-cols-[1fr_1.3fr] lg:gap-16">
           <div>
             <h2 className="font-display text-4xl leading-tight tracking-tight text-balance sm:text-5xl">See it before you change it</h2>

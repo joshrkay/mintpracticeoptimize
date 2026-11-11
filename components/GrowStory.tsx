@@ -53,7 +53,7 @@ export function GrowStory({ stages }: { stages: Stage[] }) {
     <div ref={scene} data-no-reveal className="lg:grid lg:grid-cols-2 lg:gap-16">
       <div className="sticky top-16 z-[5] -mx-5 border-b border-line bg-paper/95 px-5 pt-4 pb-3 backdrop-blur lg:border-0 sm:-mx-8 sm:px-8 lg:static lg:order-2 lg:m-0 lg:bg-transparent lg:p-0 lg:backdrop-blur-none">
         <div className="flex flex-col items-center lg:sticky lg:top-24 lg:h-[calc(100vh-7rem)] lg:justify-center">
-          <GrowingMint ground tags className="relative w-[min(38vw,9.5rem)] sm:w-48 lg:w-[min(27rem,50vh)]" />
+          <GrowingMint ground tags className="relative w-[min(34vw,8.5rem)] sm:w-44 lg:w-[min(24rem,48vh)]" />
           <ol className="mt-3 flex gap-2 lg:mt-8" aria-hidden="true">
             {stages.map((stage, i) => (
               <li

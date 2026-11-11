@@ -44,20 +44,40 @@ body {
   initial-value: 1;
 }
 
-.stem {
-  stroke-dasharray: 1;
-  stroke-dashoffset: calc(1 - var(--grow));
+/* A photographed sprig rising from its base. */
+.photo-grow {
+  transform-origin: 56% 100%;
+  scale: calc(0.45 + 0.55 * var(--grow));
+  rotate: calc((1 - var(--grow)) * -9deg);
+  /* The plant comes up out of nothing: a soft edge rises with it. */
+  mask-image: linear-gradient(
+    to top,
+    black calc(var(--grow) * 118% - 18%),
+    transparent calc(var(--grow) * 118%)
+  );
+  transition:
+    scale 0.3s ease-out,
+    rotate 0.3s ease-out;
 }
-/* Each leaf opens once growth passes its place on the stem (--at). */
+/* A photographed sprig opening out from its centre. */
+.photo-bloom {
+  transform-origin: 50% 55%;
+  scale: calc(0.25 + 0.75 * var(--grow));
+  rotate: calc((1 - var(--grow)) * -28deg);
+  opacity: clamp(0, calc(var(--grow) * 5), 1);
+}
+.photo-sway {
+  transform-origin: 55% 95%;
+  animation: sway 5.5s ease-in-out infinite alternate;
+}
+/* A leaf in the page runner opens once growth reaches it. */
 .leaf {
   transform-origin: 0 0;
   scale: clamp(0, calc((var(--grow) - var(--at, 0)) * 6), 1);
-  transition: scale 0.35s cubic-bezier(0.3, 1.5, 0.5, 1);
 }
 .ground {
-  fill: rgba(11, 34, 25, 0.16);
-  filter: blur(7px);
-  transform-origin: 200px 478px;
+  background: rgba(11, 34, 25, 0.22);
+  filter: blur(10px);
   scale: clamp(0.15, var(--grow), 1) 1;
 }
 /* The leaf sprouting from the headline. */
@@ -109,10 +129,10 @@ body {
 }
 @keyframes sway {
   from {
-    rotate: -4deg;
+    rotate: -2deg;
   }
   to {
-    rotate: 4deg;
+    rotate: 2deg;
   }
 }
 

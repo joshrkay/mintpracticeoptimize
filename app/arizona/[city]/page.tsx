@@ -124,7 +124,7 @@ export default async function CityPage({ params }: PageProps<"/arizona/[city]">)
                 href={`/services#${p.id}`}
                 className="lift relative overflow-hidden rounded-3xl border border-line bg-white p-7 hover:border-mint-deep"
               >
-                <GrowingMint className="grow-on-reveal absolute -top-2 -right-3 w-24" />
+                <GrowingMint className="grow-on-reveal absolute -top-1 -right-2 w-20" />
                 <h3 className="max-w-[11rem] font-display text-2xl">{p.name}</h3>
                 <p className="mt-3 leading-relaxed text-muted">{p.summary}</p>
               </Link>

@@ -22,7 +22,7 @@ export default function Services() {
         <section key={pillar.id} id={pillar.id} className="scroll-mt-16 border-b border-line odd:bg-white">
           <Container className="grid gap-10 py-16 sm:py-20 lg:grid-cols-[1fr_2fr] lg:gap-16">
             <div>
-              <GrowingMint className="grow-on-reveal relative -ml-3 w-28" />
+              <GrowingMint className="grow-on-reveal relative w-28" />
               <p className="mt-2 font-display text-lg text-mint-deep">
                 {i < pillars.length ? `0${i + 1}` : "Also available"}
               </p>

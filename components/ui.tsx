@@ -60,7 +60,7 @@ export function PageHero({ eyebrow, title, lede }: { eyebrow: string; title: str
             {lede}
           </p>
         </div>
-        <GrowingMint className="grow-on-load relative -mb-10 hidden w-56 lg:block" />
+        <GrowingMint className="grow-on-load relative mb-0 hidden w-60 lg:block" />
       </Container>
     </section>
   );
@@ -70,14 +70,14 @@ export function CallToAction() {
   return (
     <section className="relative overflow-hidden bg-lime text-forest">
       <FallingLeaves />
-      <Container className="relative py-20 text-center sm:py-28">
-        <h2 className="mx-auto max-w-4xl font-display text-5xl leading-[1.02] tracking-tight text-balance sm:text-7xl">
+      <Container className="relative py-14 text-center sm:py-20">
+        <h2 className="mx-auto max-w-4xl font-display text-4xl leading-[1.02] tracking-tight text-balance sm:text-6xl">
           See what your practice could <span className="italic">grow</span> into.
         </h2>
         <p className="mx-auto mt-6 max-w-xl text-xl text-forest/75">
           Start with a conversation. If it is a fit, discovery comes next.
         </p>
-        <div className="mt-10">
+        <div className="mt-8">
           <ButtonLink href="/contact" variant="dark">
             Start a conversation
           </ButtonLink>
