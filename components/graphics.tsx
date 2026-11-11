@@ -92,9 +92,9 @@ export function ValleyMap({ active, className = "" }: { active?: string; classNa
               cy={p.y}
               r="8"
               style={{ animationDelay: `${(p.x % 7) * 300}ms` }}
-              className={`map-ping ${on ? "fill-mint" : "fill-mint/60"}`}
+              className={`map-ping ${on ? "fill-mint-deep" : "fill-mint-deep/60"}`}
             />
-            {on && <circle cx={p.x} cy={p.y} r="17" className="fill-mint/25" />}
+            {on && <circle cx={p.x} cy={p.y} r="17" className="fill-mint-deep/25" />}
             <circle
               cx={p.x}
               cy={p.y}

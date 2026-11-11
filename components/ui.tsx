@@ -8,14 +8,16 @@ export function Container({ children, className = "" }: { children: ReactNode; c
 
 export function Eyebrow({ children }: { children: ReactNode }) {
   return (
-    <p className="text-sm font-semibold uppercase tracking-[0.14em] text-mint-deep">{children}</p>
+    <p className="text-sm font-semibold uppercase tracking-[0.14em] text-mint-deep in-data-dark:text-lime">{children}</p>
   );
 }
 
 const variants = {
-  primary: "bg-forest text-white hover:bg-mint-deep",
-  lime: "bg-lime text-forest hover:bg-white",
-  outline: "border border-ink/25 text-ink hover:border-ink hover:bg-white",
+  // The accent: one primary action per view.
+  primary: "bg-lime text-forest hover:bg-forest hover:text-white in-data-dark:hover:bg-white in-data-dark:hover:text-forest",
+  // On a lime band, where the accent is already the background.
+  dark: "bg-forest text-white hover:bg-mint-deep",
+  outline: "border border-ink/25 text-ink hover:border-ink hover:bg-white in-data-dark:border-white/35 in-data-dark:text-white in-data-dark:hover:bg-white/10",
 };
 
 export function ButtonLink({
@@ -66,17 +68,17 @@ export function PageHero({ eyebrow, title, lede }: { eyebrow: string; title: str
 
 export function CallToAction() {
   return (
-    <section className="relative overflow-hidden bg-forest text-white">
+    <section className="relative overflow-hidden bg-lime text-forest">
       <FallingLeaves />
-      <Container className="relative py-24 text-center sm:py-36">
+      <Container className="relative py-20 text-center sm:py-28">
         <h2 className="mx-auto max-w-4xl font-display text-5xl leading-[1.02] tracking-tight text-balance sm:text-7xl">
-          See what your practice could <span className="text-lime italic">grow</span> into.
+          See what your practice could <span className="italic">grow</span> into.
         </h2>
-        <p className="mx-auto mt-6 max-w-xl text-xl text-white/75">
+        <p className="mx-auto mt-6 max-w-xl text-xl text-forest/75">
           Start with a conversation. If it is a fit, discovery comes next.
         </p>
         <div className="mt-10">
-          <ButtonLink href="/contact" variant="lime">
+          <ButtonLink href="/contact" variant="dark">
             Start a conversation
           </ButtonLink>
         </div>

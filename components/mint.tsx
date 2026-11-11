@@ -205,7 +205,7 @@ export function Marquee({ words }: { words: string[] }) {
     </ul>
   );
   return (
-    <div className="overflow-hidden border-y border-line bg-white py-6 sm:py-8">
+    <div className="overflow-hidden bg-lime py-6 text-forest sm:py-8">
       <div className="marquee flex w-max">
         {row(false)}
         {row(true)}

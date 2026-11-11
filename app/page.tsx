@@ -161,18 +161,18 @@ export default function Home() {
               <Link
                 key={pillar.id}
                 href={`/services#${pillar.id}`}
-                className="lift group relative flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-paper p-7 hover:border-leaf"
+                className="lift group relative flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-paper p-7 hover:border-mint-deep"
               >
                 <GrowingMint
                   className="grow-on-reveal absolute -top-2 -right-3 w-28"
                 />
-                <span className="font-display text-6xl leading-none text-leaf">0{i + 1}</span>
+                <span className="font-display text-6xl leading-none text-mint-deep">0{i + 1}</span>
                 <h3 className="mt-6 max-w-[11rem] font-display text-3xl leading-tight">{pillar.name}</h3>
                 <p className="mt-3 leading-relaxed text-muted">{pillar.summary}</p>
                 <ul className="mt-5 space-y-1.5 text-[15px]">
                   {pillar.items.slice(0, 4).map((item) => (
                     <li key={item.title} className="flex items-center gap-2">
-                      <span className="text-leaf-dark">
+                      <span className="text-mint-deep">
                         <Icon name="check" className="size-4" />
                       </span>
                       {item.title}
@@ -198,7 +198,7 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="border-y border-line bg-white">
+      <section data-dark className="bg-forest text-white">
         <Container className="grid gap-10 py-20 sm:py-28 md:grid-cols-2 md:gap-16">
           <div>
             <Eyebrow>Partners, not consultants</Eyebrow>
@@ -206,7 +206,7 @@ export default function Home() {
               Your practice stays yours.
             </h2>
           </div>
-          <div className="space-y-4 text-xl leading-relaxed text-muted">
+          <div className="space-y-4 text-xl leading-relaxed text-white/75">
             <p>
               We are not a management company and we do not take a stake in your practice. Your
               team, your patients and your decisions stay with you.
@@ -216,7 +216,7 @@ export default function Home() {
               you and stay to carry it out.
             </p>
             <p>
-              <Link href="/for-your-team" className="font-semibold text-mint-deep hover:underline">
+              <Link href="/for-your-team" className="font-semibold text-lime hover:underline">
                 What this means for your manager and staff &rarr;
               </Link>
             </p>

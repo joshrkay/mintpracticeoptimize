@@ -25,7 +25,7 @@ export default function Arizona() {
         <ValleyMap className="mx-auto mt-6 max-w-3xl" />
         <div className="mt-8 grid gap-8 md:grid-cols-3">
           {areas.map((area) => (
-            <div key={area} className="border-t-2 border-mint pt-4">
+            <div key={area} className="border-t-2 border-mint-deep pt-4">
               <h3 className="font-display text-xl">{area}</h3>
               <ul className="mt-3 space-y-2 text-lg">
                 {cities

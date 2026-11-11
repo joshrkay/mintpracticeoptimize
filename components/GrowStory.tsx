@@ -59,7 +59,7 @@ export function GrowStory({ stages }: { stages: Stage[] }) {
               <li
                 key={stage.name}
                 className={`rounded-full px-3 py-1 text-xs font-semibold transition-colors duration-500 sm:text-sm ${
-                  i === active ? "bg-forest text-white" : i < active ? "bg-mint-soft text-mint-deep" : "bg-line/60 text-muted"
+                  i === active ? "bg-lime text-forest" : i < active ? "bg-mint-soft text-mint-deep" : "bg-line/60 text-muted"
                 }`}
               >
                 {stage.name}
@@ -77,7 +77,7 @@ export function GrowStory({ stages }: { stages: Stage[] }) {
               i === active ? "opacity-100" : "opacity-30"
             }`}
           >
-            <span className="font-display text-7xl leading-none text-leaf sm:text-8xl">0{i + 1}</span>
+            <span className="font-display text-7xl leading-none text-mint-deep sm:text-8xl">0{i + 1}</span>
             <h3 className="mt-4 font-display text-4xl sm:text-5xl">{stage.title}</h3>
             <p className="mt-4 max-w-md text-xl leading-relaxed text-muted">{stage.body}</p>
             {stage.note && (

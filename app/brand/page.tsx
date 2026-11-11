@@ -8,12 +8,12 @@ export const metadata: Metadata = {
 };
 
 const colors = [
-  ["Forest", "#0b2219", "text-white"],
-  ["Mint deep", "#17694c", "text-white"],
-  ["Leaf", "#3f9a4c", "text-white"],
-  ["Lime", "#cdf56a", "text-forest"],
-  ["Mint soft", "#dbf3e4", "text-forest"],
-  ["Paper", "#f4f8f1", "text-forest"],
+  ["60 · Paper", "#f4f8f1", "text-forest"],
+  ["60 · White", "#ffffff", "text-forest"],
+  ["30 · Forest", "#0b2219", "text-white"],
+  ["30 · Mint deep", "#17694c", "text-white"],
+  ["30 · Mint soft", "#dbf3e4", "text-forest"],
+  ["10 · Lime", "#cdf56a", "text-forest"],
 ];
 
 /** Internal reference sheet for the logo and palette. Not linked or indexed. */
@@ -46,6 +46,10 @@ export default function Brand() {
           </li>
         ))}
       </ul>
+      <p className="max-w-2xl text-muted">
+        Colour follows the 60-30-10 rule: neutral paper and white for about 60% of any page,
+        the green family for about 30%, and lime as the single accent for about 10%.
+      </p>
       <p className="max-w-2xl text-muted">
         Wordmark: Fraunces Semibold, with a leaf for the dot of the i. Descriptor: Geist
         Semibold, uppercase, widely spaced. The mark alone is used where space is tight.

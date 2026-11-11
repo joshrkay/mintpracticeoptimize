@@ -7,17 +7,17 @@ const VEIN = "M0-6V-84";
 export function LogoMark({ className = "size-9" }: { className?: string }) {
   return (
     <svg viewBox="0 0 64 64" className={className} role="img" aria-label="Mint">
-      <rect width="64" height="64" rx="15" className="fill-forest" />
+      <rect width="64" height="64" rx="15" className="fill-forest in-data-dark:fill-white/10" />
       <g transform="translate(32 51)">
-        <path d="M0 0V-14" className="stroke-[#8fe0a8]" strokeWidth="2.6" strokeLinecap="round" />
+        <path d="M0 0V-14" className="stroke-lime" strokeWidth="2.6" strokeLinecap="round" />
         {[-38, 38].map((angle) => (
           <g key={angle} transform={`translate(0 -13) rotate(${angle}) scale(0.3)`}>
-            <path d={LOGO_LEAF} className="fill-[#8fe0a8]" />
+            <path d={LOGO_LEAF} className="fill-lime" />
             <path d={VEIN} className="stroke-forest" strokeWidth="5" strokeLinecap="round" />
           </g>
         ))}
         <g transform="translate(0 -15) scale(0.2)">
-          <path d={LOGO_LEAF} className="fill-lime" />
+          <path d={LOGO_LEAF} className="fill-white" />
         </g>
       </g>
     </svg>
@@ -30,7 +30,7 @@ export function LogoMark({ className = "size-9" }: { className?: string }) {
  */
 export function Logo({ tone = "light", className = "" }: { tone?: "light" | "dark"; className?: string }) {
   const ink = tone === "light" ? "text-forest" : "text-white";
-  const leaf = tone === "light" ? "fill-leaf" : "fill-lime";
+  const leaf = tone === "light" ? "fill-mint-deep" : "fill-lime";
   return (
     <span role="img" aria-label="Mint" className={`inline-flex font-display font-semibold tracking-tight ${ink} ${className}`}>
       <span aria-hidden="true">M</span>

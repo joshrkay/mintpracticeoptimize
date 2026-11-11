@@ -7,7 +7,7 @@ import { GrowingMint } from "./mint";
 
 const initial: FormState = { status: "idle" };
 const inputClass =
-  "mt-2 block w-full rounded-lg border border-line bg-white px-3.5 py-2.5 text-base text-ink placeholder:text-muted/60 focus:border-mint";
+  "mt-2 block w-full rounded-lg border border-line bg-white px-3.5 py-2.5 text-base text-ink placeholder:text-muted/60 focus:border-mint-deep";
 
 function Honeypot() {
   return (
@@ -46,7 +46,7 @@ function SubmitButton({ pending, children }: { pending: boolean; children: React
     <button
       type="submit"
       disabled={pending}
-      className="rounded-full bg-mint-deep px-7 py-3 text-base font-semibold text-white transition-colors hover:bg-forest disabled:opacity-60"
+      className="rounded-full bg-lime px-7 py-3.5 text-base font-semibold text-forest transition-colors hover:bg-forest hover:text-white disabled:opacity-60"
     >
       {pending ? "Sending…" : children}
     </button>
@@ -68,7 +68,7 @@ function Field({ q, values }: { q: Question; values?: string[] }) {
           {q.options.map((option, i) => (
             <label
               key={option}
-              className="cursor-pointer rounded-full border border-line bg-white px-4 py-2 text-[15px] transition-colors hover:border-mint has-checked:border-mint-deep has-checked:bg-mint-soft has-checked:font-medium has-focus-visible:outline-2 has-focus-visible:outline-mint"
+              className="cursor-pointer rounded-full border border-line bg-white px-4 py-2 text-[15px] transition-colors hover:border-mint-deep has-checked:border-mint-deep has-checked:bg-mint-soft has-checked:font-medium has-focus-visible:outline-2 has-focus-visible:outline-mint-deep"
             >
               <input
                 type={q.type === "single" ? "radio" : "checkbox"}

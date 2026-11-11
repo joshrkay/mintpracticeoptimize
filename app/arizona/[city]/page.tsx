@@ -61,7 +61,7 @@ export default async function CityPage({ params }: PageProps<"/arizona/[city]">)
           <div>
             <dl className="grid grid-cols-2 gap-4">
               {city.stats.map(([value, label]) => (
-                <div key={label} className="lift rounded-3xl bg-gradient-to-br from-mint-soft to-[#c9f1dd] p-6">
+                <div key={label} className="lift rounded-3xl bg-mint-soft p-6">
                   <dt className="sr-only">{label}</dt>
                   <dd>
                     <span className="block font-display text-4xl text-mint-deep sm:text-5xl">{value}</span>
@@ -96,7 +96,7 @@ export default async function CityPage({ params }: PageProps<"/arizona/[city]">)
           <dl className="mt-8 grid gap-5 md:grid-cols-3">
             {city.focus.map((f, i) => (
               <div key={f.title} className="lift rounded-3xl border border-line bg-white p-6">
-                <span aria-hidden="true" className="font-display text-6xl leading-none text-leaf">
+                <span aria-hidden="true" className="font-display text-6xl leading-none text-mint-deep">
                   0{i + 1}
                 </span>
                 <dt className="mt-4 font-display text-xl">{f.title}</dt>
@@ -122,7 +122,7 @@ export default async function CityPage({ params }: PageProps<"/arizona/[city]">)
               <Link
                 key={p.id}
                 href={`/services#${p.id}`}
-                className="lift relative overflow-hidden rounded-3xl border border-line bg-white p-7 hover:border-leaf"
+                className="lift relative overflow-hidden rounded-3xl border border-line bg-white p-7 hover:border-mint-deep"
               >
                 <GrowingMint className="grow-on-reveal absolute -top-2 -right-3 w-24" />
                 <h3 className="max-w-[11rem] font-display text-2xl">{p.name}</h3>
@@ -130,7 +130,7 @@ export default async function CityPage({ params }: PageProps<"/arizona/[city]">)
               </Link>
             ))}
           </div>
-          <div className="mt-10 flex flex-col gap-4 rounded-3xl bg-mint-soft p-7 sm:flex-row sm:items-center sm:justify-between">
+          <div data-dark className="mt-10 flex flex-col gap-4 rounded-3xl bg-forest p-7 text-white sm:flex-row sm:items-center sm:justify-between">
             <p className="max-w-2xl text-lg">
               It starts with discovery: a flat <strong>{site.discoveryFee}</strong> evaluation of
               your {city.name} practice. Sign on and the fee rolls into your first month.
@@ -152,7 +152,7 @@ export default async function CityPage({ params }: PageProps<"/arizona/[city]">)
                 <li key={c.slug}>
                   <Link
                     href={`/arizona/${c.slug}`}
-                    className="inline-block rounded-full border border-line px-4 py-2 text-[15px] hover:border-mint"
+                    className="inline-block rounded-full border border-line px-4 py-2 text-[15px] hover:border-mint-deep"
                   >
                     {c.name}
                   </Link>
@@ -161,7 +161,7 @@ export default async function CityPage({ params }: PageProps<"/arizona/[city]">)
               <li>
                 <Link
                   href="/arizona"
-                  className="inline-block rounded-full border border-line px-4 py-2 text-[15px] font-semibold text-mint-deep hover:border-mint"
+                  className="inline-block rounded-full border border-line px-4 py-2 text-[15px] font-semibold text-mint-deep hover:border-mint-deep"
                 >
                   All cities
                 </Link>

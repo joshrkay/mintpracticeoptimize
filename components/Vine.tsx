@@ -91,14 +91,14 @@ export function Vine() {
             </g>
           </g>
         ))}
-        <circle className="vine-bud fill-[#b9e08a] stroke-[#2f6f36]" r="4.5" strokeWidth="2" />
+        <circle className="vine-bud fill-lime stroke-forest" r="4.5" strokeWidth="2" />
       </svg>
       <div
         ref={bar}
         aria-hidden="true"
         className="pointer-events-none fixed inset-x-0 top-16 z-20 h-[3px] xl:hidden"
       >
-        <div className="h-full origin-left scale-x-[var(--progress,0)] bg-leaf" />
+        <div className="h-full origin-left scale-x-[var(--progress,0)] bg-mint-deep" />
         <svg viewBox="-12 -44 24 48" className="absolute -top-3 left-[calc(var(--progress,0)*100%)] w-4 -translate-x-1/2 rotate-[100deg]">
           <LeafImage length={42} />
         </svg>

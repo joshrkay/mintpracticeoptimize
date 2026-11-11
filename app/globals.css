@@ -1,18 +1,26 @@
 @import "tailwindcss";
 
+/*
+ * Colour follows the 60-30-10 rule.
+ *   60  Neutral    paper and white: page backgrounds and cards.
+ *   30  Green      one family, from forest to pale mint: type, dark bands, tinted surfaces.
+ *   10  Accent     lime: calls to action and the few things that must be noticed.
+ * Leaf artwork and the red of form errors sit outside the palette.
+ * Do not add colours here; use a role below.
+ */
 @theme inline {
   --font-sans: var(--font-geist-sans);
   --font-display: var(--font-fraunces);
+  /* 60: neutral */
   --color-paper: #f4f8f1;
+  --color-line: #d3e3d8;
+  /* 30: green */
+  --color-forest: #0b2219;
   --color-ink: #0d2419;
   --color-muted: #4a6156;
-  --color-line: #d3e3d8;
-  --color-mint: #2f9e77;
   --color-mint-deep: #17694c;
   --color-mint-soft: #dbf3e4;
-  --color-forest: #0b2219;
-  --color-leaf: #3f9a4c;
-  --color-leaf-dark: #23703a;
+  /* 10: accent */
   --color-lime: #cdf56a;
   --animate-rise: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
@@ -23,7 +31,7 @@ body {
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-mint);
+  outline: 2px solid var(--color-mint-deep);
   outline-offset: 2px;
 }
 
