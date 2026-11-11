@@ -5,6 +5,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
+  alternates: { canonical: "/contact" },
   description: "Start a conversation with Mint about your practice.",
 };
 

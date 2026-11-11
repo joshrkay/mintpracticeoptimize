@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { nav, site } from "@/lib/site";
+import { footerNav, site } from "@/lib/site";
 import { Container } from "./ui";
 
 export function Footer() {
@@ -11,14 +11,11 @@ export function Footer() {
           <p>{site.descriptor}</p>
         </div>
         <div className="flex flex-wrap gap-x-6 gap-y-2">
-          {nav.map((item) => (
+          {footerNav.map((item) => (
             <Link key={item.href} href={item.href} className="hover:text-ink">
               {item.label}
             </Link>
           ))}
-          <Link href="/contact" className="hover:text-ink">
-            Contact
-          </Link>
           <a href={`mailto:${site.email}`} className="hover:text-ink">
             {site.email}
           </a>

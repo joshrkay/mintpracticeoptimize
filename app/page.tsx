@@ -1,7 +1,10 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ButtonLink, CallToAction, Container, Eyebrow } from "@/components/ui";
 import { pillars } from "@/lib/services";
 import { site } from "@/lib/site";
+
+export const metadata: Metadata = { alternates: { canonical: "/" } };
 
 const steps = [
   {
@@ -32,8 +35,9 @@ export default function Home() {
             Your practice, in <span className="text-mint-deep italic">mint</span> condition.
           </h1>
           <p className="mt-6 max-w-2xl text-xl leading-relaxed text-muted">
-            We&rsquo;re Mint, practice optimization partners. We start with a full evaluation of
-            the opportunities in your practice, deliver a playbook, then execute on it with you.
+            Mint is a practice optimization partner for independent medical practices. We start
+            with a full evaluation of the opportunities in your practice, deliver a playbook, then
+            execute on it with you.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
             <ButtonLink href="/contact">Start a conversation</ButtonLink>
@@ -121,6 +125,26 @@ export default function Home() {
               We also do not sweep in, hand over recommendations and leave. We build the plan with
               you and stay to carry it out.
             </p>
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-t border-line bg-white">
+        <Container className="flex flex-col gap-5 py-14 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <Eyebrow>Specialties</Eyebrow>
+            <p className="mt-3 max-w-2xl text-lg text-muted">
+              We are starting with podiatry. See what we look at in a podiatry practice, or how
+              Mint compares with the other kinds of help a practice can hire.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <ButtonLink href="/podiatry" variant="outline">
+              Podiatry
+            </ButtonLink>
+            <ButtonLink href="/compare" variant="outline">
+              How we compare
+            </ButtonLink>
           </div>
         </Container>
       </section>

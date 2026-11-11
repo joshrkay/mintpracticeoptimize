@@ -6,8 +6,17 @@ export const site = {
   email: "hello@practiceoptimize.com",
   discoveryFee: "$1,500",
   tagline:
-    "We find the optimization opportunities in your practice, deliver a playbook, then execute on it with you.",
+    "Mint is a practice optimization partner for independent medical practices. We evaluate your operations, revenue opportunities and marketing, deliver a playbook, then execute on it with you.",
 };
+
+export const footerNav = [
+  { href: "/services", label: "Services" },
+  { href: "/discovery", label: "Discovery" },
+  { href: "/podiatry", label: "Podiatry" },
+  { href: "/compare", label: "How we compare" },
+  { href: "/faq", label: "FAQ" },
+  { href: "/contact", label: "Contact" },
+];
 
 export const nav = [
   { href: "/services", label: "Services" },

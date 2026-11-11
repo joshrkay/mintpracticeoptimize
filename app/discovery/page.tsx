@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 import { CallToAction, Container, PageHero } from "@/components/ui";
+import { JsonLd } from "@/components/JsonLd";
+import { faqs } from "@/lib/faqs";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Discovery",
+  title: "Practice Discovery Evaluation",
+  alternates: { canonical: "/discovery" },
   description: `A full evaluation of the optimization opportunities in your practice for a flat ${site.discoveryFee}.`,
 };
 
@@ -18,28 +21,30 @@ const deliverables = [
   },
 ];
 
-const faqs = [
-  {
-    q: "What happens before discovery?",
-    a: "You fill out a short questionnaire for your specialty. It lets us arrive knowing the basics, so the time we spend together goes to your practice.",
+const discoveryFaqs = faqs.filter((f) =>
+  ["What happens before discovery?", "What do I get from discovery?", "What happens after discovery?", "How much does Mint's discovery cost?"].includes(f.q),
+);
+
+const service = {
+  "@type": "Service",
+  name: "Practice discovery evaluation",
+  serviceType: "Medical practice optimization",
+  description:
+    "A full evaluation of a medical practice that produces a current state map and an optimization opportunities map.",
+  provider: { "@id": `${site.url}/#organization` },
+  areaServed: "US",
+  offers: {
+    "@type": "Offer",
+    price: site.discoveryFee.replace(/[^0-9.]/g, ""),
+    priceCurrency: "USD",
+    url: `${site.url}/discovery`,
   },
-  {
-    q: "Why map things out before changing anything?",
-    a: "Shifting a workflow only sticks when the people doing the work agree with it. A visual before and after gets the whole team on the same page first.",
-  },
-  {
-    q: "What happens after discovery?",
-    a: "The opportunities become a playbook, and we execute on it with you. If you would rather take the maps and run with them yourself, they are yours.",
-  },
-  {
-    q: "What does it cost?",
-    a: `Discovery is a flat ${site.discoveryFee}. If you sign on with us afterward, that fee rolls into your first month.`,
-  },
-];
+};
 
 export default function Discovery() {
   return (
     <>
+      <JsonLd data={service} />
       <PageHero
         eyebrow="Discovery"
         title="A full evaluation of the optimization opportunities in your practice."
@@ -71,7 +76,7 @@ export default function Discovery() {
         <Container className="py-16 sm:py-20">
           <h2 className="font-display text-3xl">Common questions</h2>
           <dl className="mt-8 grid gap-x-12 gap-y-8 md:grid-cols-2">
-            {faqs.map((f) => (
+            {discoveryFaqs.map((f) => (
               <div key={f.q} className="border-t border-line pt-4">
                 <dt className="font-semibold">{f.q}</dt>
                 <dd className="mt-1.5 leading-relaxed text-muted">{f.a}</dd>

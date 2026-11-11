@@ -3,8 +3,10 @@ import { CallToAction, Container, PageHero } from "@/components/ui";
 import { messaging, pillars } from "@/lib/services";
 
 export const metadata: Metadata = {
-  title: "Services",
-  description: "Operations, revenue opportunities and marketing for independent medical practices.",
+  title: "Medical Practice Optimization Services",
+  description:
+    "What Mint does for independent medical practices: operations, revenue opportunities, marketing and patient messaging.",
+  alternates: { canonical: "/services" },
 };
 
 export default function Services() {
