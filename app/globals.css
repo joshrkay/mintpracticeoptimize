@@ -225,18 +225,6 @@ body {
 
 /* ---------- Pinned scenes (driven by --p, 0 to 1) ---------- */
 
-/* The wipe: holds, crosses, holds. */
-.wipe {
-  --w: clamp(0, calc((var(--p) - 0.14) / 0.66), 1);
-}
-.wipe-top {
-  clip-path: inset(0 calc((1 - var(--w)) * 100%) 0 0);
-}
-.wipe-line {
-  left: calc(var(--w) * 100%);
-  opacity: clamp(0, calc(var(--w) * 20), 1);
-}
-
 /* The pan: the track slides until its last panel reaches the right margin. */
 @media (min-width: 1024px) {
   .pan {

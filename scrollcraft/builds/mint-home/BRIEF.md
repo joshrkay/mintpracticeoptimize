@@ -62,7 +62,6 @@ remains the doctor's own.
 | --- | --- | --- |
 | Hero | Calm confidence | A sharp sprig against deep, soft foliage; layers drift apart as the page moves |
 | The day | Recognition turning to unease | Plain statements of the visitor's own problems, one after another |
-| The wipe | Relief | A line crosses the frame and the yellowed day turns fresh behind it |
 | Pillars | Clarity | The page turns sideways: three panels pass like options on a shelf |
 | Yours | Reassurance | The page goes still; one sentence over dark leaves |
 | Growth (peak) | Momentum, a little wonder | The plant rises and comes into focus under the visitor's own scroll |
@@ -99,12 +98,11 @@ near the lens to the plant, so the foreground softens as the subject sharpens.
 | Beat | Device | Why |
 | --- | --- | --- |
 | Recognition | Layered parallax, pinned | Depth is the strongest signal that this is a photograph |
-| Tension | Kinetic list | Each line resolves as it passes the reading line; the visitor does the fixing |
-| Turn | Reveal (wipe) | A wipe is a change of state, which is what this beat is |
+| Tension and turn | Two static tables | Client direction: keep it simple. Today beside With Mint, no interaction |
 | Range | Horizontal pan | Sideways travel reads as options |
 | Reassurance | Static band | The stillness is the point, and it sets up the peak |
 | Substance | Pin with scroll-driven growth and focus pull | The plant responds to the visitor's hand |
 | Ground | Static split | Information, plainly |
 | Commitment | Still band | The page stops and asks |
 
-Six device families, none twice in a row.
+Five device families, none twice in a row. The client removed the hover list and the wipe scene in favour of two plain tables.

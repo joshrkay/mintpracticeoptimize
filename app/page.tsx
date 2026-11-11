@@ -6,7 +6,7 @@ import { ValleyMap } from "@/components/graphics";
 import { GrowStory, type Stage } from "@/components/GrowStory";
 import { IconBadge, type IconName } from "@/components/icons";
 import { SymptomCards, type Symptom } from "@/components/SymptomCards";
-import { BeforeAfterWipe, PillarsPan } from "@/components/scenes";
+import { PillarsPan } from "@/components/scenes";
 import { ButtonLink, CallToAction, Container, Eyebrow } from "@/components/ui";
 import { cityNames, listNames } from "@/lib/cities";
 import { pillars } from "@/lib/services";
@@ -128,8 +128,6 @@ export default function Home() {
                     <SymptomCards items={symptoms} />
         </Container>
       </section>
-
-      <BeforeAfterWipe />
 
       <PillarsPan pillars={pillars} />
 
