@@ -6,7 +6,8 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact",
   alternates: { canonical: "/contact" },
-  description: "Start a conversation with Mint about your practice.",
+  description:
+    "Tell Mint about your practice and what you would like to improve. We work on site with independent medical practices across the Phoenix area.",
 };
 
 export default function Contact() {

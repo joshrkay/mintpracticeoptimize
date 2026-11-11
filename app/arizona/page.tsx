@@ -21,7 +21,9 @@ export default function Arizona() {
         lede={`Mint works with independent medical practices, solo and group, in ${listNames(cityNames)}. We are starting in the Valley so we can be in your office, not on a video call.`}
       />
       <Container className="py-16 sm:py-20">
-        <h2 className="font-display text-4xl leading-tight tracking-tight text-balance sm:text-5xl">Where we work</h2>
+        <h2 className="font-display text-4xl leading-tight tracking-tight text-balance sm:text-5xl">
+          Where we work
+        </h2>
         <ValleyMap className="mx-auto mt-6 max-w-3xl" />
         <div className="mt-8 grid gap-8 md:grid-cols-3">
           {areas.map((area) => (
@@ -31,10 +33,16 @@ export default function Arizona() {
                 {cities
                   .filter((c) => c.area === area)
                   .map((c) => (
-                    <li key={c.slug}>
-                      <Link href={`/arizona/${c.slug}`} className="inline-flex min-h-11 items-center text-mint-deep hover:underline">
+                    <li key={c.slug} className="border-t border-line py-4">
+                      <Link
+                        href={`/arizona/${c.slug}`}
+                        className="inline-flex min-h-11 items-center font-display text-2xl text-mint-deep hover:underline"
+                      >
                         {c.name}
                       </Link>
+                      <p className="text-base leading-relaxed text-muted">
+                        {c.summary}
+                      </p>
                     </li>
                   ))}
               </ul>
@@ -42,8 +50,8 @@ export default function Arizona() {
           ))}
         </div>
         <p className="mt-10 max-w-2xl text-lg leading-relaxed text-muted">
-          Practice elsewhere in Arizona? Get in touch anyway. These are the cities we are starting
-          with, not a boundary.
+          Practice elsewhere in Arizona? Get in touch anyway. These are the
+          cities we are starting with, not a boundary.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <ButtonLink href="/services">What we do</ButtonLink>

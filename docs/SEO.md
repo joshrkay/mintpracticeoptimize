@@ -24,6 +24,18 @@ questions directly do well in both.
 - Questionnaire pages are `noindex` and left out of the sitemap.
 - Pages are static HTML, so crawlers that do not run JavaScript still see all the text.
 
+## Checking it
+
+`node scripts/seo-audit.mjs http://localhost:3000` reads every page in the sitemap with
+scripts turned off, as a crawler would, and reports title and description length,
+canonical URLs, heading structure, share tags, structured data, duplicate titles, broken
+internal links and pages nothing links to. Run it after content changes. The last run
+found no issues.
+
+Also in place since the first pass: breadcrumbs on city pages, a WebSite entry on the
+home page, a catalogue of the three services on `/services`, and a line about each city
+on `/arizona`. Descriptions are kept under 160 characters so search results show them whole.
+
 ## What only you can do
 
 1. **After launch:** verify the domain in Google Search Console and Bing Webmaster Tools

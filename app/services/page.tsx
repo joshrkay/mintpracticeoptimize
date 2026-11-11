@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { GrowingMint, LeafBullet } from "@/components/mint";
+import { JsonLd } from "@/components/JsonLd";
 import { CallToAction, Container, PageHero } from "@/components/ui";
+import { site } from "@/lib/site";
 import { messaging, pillars } from "@/lib/services";
 
 export const metadata: Metadata = {
@@ -13,6 +15,20 @@ export const metadata: Metadata = {
 export default function Services() {
   return (
     <>
+      <JsonLd
+        data={{
+          "@type": "OfferCatalog",
+          name: "Mint practice optimization services",
+          itemListElement: pillars.map((pillar) => ({
+            "@type": "Service",
+            name: pillar.name,
+            description: pillar.summary,
+            provider: { "@id": `${site.url}/#organization` },
+            areaServed: { "@type": "State", name: site.region },
+            url: `${site.url}/services#${pillar.id}`,
+          })),
+        }}
+      />
       <PageHero
         eyebrow="Services"
         title="Operations, revenue opportunities and marketing."

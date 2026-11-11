@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     default: `${site.brand} | ${site.descriptor}`,
     template: `%s | ${site.brand}`,
   },
-  description: site.tagline,
+  description: site.description,
   openGraph: {
     type: "website",
     siteName: `${site.brand} ${site.descriptor}`,

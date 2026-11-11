@@ -6,7 +6,7 @@ import { ButtonLink, CallToAction, Container, PageHero } from "@/components/ui";
 export const metadata: Metadata = {
   title: "Podiatry Practice Optimization in Arizona",
   description:
-    "What Mint looks at in an Arizona podiatry practice, solo or group: orthotics and DME handoffs, collections, recall, patient outreach, reviews and local marketing.",
+    "What Mint looks at in an Arizona podiatry practice: orthotics and DME handoffs, collections, recall, patient outreach, reviews and local marketing.",
   alternates: { canonical: "/podiatry" },
 };
 

@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: PageProps<"/arizona/[city]">)
   if (!city) return {};
   return {
     title: `Medical Practice Optimization in ${city.name}, AZ`,
-    description: `${city.summary} Mint is a practice optimization partner for independent practices in ${city.name}, Arizona.`,
+    description: city.summary,
     alternates: { canonical: `/arizona/${city.slug}` },
   };
 }
@@ -48,9 +48,24 @@ export default async function CityPage({ params }: PageProps<"/arizona/[city]">)
     url: `${site.url}/arizona/${city.slug}`,
   };
 
+  const breadcrumbs = {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      ["Home", "/"],
+      ["Arizona", "/arizona"],
+      [city.name, `/arizona/${city.slug}`],
+    ].map(([name, path], i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name,
+      item: `${site.url}${path}`,
+    })),
+  };
+
   return (
     <>
       <JsonLd data={service} />
+      <JsonLd data={breadcrumbs} />
       <PageHero
         eyebrow={`${city.name}, Arizona`}
         title={`Practice optimization for ${city.name} medical practices.`}

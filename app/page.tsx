@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { DepthHero } from "@/components/DepthHero";
+import { JsonLd } from "@/components/JsonLd";
 import { ValleyMap } from "@/components/graphics";
 import { GrowStory, type Stage } from "@/components/GrowStory";
 import { IconBadge, type IconName } from "@/components/icons";
@@ -80,6 +81,15 @@ const sizes: { icon: IconName; title: string; body: string }[] = [
 export default function Home() {
   return (
     <>
+      <JsonLd
+        data={{
+          "@type": "WebSite",
+          name: `${site.brand} ${site.descriptor}`,
+          alternateName: site.brand,
+          url: site.url,
+          publisher: { "@id": `${site.url}/#organization` },
+        }}
+      />
       <DepthHero pinned>
         <Container className="pt-14 pb-48 lg:py-16">
           <div className="max-w-[40rem]">
