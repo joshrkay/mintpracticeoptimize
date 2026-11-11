@@ -1,0 +1,131 @@
+import Link from "next/link";
+import { ButtonLink, CallToAction, Container, Eyebrow } from "@/components/ui";
+import { pillars } from "@/lib/services";
+import { site } from "@/lib/site";
+
+const steps = [
+  {
+    title: "Questionnaire",
+    body: "A short set of questions before we meet, so our first conversation is about your practice.",
+  },
+  {
+    title: "Discovery",
+    body: "A full evaluation. You get a map of how the practice runs today and a map of the optimization opportunities.",
+  },
+  {
+    title: "Playbook",
+    body: "The opportunities become a prioritized plan your team has seen and bought into.",
+  },
+  {
+    title: "Execution",
+    body: "We stay and do the work with you. No binder left on the desk.",
+  },
+];
+
+export default function Home() {
+  return (
+    <>
+      <section className="bg-mint-soft/60">
+        <Container className="py-20 sm:py-28">
+          <Eyebrow>{site.descriptor}</Eyebrow>
+          <h1 className="mt-5 max-w-4xl font-display text-5xl leading-[1.05] text-balance sm:text-7xl">
+            Your practice, in <span className="text-mint-deep italic">mint</span> condition.
+          </h1>
+          <p className="mt-6 max-w-2xl text-xl leading-relaxed text-muted">
+            We&rsquo;re Mint, practice optimization partners. We start with a full evaluation of
+            the opportunities in your practice, deliver a playbook, then execute on it with you.
+          </p>
+          <div className="mt-9 flex flex-wrap gap-3">
+            <ButtonLink href="/contact">Start a conversation</ButtonLink>
+            <ButtonLink href="/discovery" variant="outline">
+              How discovery works
+            </ButtonLink>
+          </div>
+        </Container>
+      </section>
+
+      <section>
+        <Container className="py-20 sm:py-24">
+          <Eyebrow>Three pillars</Eyebrow>
+          <h2 className="mt-4 max-w-2xl font-display text-3xl text-balance sm:text-4xl">
+            Where we look, and where we work.
+          </h2>
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+            {pillars.map((pillar, i) => (
+              <Link
+                key={pillar.id}
+                href={`/services#${pillar.id}`}
+                className="group flex flex-col rounded-2xl border border-line bg-white p-7 transition-colors hover:border-mint"
+              >
+                <span className="font-display text-lg text-mint-deep">0{i + 1}</span>
+                <h3 className="mt-3 font-display text-2xl">{pillar.name}</h3>
+                <p className="mt-3 leading-relaxed text-muted">{pillar.summary}</p>
+                <ul className="mt-5 space-y-1.5 text-[15px]">
+                  {pillar.items.slice(0, 4).map((item) => (
+                    <li key={item.title} className="flex gap-2">
+                      <span aria-hidden="true" className="text-mint">
+                        &bull;
+                      </span>
+                      {item.title}
+                    </li>
+                  ))}
+                </ul>
+                <span className="mt-auto pt-6 font-semibold text-mint-deep group-hover:underline">
+                  See {pillar.name.toLowerCase()} &rarr;
+                </span>
+              </Link>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-y border-line bg-white">
+        <Container className="py-20 sm:py-24">
+          <Eyebrow>How it works</Eyebrow>
+          <h2 className="mt-4 max-w-2xl font-display text-3xl text-balance sm:text-4xl">
+            See the before and after, then decide.
+          </h2>
+          <ol className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {steps.map((step, i) => (
+              <li key={step.title} className="border-t-2 border-mint pt-5">
+                <span className="text-sm font-semibold text-mint-deep">Step {i + 1}</span>
+                <h3 className="mt-1 font-display text-xl">{step.title}</h3>
+                <p className="mt-2 leading-relaxed text-muted">{step.body}</p>
+              </li>
+            ))}
+          </ol>
+          <div className="mt-12 flex flex-col gap-4 rounded-2xl bg-mint-soft p-7 sm:flex-row sm:items-center sm:justify-between">
+            <p className="max-w-2xl text-lg">
+              Discovery is a flat <strong>{site.discoveryFee}</strong>. If you sign on, the fee
+              rolls into your first month.
+            </p>
+            <ButtonLink href="/discovery">About discovery</ButtonLink>
+          </div>
+        </Container>
+      </section>
+
+      <section>
+        <Container className="grid gap-10 py-20 sm:py-24 md:grid-cols-2 md:gap-16">
+          <div>
+            <Eyebrow>Partners, not consultants</Eyebrow>
+            <h2 className="mt-4 font-display text-3xl text-balance sm:text-4xl">
+              Your practice stays yours.
+            </h2>
+          </div>
+          <div className="space-y-4 text-lg leading-relaxed text-muted">
+            <p>
+              We are not a management company and we do not take a stake in your practice. Your
+              team, your patients and your decisions stay with you.
+            </p>
+            <p>
+              We also do not sweep in, hand over recommendations and leave. We build the plan with
+              you and stay to carry it out.
+            </p>
+          </div>
+        </Container>
+      </section>
+
+      <CallToAction />
+    </>
+  );
+}

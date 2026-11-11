@@ -1,0 +1,29 @@
+import Link from "next/link";
+import { nav, site } from "@/lib/site";
+import { Container } from "./ui";
+
+export function Footer() {
+  return (
+    <footer className="border-t border-line">
+      <Container className="flex flex-col gap-6 py-10 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <p className="font-display text-xl font-semibold text-mint-deep">{site.brand}</p>
+          <p>{site.descriptor}</p>
+        </div>
+        <div className="flex flex-wrap gap-x-6 gap-y-2">
+          {nav.map((item) => (
+            <Link key={item.href} href={item.href} className="hover:text-ink">
+              {item.label}
+            </Link>
+          ))}
+          <Link href="/contact" className="hover:text-ink">
+            Contact
+          </Link>
+          <a href={`mailto:${site.email}`} className="hover:text-ink">
+            {site.email}
+          </a>
+        </div>
+      </Container>
+    </footer>
+  );
+}
