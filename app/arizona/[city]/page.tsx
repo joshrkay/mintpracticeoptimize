@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: PageProps<"/arizona/[city]">)
   if (!city) return {};
   return {
     title: `Medical Practice Optimization in ${city.name}, AZ`,
-    description: `Mint is a practice optimization partner for independent medical practices in ${city.name}, Arizona. Operations, revenue opportunities and marketing, starting with a flat ${site.discoveryFee} discovery.`,
+    description: `${city.summary} Mint is a practice optimization partner for independent practices in ${city.name}, Arizona.`,
     alternates: { canonical: `/arizona/${city.slug}` },
   };
 }
@@ -51,11 +51,44 @@ export default async function CityPage({ params }: PageProps<"/arizona/[city]">)
       <PageHero
         eyebrow={`${city.name}, Arizona`}
         title={`Practice optimization for ${city.name} medical practices.`}
-        lede={`Mint is a practice optimization partner for independent practices in ${city.name}, solo and group. We evaluate how your practice runs, deliver a playbook, then execute on it with you, in person.`}
+        lede={city.summary}
       />
+      <section className="border-b border-line bg-white">
+        <Container className="grid gap-10 py-16 sm:py-20 md:grid-cols-2 md:gap-16">
+          <div>
+            <h2 className="font-display text-3xl">Medicine in {city.name}</h2>
+            <p className="mt-4 text-lg leading-relaxed text-muted">{city.landscape}</p>
+          </div>
+          <div>
+            <h2 className="font-display text-3xl">The patients</h2>
+            <p className="mt-4 text-lg leading-relaxed text-muted">{city.patients}</p>
+          </div>
+        </Container>
+      </section>
+      <section className="border-b border-line">
+        <Container className="py-16 sm:py-20">
+          <h2 className="font-display text-3xl">Where we would look first in a {city.name} practice</h2>
+          <dl className="mt-8 grid gap-x-10 gap-y-8 md:grid-cols-3">
+            {city.focus.map((f) => (
+              <div key={f.title} className="border-t-2 border-mint pt-4">
+                <dt className="font-display text-xl">{f.title}</dt>
+                <dd className="mt-2 leading-relaxed text-muted">{f.body}</dd>
+              </div>
+            ))}
+          </dl>
+          <p className="mt-8 max-w-2xl text-lg text-muted">
+            These are starting points. Discovery shows what your own practice needs.
+          </p>
+        </Container>
+      </section>
       <section>
         <Container className="py-16 sm:py-20">
-          <h2 className="font-display text-3xl">What we do for {city.name} practices</h2>
+          <h2 className="font-display text-3xl">What Mint does</h2>
+          <p className="mt-3 max-w-2xl text-lg leading-relaxed text-muted">
+            Mint is a practice optimization partner for independent practices in {city.name}, solo
+            and group. We evaluate how your practice runs, deliver a playbook, then execute on it
+            with you, in person.
+          </p>
           <div className="mt-8 grid gap-5 md:grid-cols-3">
             {pillars.map((p) => (
               <Link
