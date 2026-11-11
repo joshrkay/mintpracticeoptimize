@@ -1,7 +1,7 @@
 export const site = {
   brand: "Mint",
   descriptor: "Practice Optimization Partners",
-  url: "https://practiceoptimize.com",
+  url: "https://www.practiceoptimize.com",
   // Placeholder inbox until the domain and mailboxes are set up.
   email: "hello@practiceoptimize.com",
   discoveryFee: "$1,500",

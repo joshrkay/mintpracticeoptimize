@@ -46,7 +46,7 @@ for (const path of paths) {
   if (res.status() !== 200) issues.push(`status ${res.status()}`);
   if (d.title.length > 60) issues.push(`title ${d.title.length} chars`);
   if (d.desc.length < 70 || d.desc.length > 160) issues.push(`description ${d.desc.length} chars`);
-  if (!d.canonical.endsWith(path === "/" ? "practiceoptimize.com/" : path)) issues.push(`canonical ${d.canonical}`);
+  if (!d.canonical.endsWith(path === "/" ? "www.practiceoptimize.com/" : path)) issues.push(`canonical ${d.canonical}`);
   if (d.h1.length !== 1) issues.push(`${d.h1.length} h1`);
   if (d.skip) issues.push("heading level skipped");
   if (!d.ogTitle || !d.ogDesc || !d.ogImage) issues.push("open graph incomplete");

@@ -15,8 +15,8 @@ preview.
 ## 2. Point the domain at Vercel
 
 1. In the Vercel project, open **Settings > Domains** and add `practiceoptimize.com` and
-   `www.practiceoptimize.com`. Set `www` to redirect to `practiceoptimize.com`; the site's
-   canonical URLs use the address without `www`.
+   `www.practiceoptimize.com`. Make `www.practiceoptimize.com` the main address and have
+   `practiceoptimize.com` redirect to it; the site's canonical URLs use the `www` address.
 2. Vercel shows the DNS records it wants. Use the values it shows. They are normally:
 
    | Type | Name | Value |
@@ -50,5 +50,5 @@ please email us" message.
 
 - Replace the placeholder `hello@practiceoptimize.com` in `lib/site.ts` once the real
   mailbox exists.
-- Submit `https://practiceoptimize.com/sitemap.xml` in Google Search Console and Bing
+- Submit `https://www.practiceoptimize.com/sitemap.xml` in Google Search Console and Bing
   Webmaster Tools (see [SEO.md](SEO.md)).
