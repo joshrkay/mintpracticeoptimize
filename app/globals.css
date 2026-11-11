@@ -146,7 +146,14 @@ body {
   scale: 0;
   transition: scale 0.7s cubic-bezier(0.3, 1.7, 0.5, 1);
 }
-.vine-leaf.on {
+.vine-node.on .vine-leaf {
+  scale: 1;
+}
+.vine-joint {
+  scale: 0;
+  transition: scale 0.3s ease-out;
+}
+.vine-node.on .vine-joint {
   scale: 1;
 }
 
