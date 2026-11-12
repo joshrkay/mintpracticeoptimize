@@ -216,8 +216,16 @@ body {
       rotate(calc(var(--p) * -9deg)) scale(calc(1 + var(--p) * 0.1));
   }
 }
+/* The blurred leaf near the lens only sweeps across the scene on large screens, where the
+   words fade out as it passes. On phones and tablets it stays in its corner, so it never
+   covers a button. */
 .depth-front {
-  transform: translate3d(calc(var(--mx) * 54px), calc(var(--my) * 34px + var(--p) * -70vh), 0);
+  transform: translate3d(0, calc(var(--p) * -5vh), 0);
+}
+@media (min-width: 1024px) {
+  .depth-front {
+    transform: translate3d(calc(var(--mx) * 54px), calc(var(--my) * 34px + var(--p) * -70vh), 0);
+  }
 }
 @keyframes settle {
   from {

@@ -117,7 +117,7 @@ export default function Home() {
             </p>
             <div
               style={{ animationDelay: "400ms" }}
-              className="mt-9 flex animate-rise flex-wrap gap-3"
+              className="mt-9 flex animate-rise flex-col items-start gap-3 sm:flex-row sm:flex-wrap"
             >
               <ButtonLink href="/contact">Start a conversation</ButtonLink>
               <ButtonLink href="/discovery" variant="outline">

@@ -148,7 +148,7 @@ export function DepthHero({
         >
           <LooseLeaf
             variant={1}
-            className="absolute -bottom-[38%] -left-[13%] w-[36vw] max-w-[26rem] rotate-[38deg] blur-[9px] lg:-bottom-[42%] lg:w-[22vw]"
+            className="absolute -bottom-[38%] -left-[13%] w-[36vw] max-w-[26rem] rotate-[38deg] blur-[9px] sm:w-[24vw] lg:-bottom-[42%] lg:w-[22vw]"
           />
           <LooseLeaf
             variant={2}
