@@ -197,9 +197,13 @@ body {
 .depth-mid {
   transform: translate3d(calc(var(--mx) * 14px), calc(var(--my) * 10px + var(--p) * -22vh), 0);
 }
-.depth-copy {
-  transform: translate3d(0, calc(var(--p) * -16vh), 0);
-  opacity: calc(1 - var(--p) * 1.7);
+/* The words only drift and fade when the scene is pinned (large screens), where they would
+   otherwise sit stuck while the layers move. Everywhere else they just scroll. */
+@media (min-width: 1024px) {
+  .depth[data-pinned] .depth-copy {
+    transform: translate3d(0, calc(var(--p) * -16vh), 0);
+    opacity: calc(1 - var(--p) * 1.7);
+  }
 }
 .depth-subject {
   transform: translate3d(calc(var(--mx) * 22px), calc(var(--my) * 14px + var(--p) * -12vh), 0)
@@ -237,7 +241,7 @@ body {
 
 /* The growth scene: scrolling moves the focal plane from the near leaves to the plant. */
 .focus-subject {
-  filter: blur(calc((1 - clamp(0, calc(var(--grow) * 1.8), 1)) * 9px));
+  filter: blur(calc((1 - clamp(0, calc(var(--grow) * 2.2), 1)) * 6px));
 }
 .focus-near {
   filter: blur(calc(3px + var(--grow) * 16px));

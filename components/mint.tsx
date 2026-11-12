@@ -157,7 +157,8 @@ export function LooseLeaf({
 
 // Deterministic scatter, so server and browser render the same leaves.
 const FALLING = Array.from({ length: 14 }, (_, i) => ({
-  left: (i * 37 + 11) % 100,
+  // Kept to the outer margins so a leaf never passes under the text.
+  left: i % 2 === 0 ? 2 + ((i * 13) % 14) : 84 + ((i * 11) % 14),
   size: 20 + ((i * 13) % 26),
   duration: 10 + ((i * 7) % 9),
   delay: -((i * 5) % 14),
@@ -174,7 +175,7 @@ export function FallingLeaves() {
       {FALLING.map((leaf, i) => (
         <span
           key={i}
-          className="falling-leaf absolute -top-16"
+          className={`falling-leaf absolute -top-16 ${i >= 8 ? "max-sm:hidden" : ""}`}
           style={
             {
               left: `${leaf.left}%`,
@@ -187,7 +188,7 @@ export function FallingLeaves() {
         >
           <LooseLeaf
             variant={i + 1}
-            className={`w-full ${i % 3 === 0 ? "opacity-50 blur-[1.5px]" : "opacity-90"}`}
+            className={`w-full ${i % 3 === 0 ? "opacity-40 blur-[1.5px]" : "opacity-75"}`}
           />
         </span>
       ))}

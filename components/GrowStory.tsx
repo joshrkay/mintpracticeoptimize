@@ -42,11 +42,12 @@ export function GrowStory({
       // Growth runs from the first step reaching the reading line to the last.
       const span =
         (last.top + last.bottom) / 2 - (first.top + first.bottom) / 2;
-      const grow = Math.max(
+      const raw = Math.max(
         0,
         Math.min(1, (middle - first.top) / Math.max(1, span)),
       );
-      el.style.setProperty("--grow", String(still ? 1 : grow));
+      // Start with a seedling already showing, so the stage is never empty.
+      el.style.setProperty("--grow", String(still ? 1 : 0.3 + 0.7 * raw));
       let nearest = 0;
       steps.forEach((step, i) => {
         const r = step.getBoundingClientRect();
@@ -114,7 +115,7 @@ export function GrowStory({
               <div className="focus-subject">
                 <GrowingMint
                   ground
-                  className="relative w-[5.5rem] sm:w-44 lg:w-[min(25rem,50vh)]"
+                  className="relative w-[7rem] sm:w-44 lg:w-[min(25rem,50vh)]"
                 />
               </div>
               <ol className="mt-3 flex gap-2 lg:mt-10" aria-hidden="true">
@@ -140,7 +141,7 @@ export function GrowStory({
               <li
                 key={stage.title}
                 data-stage
-                className={`flex min-h-[62svh] flex-col justify-center py-8 transition-opacity duration-500 lg:min-h-[78vh] ${
+                className={`flex min-h-[52svh] flex-col justify-center py-8 transition-opacity duration-500 lg:min-h-[78vh] ${
                   i === active ? "opacity-100" : "opacity-30"
                 }`}
               >

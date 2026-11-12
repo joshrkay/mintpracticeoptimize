@@ -3,22 +3,36 @@ import type { ReactNode } from "react";
 import { DepthHero } from "./DepthHero";
 import { FallingLeaves } from "./mint";
 
-export function Container({ children, className = "" }: { children: ReactNode; className?: string }) {
-  return <div className={`mx-auto w-full max-w-6xl px-5 sm:px-8 ${className}`}>{children}</div>;
+export function Container({
+  children,
+  className = "",
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <div className={`mx-auto w-full max-w-6xl px-5 sm:px-8 ${className}`}>
+      {children}
+    </div>
+  );
 }
 
 export function Eyebrow({ children }: { children: ReactNode }) {
   return (
-    <p className="text-sm font-semibold uppercase tracking-[0.14em] text-mint-deep in-data-dark:text-lime">{children}</p>
+    <p className="text-sm font-semibold uppercase tracking-[0.14em] text-mint-deep in-data-dark:text-lime">
+      {children}
+    </p>
   );
 }
 
 const variants = {
   // The accent: one primary action per view.
-  primary: "bg-lime text-forest hover:bg-forest hover:text-white in-data-dark:hover:bg-white in-data-dark:hover:text-forest",
+  primary:
+    "bg-lime text-forest hover:bg-forest hover:text-white in-data-dark:hover:bg-white in-data-dark:hover:text-forest",
   // On a lime band, where the accent is already the background.
   dark: "bg-forest text-white hover:bg-mint-deep",
-  outline: "border border-ink/25 text-ink hover:border-ink hover:bg-white in-data-dark:border-white/35 in-data-dark:text-white in-data-dark:hover:bg-white/10",
+  outline:
+    "border border-ink/25 text-ink hover:border-ink hover:bg-white in-data-dark:border-white/35 in-data-dark:text-white in-data-dark:hover:bg-white/10",
 };
 
 export function ButtonLink({
@@ -40,10 +54,18 @@ export function ButtonLink({
   );
 }
 
-export function PageHero({ eyebrow, title, lede }: { eyebrow: string; title: string; lede: string }) {
+export function PageHero({
+  eyebrow,
+  title,
+  lede,
+}: {
+  eyebrow: string;
+  title: string;
+  lede: string;
+}) {
   return (
     <DepthHero>
-      <Container className="py-20 sm:py-28">
+      <Container className="pt-20 pb-44 sm:pt-28 sm:pb-56 lg:py-28">
         <div className="max-w-2xl">
           <div className="animate-rise">
             <Eyebrow>{eyebrow}</Eyebrow>
@@ -72,7 +94,8 @@ export function CallToAction() {
       <FallingLeaves />
       <Container className="relative flex min-h-[72svh] flex-col items-center justify-center py-16 text-center">
         <h2 className="mx-auto max-w-4xl font-display text-4xl leading-[1.02] tracking-tight text-balance sm:text-6xl">
-          See what your practice could <span className="italic">grow</span> into.
+          See what your practice could <span className="italic">grow</span>{" "}
+          into.
         </h2>
         <p className="mx-auto mt-6 max-w-xl text-xl text-forest/75">
           Start with a conversation. If it is a fit, discovery comes next.

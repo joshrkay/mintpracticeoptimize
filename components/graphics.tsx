@@ -3,14 +3,45 @@ import { cities } from "@/lib/cities";
 import { Icon, type IconName } from "./icons";
 import { LooseLeaf } from "./mint";
 
-const journey: { icon: IconName; step: string; today: string; mint: string }[] = [
-  { icon: "phone", step: "Phone call", today: "Goes to voicemail", mint: "Answered or called back" },
-  { icon: "calendar", step: "Scheduling", today: "Phone only, office hours", mint: "Booked online, reminded by text" },
-  { icon: "box", step: "Visit prep", today: "Orthotics hunted down mid-visit", mint: "Waiting at the front desk" },
-  { icon: "card", step: "Checkout", today: "Copay billed later", mint: "Collected up front" },
-  { icon: "pen", step: "Charting", today: "Finished after hours", mint: "Finished the same day" },
-  { icon: "heart", step: "Follow-up", today: "None", mint: "Summary and a thank-you" },
-];
+const journey: { icon: IconName; step: string; today: string; mint: string }[] =
+  [
+    {
+      icon: "phone",
+      step: "Phone call",
+      today: "Goes to voicemail",
+      mint: "Answered or called back",
+    },
+    {
+      icon: "calendar",
+      step: "Scheduling",
+      today: "Phone only, office hours",
+      mint: "Booked online, reminded by text",
+    },
+    {
+      icon: "box",
+      step: "Visit prep",
+      today: "Orthotics hunted down mid-visit",
+      mint: "Waiting at the front desk",
+    },
+    {
+      icon: "card",
+      step: "Checkout",
+      today: "Copay billed later",
+      mint: "Collected up front",
+    },
+    {
+      icon: "pen",
+      step: "Charting",
+      today: "Finished after hours",
+      mint: "Finished the same day",
+    },
+    {
+      icon: "heart",
+      step: "Follow-up",
+      today: "None",
+      mint: "Summary and a thank-you",
+    },
+  ];
 
 /** An illustrative version of the two maps discovery produces. */
 export function BeforeAfterMap({ className = "" }: { className?: string }) {
@@ -20,8 +51,12 @@ export function BeforeAfterMap({ className = "" }: { className?: string }) {
     >
       <div className="grid grid-cols-[1fr_1fr] gap-x-3 sm:grid-cols-[1.1fr_1fr_1fr] sm:gap-x-4">
         <div className="hidden sm:block" />
-        <p className="pb-3 text-[13px] font-semibold uppercase tracking-wider text-muted">Today</p>
-        <p className="pb-3 text-[13px] font-semibold uppercase tracking-wider text-mint-deep">With Mint</p>
+        <p className="pb-3 text-[13px] font-semibold uppercase tracking-wider text-muted">
+          Today
+        </p>
+        <p className="pb-3 text-[13px] font-semibold uppercase tracking-wider text-mint-deep">
+          With Mint
+        </p>
         {journey.map((row) => (
           <div
             key={row.step}
@@ -34,7 +69,10 @@ export function BeforeAfterMap({ className = "" }: { className?: string }) {
               {row.step}
             </p>
             <p className="flex items-start gap-2 text-sm leading-snug text-muted">
-              <LooseLeaf variant={2} className="wilted mt-0.5 w-3.5 shrink-0 rotate-[150deg]" />
+              <LooseLeaf
+                variant={2}
+                className="wilted mt-0.5 w-3.5 shrink-0 rotate-[150deg]"
+              />
               {row.today}
             </p>
             <p className="flex items-start gap-2 text-sm leading-snug font-medium">
@@ -45,14 +83,18 @@ export function BeforeAfterMap({ className = "" }: { className?: string }) {
         ))}
       </div>
       <figcaption className="mt-3 border-t border-line pt-3 text-xs text-muted">
-        Illustrative example of a current state map and an optimization opportunities map.
+        Illustrative example of a current state map and an optimization
+        opportunities map.
       </figcaption>
     </figure>
   );
 }
 
 // Approximate positions of the nine cities, west to east. Schematic, not to scale.
-const positions: Record<string, { x: number; y: number; label: "left" | "right" }> = {
+const positions: Record<
+  string,
+  { x: number; y: number; label: "left" | "right" }
+> = {
   goodyear: { x: 92, y: 190, label: "right" },
   peoria: { x: 188, y: 77, label: "left" },
   glendale: { x: 228, y: 109, label: "right" },
@@ -64,7 +106,13 @@ const positions: Record<string, { x: number; y: number; label: "left" | "right" 
   chandler: { x: 508, y: 295, label: "left" },
 };
 
-export function ValleyMap({ active, className = "" }: { active?: string; className?: string }) {
+export function ValleyMap({
+  active,
+  className = "",
+}: {
+  active?: string;
+  className?: string;
+}) {
   return (
     <svg
       viewBox="0 0 660 370"
@@ -88,7 +136,13 @@ export function ValleyMap({ active, className = "" }: { active?: string; classNa
         return (
           <Link key={c.slug} href={`/arizona/${c.slug}`} className="group">
             {/* A generous invisible area so the marker is easy to tap. */}
-            <rect x={p.label === "right" ? p.x - 16 : p.x - 96} y={p.y - 16} width="112" height="32" fill="transparent" />
+            <rect
+              x={p.label === "right" ? p.x - 16 : p.x - 96}
+              y={p.y - 16}
+              width="112"
+              height="32"
+              fill="transparent"
+            />
             <circle
               cx={p.x}
               cy={p.y}
@@ -96,7 +150,9 @@ export function ValleyMap({ active, className = "" }: { active?: string; classNa
               style={{ animationDelay: `${(p.x % 7) * 300}ms` }}
               className={`map-ping ${on ? "fill-mint-deep" : "fill-mint-deep/60"}`}
             />
-            {on && <circle cx={p.x} cy={p.y} r="17" className="fill-mint-deep/25" />}
+            {on && (
+              <circle cx={p.x} cy={p.y} r="17" className="fill-mint-deep/25" />
+            )}
             <circle
               cx={p.x}
               cy={p.y}
@@ -108,7 +164,7 @@ export function ValleyMap({ active, className = "" }: { active?: string; classNa
               x={p.label === "right" ? p.x + 14 : p.x - 14}
               y={p.y + 5}
               textAnchor={p.label === "right" ? "start" : "end"}
-              className={`fill-ink text-[15px] group-hover:underline ${on ? "font-bold" : "font-medium"}`}
+              className={`fill-ink text-[21px] group-hover:underline sm:text-[15px] ${on ? "font-bold" : "font-medium"}`}
             >
               {c.name}
             </text>

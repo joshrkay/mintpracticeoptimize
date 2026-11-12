@@ -28,7 +28,8 @@ const symptoms: Symptom[] = [
     mint: "Documentation that keeps pace with the day.",
   },
   {
-    today: "Orthotics sit in the back room waiting for a pickup nobody scheduled.",
+    today:
+      "Orthotics sit in the back room waiting for a pickup nobody scheduled.",
     mint: "Orthotics at the front desk before the patient walks in.",
   },
   {
@@ -90,8 +91,11 @@ export default function Home() {
           publisher: { "@id": `${site.url}/#organization` },
         }}
       />
-      <DepthHero pinned>
-        <Container className="pt-14 pb-48 lg:py-16">
+      <DepthHero
+        pinned
+        subjectClass="max-sm:right-[-4%] max-sm:bottom-6 max-sm:w-[38%]"
+      >
+        <Container className="pt-12 pb-28 sm:pb-56 lg:py-16">
           <div className="max-w-[40rem]">
             <div className="animate-rise">
               <Eyebrow>{site.descriptor}</Eyebrow>
@@ -100,17 +104,21 @@ export default function Home() {
               style={{ animationDelay: "120ms" }}
               className="mt-5 animate-rise font-display text-[clamp(3.1rem,7vw,6.6rem)] leading-[0.95] tracking-tight"
             >
-              Your practice, in <span className="text-lime italic">mint</span> condition.
+              Your practice, in <span className="text-lime italic">mint</span>{" "}
+              condition.
             </h1>
             <p
               style={{ animationDelay: "260ms" }}
               className="mt-7 max-w-xl animate-rise text-xl leading-relaxed text-white/80"
             >
-              Mint is a practice optimization partner for independent medical practices in
-              Arizona, solo and group. We find what is holding your practice back, write the
-              playbook, then do the work with you.
+              Mint is a practice optimization partner for independent medical
+              practices in Arizona, solo and group. We find what is holding your
+              practice back, write the playbook, then do the work with you.
             </p>
-            <div style={{ animationDelay: "400ms" }} className="mt-9 flex animate-rise flex-wrap gap-3">
+            <div
+              style={{ animationDelay: "400ms" }}
+              className="mt-9 flex animate-rise flex-wrap gap-3"
+            >
               <ButtonLink href="/contact">Start a conversation</ButtonLink>
               <ButtonLink href="/discovery" variant="outline">
                 How discovery works
@@ -125,7 +133,7 @@ export default function Home() {
           <h2 className="max-w-3xl font-display text-4xl leading-tight tracking-tight text-balance sm:text-6xl">
             Good medicine, held back by the way the day runs.
           </h2>
-                    <SymptomCards items={symptoms} />
+          <SymptomCards items={symptoms} />
         </Container>
       </section>
 
@@ -138,15 +146,19 @@ export default function Home() {
           </h2>
           <div className="space-y-4 self-end text-xl leading-relaxed text-muted">
             <p>
-              We are not a management company and we do not take a stake in your practice. Your
-              team, your patients and your decisions stay with you.
+              We are not a management company and we do not take a stake in your
+              practice. Your team, your patients and your decisions stay with
+              you.
             </p>
             <p>
-              We also do not sweep in, hand over recommendations and leave. We build the plan with
-              you and stay to carry it out.
+              We also do not sweep in, hand over recommendations and leave. We
+              build the plan with you and stay to carry it out.
             </p>
             <p>
-              <Link href="/for-your-team" className="font-semibold text-mint-deep hover:underline">
+              <Link
+                href="/for-your-team"
+                className="font-semibold text-mint-deep hover:underline"
+              >
                 What this means for your manager and staff &rarr;
               </Link>
             </p>
@@ -164,17 +176,25 @@ export default function Home() {
           <div className="mt-12 grid items-center gap-10 lg:grid-cols-2">
             <div className="grid gap-5">
               {sizes.map((s) => (
-                <div key={s.title} className="lift flex gap-5 rounded-3xl border border-line bg-white p-6">
+                <div
+                  key={s.title}
+                  className="lift flex gap-5 rounded-3xl border border-line bg-white p-6"
+                >
                   <IconBadge name={s.icon} />
                   <div>
                     <h3 className="font-display text-2xl">{s.title}</h3>
-                    <p className="mt-2 text-lg leading-relaxed text-muted">{s.body}</p>
+                    <p className="mt-2 text-lg leading-relaxed text-muted">
+                      {s.body}
+                    </p>
                   </div>
                 </div>
               ))}
               <p className="text-lg text-muted">
                 On site in {listNames(cityNames)}.{" "}
-                <Link href="/arizona" className="font-semibold text-mint-deep hover:underline">
+                <Link
+                  href="/arizona"
+                  className="font-semibold text-mint-deep hover:underline"
+                >
                   Where we work &rarr;
                 </Link>
               </p>
