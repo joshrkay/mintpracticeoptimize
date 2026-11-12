@@ -1,0 +1,100 @@
+import type { PracticeType } from "./schema";
+
+export const physicalTherapy: PracticeType = {
+  slug: "physical-therapy",
+  kind: "specialty",
+  name: "Physical therapy practices",
+  short: "Physical therapy",
+  icon: "calendar",
+  summary: "Evaluation, plan of care, a standing schedule and the drop-off after the first few visits.",
+  title: "Physical Therapy Practice Optimization in AZ",
+  description:
+    "How Mint works with Arizona outpatient physical therapy clinics: eval to discharge, authorizations, plan of care signatures, no-shows and drop-off.",
+  h1: "Practice optimization for Arizona physical therapy clinics.",
+  lede: "A physical therapy clinic sells a course of visits. Everything depends on whether the patient who came for the evaluation comes back for the second, third and eighth visit, and whether the paperwork around the plan of care keeps up.",
+  blocks: [
+    {
+      type: "story",
+      heading: "What makes a PT clinic different",
+      paragraphs: [
+        "A physical therapy schedule is a standing grid. The evaluation is a long slot, follow-ups are shorter, and a patient on a plan of care might hold two or three recurring slots a week for six to eight weeks. A cancellation does not just leave a hole, it breaks a course of treatment.",
+        "Arizona allows direct access, so a patient can walk in without a physician's referral. That does not remove the physician from the picture. Medicare needs the plan of care certified by a physician or other practitioner, many plans want authorization for a number of visits, and the surgeon or primary care doctor who sends patients is still the clinic's most important relationship.",
+        "The pattern nobody likes to look at is drop-off. A published study of people who attended an evaluation and did not return found cost, a work-schedule conflict, feeling improved and poor communication among the reasons. None of those are mysterious, and most are things a front desk and a PT can address in the first two visits.",
+      ],
+    },
+    {
+      type: "journey",
+      heading: "From the evaluation to discharge",
+      steps: [
+        { title: "Booking and intake", body: "Phone, web or referral. The new patient fills out intake forms, which should include the cancellation policy and a signature.", leak: "A new patient scheduled for a long evaluation slot with no insurance check, no policy signed and no reminder sent." },
+        { title: "Benefits and authorization", body: "Front desk checks visits remaining, deductible and copay, and whether the plan needs authorization. Medicare Advantage plans increasingly route physical therapy authorizations through a separate vendor.", leak: "The patient arrives and the authorization for visits is still pending." },
+        { title: "The evaluation", body: "The PT performs the evaluation, documents it and writes the plan of care with goals, frequency and duration. The evaluation is a longer slot and is coded by complexity, which is for the PT and biller to decide, not the front desk." },
+        { title: "Certification of the plan of care", body: "For Medicare, a physician or other practitioner has to sign and date the plan. There are timing rules for how soon after treatment starts.", leak: "Unsigned plans pile up on a desk until a claim is questioned." },
+        { title: "The standing schedule", body: "Patients leave with the next visits booked. The home exercise program goes with them, often through an app or a printed sheet.", leak: "Patients leave with one visit booked instead of the whole series, so every visit needs a new decision." },
+        { title: "Progress reports and re-evaluation", body: "Medicare's progress report and re-evaluation rules mean dates need to be tracked, usually inside the EMR but sometimes in a spreadsheet." },
+        { title: "Discharge", body: "The episode closes with a discharge summary, and the physician or referral source ideally hears the outcome.", leak: "A patient who simply stops, never officially discharged, and a referring doctor who never hears back." },
+      ],
+    },
+    {
+      type: "terms",
+      heading: "The words in a PT clinic",
+      items: [
+        { term: "Eval and re-eval", meaning: "The initial evaluation and a later reassessment. Both are billable and tracked." },
+        { term: "POC", meaning: "Plan of care: goals, frequency and duration. For Medicare it needs a certification signature." },
+        { term: "Cert and recert", meaning: "The physician's or practitioner's signature on the plan of care, and a renewed signature if care continues." },
+        { term: "Verbal order", meaning: "A phoned-in order that has to be signed and dated afterward within a set window." },
+        { term: "HEP", meaning: "Home exercise program, the work the patient does between visits." },
+        { term: "Timed codes and units", meaning: "Treatments billed in fifteen-minute units, counted from the total timed minutes in a visit." },
+        { term: "KX modifier", meaning: "Attests that services above the annual Medicare threshold are medically necessary." },
+        { term: "PTA and aide", meaning: "A physical therapist assistant is licensed and works under the PT. An aide is unlicensed support." },
+        { term: "Direct access", meaning: "A patient can see a PT without a physician's referral. Arizona is an unrestricted state." },
+        { term: "Visits remaining", meaning: "What the plan allows, which decides how long a course can run." },
+        { term: "No-show and late cancel", meaning: "A missed visit without notice versus a cancellation inside the policy window. Clinics define them differently." },
+        { term: "Visits per case", meaning: "The average number of visits per patient, a main measure of whether courses are completed." },
+        { term: "Drop-off", meaning: "A patient who attends an evaluation and does not return." },
+      ],
+    },
+    {
+      type: "rules",
+      heading: "What the rules mean at the desk",
+      intro: "Medicare and payer rules shift each year. We use these to shape workflow, not to give coverage or coding advice.",
+      items: [
+        { title: "A threshold that changes every year", body: "Medicare sets an annual amount above which the KX modifier is needed. For 2026 it was $2,480 for physical therapy and speech-language pathology combined, with a separate amount for occupational therapy. Clinics usually track patients as they near it." },
+        { title: "Arizona direct access, with limits", body: "A patient can self-refer to a PT in Arizona, but Medicare still needs the plan of care certified, and some plans have their own requirements. The desk should not tell a patient that no referral means no paperwork." },
+        { title: "Authorization for Medicare Advantage", body: "UnitedHealthcare began requiring authorization for outpatient physical therapy under some Medicare Advantage plans, and expanded it in Arizona. Rules differ by plan and change, so the desk needs the current requirement for each." },
+        { title: "Charging for missed visits", body: "Charging Medicare patients a missed-appointment fee is generally allowed only if the same fee is charged to other patients. Fees cannot be billed to insurance. Disclose the policy in writing at the first visit." },
+        { title: "Assistants and supervision", body: "Arizona has defined supervision levels for assistants and a ratio of assistants per therapist that was under revision in 2025. Confirm the current rule before scheduling around it." },
+      ],
+    },
+    {
+      type: "cards",
+      heading: "Where Mint would look first",
+      items: [
+        { pillar: "operations", icon: "calendar", title: "Book the series, not the visit", body: "Front desk habits at checkout so patients leave with the course on the calendar." },
+        { pillar: "operations", icon: "repeat", title: "Waitlist and same-day refill", body: "A cancellation list that fills the standing slot before it goes empty." },
+        { pillar: "operations", icon: "clipboard", title: "Certification tracker", body: "Where every plan of care is in the sign-and-return cycle, with an owner." },
+        { pillar: "revenue", icon: "search", title: "Evaluated but never returned", body: "Patients who had an evaluation and did not continue, and what they were told." },
+        { pillar: "marketing", icon: "users", title: "Referral relationships", body: "How surgeons and primary care offices hear about outcomes, and how easy it is to send a patient to you." },
+        { pillar: "marketing", icon: "pin", title: "Condition and location pages", body: "Search pages for the conditions you treat near each clinic, with a booking path that works on a phone." },
+      ],
+    },
+    {
+      type: "compare",
+      heading: "A PT front desk, today and with Mint",
+      items: [
+        { today: "The patient leaves with the next visit booked.", mint: "The patient leaves with the whole plan on the calendar and a reminder they can reply to." },
+        { today: "A cancellation leaves a hole.", mint: "A waitlist message goes out within the hour." },
+        { today: "Referral sources hear nothing.", mint: "Each referring office gets a short, compliant outcome note." },
+        { today: "Plans of care wait on a desk.", mint: "Each has a date sent, a date due and a name." },
+      ],
+    },
+  ],
+  faqs: [
+    { q: "Do you decide visit frequency or the plan of care?", a: "No. Frequency and duration are clinical decisions for your therapist. We look at how the plan is communicated, scheduled and kept." },
+    { q: "Can you tell us our no-show rate is normal?", a: "Published rates range widely, from about 10 percent in one national survey to over 20 percent at a single clinic, and clinics define it differently. We measure yours the same way each month and look at where it concentrates." },
+    { q: "Do you do referral marketing to physicians?", a: "We help with the practical side: clear referral instructions, a way to send outcomes back, and an honest local web presence. Anything involving payments for referrals is out of bounds." },
+    { q: "Is cash-based physical therapy something you work with?", a: "Yes. It uses a different front end, with a Good Faith Estimate and a price list. See our cash-pay page." },
+  ],
+  related: ["chiropractic", "cash-pay-practices", "insurance-based-practices"],
+  reviewed: "November 2026",
+};

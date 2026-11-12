@@ -1,0 +1,100 @@
+import type { PracticeType } from "./schema";
+
+export const groupPractices: PracticeType = {
+  slug: "group-practices",
+  kind: "size",
+  name: "Group practices",
+  short: "Group",
+  icon: "users",
+  summary: "Several providers, often several sites, and every doctor's template, rules and habits slightly different.",
+  title: "Practice Optimization for Group Practices",
+  description:
+    "How Mint works with group medical practices in Arizona: provider templates, multi-site phones and scheduling, onboarding new providers and location marketing.",
+  h1: "Practice optimization for group practices in Arizona.",
+  lede: "A group practice is a set of small practices sharing a name. The work is deciding which differences matter and which are just habit, and making the shared parts work the same way at every site.",
+  blocks: [
+    {
+      type: "story",
+      heading: "What a group practice is really like",
+      paragraphs: [
+        "A group has partners or owners and employed associates, a practice administrator, and a lead at each site. Titles blur: the administrator may handle the business side while the office manager handles day-to-day operations and HR, or one person holds both. The meeting that matters is the partner meeting, and the document that matters is the monthly report by provider and by location.",
+        "Groups fragment in three places. Compensation is the first, because any change creates winners and losers. Decision rights are the second, because partners resent being told rather than asked. Habits are the third: each doctor wants their schedule and their EHR templates their own way, and every site learns its own way of doing things.",
+        "The mechanics of that variation reach the front desk. If each provider has a custom template, with their own rules for new patients, the scheduler is learning a different rule set for every doctor. The honest management advice, including from MGMA, is to find where variation concentrates before assuming one site or one person is the problem.",
+      ],
+    },
+    {
+      type: "journey",
+      heading: "Onboarding a new provider",
+      intro: "Few moments in a group show its seams like a new hire.",
+      steps: [
+        { title: "Offer and start date", body: "Partners agree on terms, and a start date is set, often before anything is enrolled." },
+        { title: "Credentialing and payer enrollment", body: "Payers typically take months to complete credentialing, with commercial payers commonly quoted at ninety to a hundred and twenty days and Medicaid varying by state. A clean CAQH profile helps.", leak: "A provider on the schedule before enrollment is done, and the desk guessing whether to book insured patients." },
+        { title: "Linking to the group", body: "The provider's own number is linked to the group's billing identity, and claims deny until it is.", leak: "First claims deny, and nobody tells the front desk why." },
+        { title: "Template and EHR setup", body: "The provider's visit types, order sets and schedule are built. Each doctor wants it their way." },
+        { title: "Ramp-up", body: "A new provider's schedule fills over months, not weeks, and the range of estimates is wide.", leak: "A new provider sitting on an empty template for lack of an outreach plan." },
+        { title: "Normal", body: "The provider becomes one more column on the schedule, and one more set of rules the front desk memorizes." },
+      ],
+    },
+    {
+      type: "terms",
+      heading: "The words in a group practice",
+      items: [
+        { term: "Partner, associate, buy-in", meaning: "Equity owner, employed physician, and the payment to join as an owner." },
+        { term: "Managing partner and executive committee", meaning: "The partner or small body with delegated authority." },
+        { term: "Practice administrator", meaning: "The business lead, with a title that varies. Ask what they actually own." },
+        { term: "Compensation model", meaning: "Productivity-based, equal share, salary plus bonus, or a hybrid." },
+        { term: "wRVU", meaning: "Work relative value units: a standard measure of provider effort regardless of payer." },
+        { term: "Schedule template", meaning: "The grid of slots per provider, and how well it fills." },
+        { term: "Visit type", meaning: "New, follow-up, procedure, each with a set length." },
+        { term: "Centralized scheduling", meaning: "One team takes calls for all sites, instead of each front desk." },
+        { term: "IVR", meaning: "The phone menu, where callers get stuck on which location." },
+        { term: "Group NPI and TIN", meaning: "The group's own billing identifiers, separate from the provider's." },
+        { term: "Provider build", meaning: "Setting up a provider's templates and preferences in the EHR." },
+        { term: "Float provider", meaning: "A clinician covering more than one site." },
+        { term: "Google Business Profile", meaning: "The listing for each location. Google limits it to one per location, with some exceptions for individual practitioners." },
+        { term: "IPA, CIN, ACO", meaning: "Physician-owned networks for contracting scale, several of which exist in Arizona." },
+      ],
+    },
+    {
+      type: "rules",
+      heading: "What the rules mean for a group",
+      items: [
+        { title: "Who signs", body: "A contract with an outside partner is usually signed by the managing partner or executive committee, not the administrator. Confirm before the work starts." },
+        { title: "Workflow, not management", body: "Staff-facing scripts and standard procedures are consulting. Deciding who works where, who is hired or how doctors are paid is management. Mint stays on the workflow side." },
+        { title: "Flat fees", body: "Arizona's fee-splitting rules make percentage-of-revenue pricing a risk, especially when tied to patients the vendor finds. Mint's fees are flat." },
+        { title: "Multiple entities, multiple agreements", body: "Groups with separate legal entities for sites or specialties may need more than one business associate agreement. Counsel should confirm." },
+        { title: "Location listings", body: "Google's guidelines allow one profile per location and separate profiles for public-facing practitioners. Keep names, addresses and phone numbers consistent, and let the practice's own staff manage them." },
+      ],
+    },
+    {
+      type: "cards",
+      heading: "Where Mint would look first",
+      items: [
+        { pillar: "operations", icon: "calendar", title: "Template comparison", body: "Provider by provider: slot lengths, new patient rules, and whether productivity gaps are template gaps." },
+        { pillar: "operations", icon: "phone", title: "Phones across sites", body: "Which phone menu, which site, how long callers wait." },
+        { pillar: "operations", icon: "clipboard", title: "A shared procedures book", body: "One written way to do the work that should not vary, and a short list of the things that may." },
+        { pillar: "revenue", icon: "users", title: "New-provider ramp plan", body: "A plan for filling a new provider's schedule from existing patients." },
+        { pillar: "marketing", icon: "pin", title: "One listing per location", body: "Each site's listing, phone and page, and a provider page for each clinician." },
+        { pillar: "marketing", icon: "message", title: "Reviews by site and by provider", body: "A request after every visit and a reply routine that protects patient privacy." },
+      ],
+    },
+    {
+      type: "compare",
+      heading: "A group, today and with Mint",
+      items: [
+        { today: "Each doctor has their own scheduling rules.", mint: "A written list of rules, the reason for each and the short list that is truly doctor-specific." },
+        { today: "Callers press one for the wrong location.", mint: "A menu based on how patients actually call." },
+        { today: "A new provider starts with an empty week.", mint: "A ramp plan with outreach to existing patients before day one." },
+        { today: "Each site does it differently.", mint: "The shared steps are done the same, and each site is measured the same way." },
+      ],
+    },
+  ],
+  faqs: [
+    { q: "Will you tell us how to pay our doctors?", a: "No. Compensation and governance belong to the partners. We stay on workflow." },
+    { q: "Does a call center beat site front desks?", a: "The evidence is thin either way. We look at how callers actually behave in your group before suggesting a change." },
+    { q: "Can you help with credentialing delays?", a: "We help the front desk handle the gap with a simple rule for who gets booked when, and a tracker. Enrollment itself is handled by whoever handles it today." },
+    { q: "We are thinking about joining a network. Do you advise on that?", a: "No. We can document how your practice runs, which any network will ask for." },
+  ],
+  related: ["solo-practices", "primary-care", "insurance-based-practices"],
+  reviewed: "November 2026",
+};

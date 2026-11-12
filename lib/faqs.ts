@@ -1,4 +1,5 @@
 import { cityNames, listNames } from "./cities";
+import { practiceTypes } from "./practice-types";
 import { site } from "./site";
 
 // Each answer leads with a direct, self-contained sentence so search engines and
@@ -50,7 +51,7 @@ export const faqs = [
   },
   {
     q: "Which specialties does Mint work with?",
-    a: "Mint is starting with podiatry and building out to other specialties. Most of what makes a practice run well is common across specialties, so the approach carries over.",
+    a: `Mint works with ${listNames(practiceTypes.filter((t) => t.kind === "specialty").map((t) => t.short.toLowerCase()))} practices, solo and group, insurance-based and cash-pay. Each has its own page. Most of what makes a practice run well is common across specialties, but what goes wrong first is not, so Discovery starts from how your kind of practice actually runs.`,
   },
   {
     q: "How does Mint help a practice get more Google reviews?",

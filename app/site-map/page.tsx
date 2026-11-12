@@ -2,10 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Container, PageHero } from "@/components/ui";
 import { cities } from "@/lib/cities";
+import { practiceTypes } from "@/lib/practice-types";
 
 export const metadata: Metadata = {
   title: "Sitemap",
-  description: "Every page on the Mint website: services, discovery, podiatry, the Phoenix-area cities we serve, and how to reach us.",
+  description:
+    "Every page on the Mint website: services, discovery, the practice types we work with, the Phoenix-area cities we serve, and how to reach us.",
   alternates: { canonical: "/site-map" },
 };
 
@@ -20,11 +22,15 @@ const groups: { title: string; links: [label: string, href: string][] }[] = [
     ],
   },
   {
-    title: "Who we work with",
+    title: "Practice types",
     links: [
-      ["Podiatry practices", "/podiatry"],
-      ["For your manager and staff", "/for-your-team"],
+      ["All practice types", "/practice-types"],
+      ...practiceTypes.map((t): [string, string] => [t.name, `/${t.slug}`]),
     ],
+  },
+  {
+    title: "Who we work with",
+    links: [["For your manager and staff", "/for-your-team"]],
   },
   {
     title: "Learn more",

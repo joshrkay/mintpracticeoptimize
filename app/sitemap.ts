@@ -1,12 +1,14 @@
 import type { MetadataRoute } from "next";
 import { cities } from "@/lib/cities";
+import { practiceTypes } from "@/lib/practice-types";
 import { site } from "@/lib/site";
 
 // Questionnaires are sent by direct link and deliberately left out.
 const routes = [
   "",
   "/services",
-  "/podiatry",
+  "/practice-types",
+  ...practiceTypes.map((t) => `/${t.slug}`),
   "/arizona",
   ...cities.map((c) => `/arizona/${c.slug}`),
   "/for-your-team",

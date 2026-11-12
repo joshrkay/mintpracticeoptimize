@@ -16,7 +16,7 @@ export const site = {
 export const footerNav = [
   { href: "/services", label: "Services" },
   { href: "/discovery", label: "Discovery" },
-  { href: "/podiatry", label: "Podiatry" },
+  { href: "/practice-types", label: "Practice types" },
   { href: "/arizona", label: "Arizona" },
   { href: "/for-your-team", label: "For your team" },
   { href: "/compare", label: "How we compare" },
@@ -26,5 +26,6 @@ export const footerNav = [
 
 export const nav = [
   { href: "/services", label: "Services" },
+  { href: "/practice-types", label: "Practices" },
   { href: "/discovery", label: "Discovery" },
 ];

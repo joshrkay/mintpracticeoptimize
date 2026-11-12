@@ -1,0 +1,100 @@
+import type { PracticeType } from "./schema";
+
+export const chiropractic: PracticeType = {
+  slug: "chiropractic",
+  kind: "specialty",
+  name: "Chiropractic practices",
+  short: "Chiropractic",
+  icon: "repeat",
+  summary: "Plans of care, the report of findings, personal injury and a drop-off curve that starts when the pain does.",
+  title: "Chiropractic Practice Optimization in Arizona",
+  description:
+    "How Mint works with Arizona chiropractic offices: report of findings, plan of care and re-exams, personal injury paperwork, drop-off and compliant advertising.",
+  h1: "Practice optimization for Arizona chiropractic offices.",
+  lede: "A chiropractic office is built around a plan of care that patients are asked to follow for weeks. The business is the distance between the first visit and the last one, and between what the patient was told and what the front desk can book.",
+  blocks: [
+    {
+      type: "story",
+      heading: "What makes a chiropractic office different",
+      paragraphs: [
+        "Chiropractic runs on frequency. A new patient may be asked to come two or three times a week at first, then taper, with re-exams along the way. That is a commitment the patient makes in the report of findings, and it is kept or lost at the front desk, on the schedule and in the follow-up call after a missed visit.",
+        "The payer mix is unusually mixed. Some patients use commercial insurance with visit limits, some pay cash for a plan or a package, some are in an auto accident case with a lien or a letter of protection, and Medicare covers only a narrow slice of what a chiropractor does. The same waiting room holds all four, and the staff has to know which conversation to have with whom.",
+        "The pattern the data supports is not the one people assume. In one national survey of chiropractic patients who had stopped care, most said their problem had resolved, and very few cited cost. People mostly leave because they feel better, which means a plan of care that never explains what the next phase is for is a plan that ends when the pain does.",
+      ],
+    },
+    {
+      type: "journey",
+      heading: "From first visit to the last one on the plan",
+      steps: [
+        { title: "New patient intake", body: "History, a pain diagram and outcome questionnaires are completed before the doctor sees the patient. Many offices use a tablet or kiosk." },
+        { title: "Exam, x-rays if indicated, first adjustment or not", body: "Some offices adjust on day one, some wait for the report of findings. The schedule has to hold both." },
+        { title: "The report of findings", body: "A second visit where the doctor explains the diagnosis, the plan of care, how many visits per week and for how long, and the prognosis.", leak: "A patient who nods, goes home, and never understood what the second phase was for." },
+        { title: "The financial conversation", body: "Often a separate, short conversation at checkout about what insurance is expected to cover, what the plan costs, and how to pay for a package or monthly plan.", leak: "Handled differently by each staff member, so patients get different answers about the same plan." },
+        { title: "The block of visits", body: "Short adjustment visits are scheduled high volume and fast. A missed one needs a same-day call, not a weekly list.", leak: "A patient who misses two visits in week two and is not called until week four." },
+        { title: "Re-exam and the next phase", body: "Scheduled reassessment shows progress. For Medicare patients, active corrective care ends at maximum objective improvement and anything after that is not covered.", leak: "A re-exam that is booked and missed, and a plan that quietly becomes whatever the patient decides." },
+        { title: "Maintenance, wellness or discharge", body: "Some patients move to occasional supportive visits, paid in cash or by plan. Others are discharged. Either is a deliberate step, not a fade." },
+      ],
+    },
+    {
+      type: "terms",
+      heading: "The words in a chiropractic office",
+      items: [
+        { term: "Report of findings (ROF)", meaning: "The visit where the doctor explains diagnosis, frequency, duration and prognosis." },
+        { term: "Financial report of findings", meaning: "The money conversation that follows, sometimes called \"the financials.\"" },
+        { term: "CMT", meaning: "Chiropractic manipulative treatment, grouped by how many spinal regions are treated." },
+        { term: "AT modifier", meaning: "Marks active or corrective care on a Medicare claim. Without it, a claim is treated as maintenance." },
+        { term: "GA and GZ", meaning: "Modifiers tied to the Advance Beneficiary Notice: valid notice on file, or none on file when a denial is expected." },
+        { term: "PART", meaning: "Pain, asymmetry, range of motion and tissue changes: the findings used to support subluxation when there is no x-ray." },
+        { term: "Active versus maintenance", meaning: "Care aimed at improvement versus care to hold the gain. Medicare does not cover maintenance." },
+        { term: "Re-exam", meaning: "A scheduled reassessment that shows whether the plan is working." },
+        { term: "PVA", meaning: "Patient visit average: visits per new patient, a measure of how far plans of care actually run." },
+        { term: "CA", meaning: "Chiropractic assistant, the supervised clinical support person." },
+        { term: "LOP and lien", meaning: "A letter of protection or lien: the provider is paid from a settlement, often in an auto injury case." },
+        { term: "Med-pay", meaning: "The medical payments coverage on an auto policy, which pays regardless of fault." },
+        { term: "Reactivation", meaning: "Reaching out to patients who stopped before their plan was finished." },
+      ],
+    },
+    {
+      type: "rules",
+      heading: "What the rules mean at the desk",
+      intro: "These shape the front desk's script. They are not legal advice, and your compliance contact has the last word.",
+      items: [
+        { title: "Medicare covers a narrow slice", body: "For a Medicare patient the covered service is manual manipulation of the spine for subluxation, and only when it is active and corrective. Exams the chiropractor orders, x-rays the chiropractor orders, and modalities are not covered. The desk needs a script for that conversation." },
+        { title: "An ABN lets you collect, it does not make care covered", body: "A signed Advance Beneficiary Notice supports billing the patient for care Medicare is expected to deny. The form was replaced in 2026, and it does not apply to Medicare Advantage." },
+        { title: "\"Specialist,\" \"expert\" and a free exam", body: "Arizona's chiropractic board has treated words like specialist and expert as likely misleading, and advertising a free exam or x-ray without saying what is included has been treated as deceptive. Offers should say exactly what the patient gets." },
+        { title: "Be careful with \"physical therapy\"", body: "Arizona has an Attorney General opinion limiting who may use physiotherapy and physical therapy wording. Many offices use \"physical medicine modalities.\" Have your attorney approve any page that uses either." },
+        { title: "Liens are paperwork with a clock", body: "Arizona has a health care provider lien statute with recording requirements and deadlines, and the rules changed for services after January 1, 2023. The office should confirm with counsel how it applies before treating an injury case on a lien." },
+      ],
+    },
+    {
+      type: "cards",
+      heading: "Where Mint would look first",
+      items: [
+        { pillar: "operations", icon: "phone", title: "The missed-visit call", body: "A same-day call script and an owner, so a missed visit in week two does not turn into a quiet exit." },
+        { pillar: "operations", icon: "clipboard", title: "One version of the financial conversation", body: "A written, plain-language explanation of what insurance covers, what a plan costs and how to pay, said the same way by everyone." },
+        { pillar: "revenue", icon: "search", title: "Plans that ended early", body: "Patients whose plan of care was not finished. Some are done, some are waiting to be asked." },
+        { pillar: "revenue", icon: "repeat", title: "Re-exam attendance", body: "How many booked re-exams actually happen, since each is the moment a plan is renewed or closed." },
+        { pillar: "marketing", icon: "pin", title: "Honest local search", body: "Pages about the conditions you treat and how a first visit works, written without cure claims or the word specialist." },
+        { pillar: "marketing", icon: "message", title: "Reviews from every patient", body: "A request after each visit, the same for everyone, with no staff quotas and no screening for who is happy." },
+      ],
+    },
+    {
+      type: "compare",
+      heading: "A week in the plan of care, today and with Mint",
+      items: [
+        { today: "A missed visit appears on a weekly list.", mint: "The same-day call is on the day sheet, with a name next to it." },
+        { today: "Each staff member explains the plan differently.", mint: "One short written explanation that matches the report of findings." },
+        { today: "Re-exams are booked and then slip.", mint: "Re-exam dates are on the board and tracked to attendance." },
+        { today: "Reactivation is a promise to do it someday.", mint: "A monthly list of unfinished plans, with a respectful message approved by your compliance contact." },
+      ],
+    },
+  ],
+  faqs: [
+    { q: "Do you tell us how many visits a plan should be?", a: "No. Plans of care are a clinical decision. We look at whether the plan is explained, scheduled and followed up the same way for every patient." },
+    { q: "Can you help with personal injury cases?", a: "We look at the process around them: intake, who tracks lien paperwork, and who talks to the attorney. We do not advise on liens, which are a legal question for your attorney." },
+    { q: "Can you write ads that promise results?", a: "No. Arizona's board and the FTC both care about claims. We write plain descriptions of what you treat and how a visit works." },
+    { q: "Do you handle billing for Medicare modifiers?", a: "No. Mint does not do billing or coding. We make sure the front desk collects the information your biller needs and explains coverage the same way each time." },
+  ],
+  related: ["physical-therapy", "cash-pay-practices", "solo-practices"],
+  reviewed: "November 2026",
+};

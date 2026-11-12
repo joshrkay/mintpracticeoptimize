@@ -198,6 +198,15 @@ export default function Home() {
                   Where we work &rarr;
                 </Link>
               </p>
+              <p className="text-lg text-muted">
+                Podiatry, chiropractic, physical therapy, dermatology, primary care and urgent care.{" "}
+                <Link
+                  href="/practice-types"
+                  className="font-semibold text-mint-deep hover:underline"
+                >
+                  See practice types &rarr;
+                </Link>
+              </p>
             </div>
             <ValleyMap />
           </div>

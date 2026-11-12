@@ -1,0 +1,103 @@
+import type { PracticeType } from "./schema";
+
+export const insuranceBasedPractices: PracticeType = {
+  slug: "insurance-based-practices",
+  kind: "payment",
+  name: "Insurance-based practices",
+  short: "Insurance-based",
+  icon: "clipboard",
+  summary: "The front end of the revenue cycle: scheduling, eligibility, estimates and the collection at the desk.",
+  title: "Practice Optimization for Insurance Practices",
+  description:
+    "How Mint works with insurance-based practices in Arizona: eligibility checks, patient estimates, point-of-service collection and front-end causes of denials.",
+  h1: "Practice optimization for insurance-based practices.",
+  lede: "Most claim problems start at the desk, before there is a claim. Mint works on the front end: what is asked at scheduling, checked before the visit, quoted at check-in and collected at checkout. We do not do billing, coding or claims.",
+  blocks: [
+    {
+      type: "story",
+      heading: "Where the money actually starts",
+      paragraphs: [
+        "A claim is only as good as what was captured before the visit. The payer, member ID, subscriber, referral or authorization, secondary insurance and the patient's address are all front desk work, and an error in any of them will surface later as a rejection or a denial. Industry surveys put roughly a quarter to a half of denials on front-end causes, though the definitions vary by survey and the figures are a few years old.",
+        "The other half of the front end is the patient's share. Deductibles have grown and a growing share of workers are on high-deductible plans, so the visit now comes with a bill that the practice has to estimate and ask for. Asking for money is the part front desk staff like least, and collection at the visit is the most reliable money the practice sees.",
+        "Mint does not touch the back end. Claims, coding, appeals and accounts receivable follow-up belong to your biller or billing company. What we do is give them cleaner inputs and give the desk a routine for the money conversation.",
+      ],
+    },
+    {
+      type: "journey",
+      heading: "The front end, step by step",
+      steps: [
+        { title: "Scheduling and data capture", body: "Demographics and insurance entered in the practice system, with a flag for referral or authorization requirements." },
+        { title: "Pre-registration", body: "Intake forms, card images, consents and the financial policy sent ahead by portal, text or email." },
+        { title: "Eligibility and benefits", body: "Usually checked a day or more ahead by an electronic inquiry, a payer portal or a phone call.", leak: "Checked once at scheduling, never again, and coverage changed in between." },
+        { title: "Authorization, referral and secondary coverage", body: "Does this service need approval, is there a second plan or an auto or work claim?", leak: "A secondary plan missed at registration, and the patient billed in error." },
+        { title: "The estimate", body: "Staff work out the patient's share from deductible remaining, copay and coinsurance, and say plainly that it is an estimate.", leak: "A quote that is a guess presented as a number." },
+        { title: "Check-in and collection", body: "ID and card scanned front and back, demographics confirmed, copay and balance asked for, card on file requested." },
+        { title: "Checkout", body: "Next visit scheduled, any referral started, payment taken for the visit's estimated balance.", leak: "The patient already on the way out the door." },
+        { title: "Hand-off to the biller", body: "The claim goes out. The quality of the desk's work decides whether it is clean." },
+      ],
+    },
+    {
+      type: "terms",
+      heading: "The words at the front desk",
+      items: [
+        { term: "Eligibility and benefits (E&B)", meaning: "Confirming active coverage and plan details before the visit." },
+        { term: "270 and 271", meaning: "The electronic inquiry and response. Real-time answers can still be incomplete." },
+        { term: "Copay, coinsurance, deductible", meaning: "A flat visit fee, a percentage of the allowed amount and the amount owed before the plan pays." },
+        { term: "Out-of-pocket maximum", meaning: "The annual cap on what the patient pays, after which patients often stop paying." },
+        { term: "HDHP and HSA", meaning: "High-deductible plans and the tax-advantaged accounts that go with them." },
+        { term: "Plan year", meaning: "Not every employer's plan resets in January." },
+        { term: "In-network and out-of-network", meaning: "Whether the practice is contracted with the plan." },
+        { term: "Prior authorization", meaning: "Payer approval before a service." },
+        { term: "Coordination of benefits", meaning: "Which plan is primary, and which pays second." },
+        { term: "Clean claim", meaning: "A claim with nothing that would stop adjudication." },
+        { term: "Rejection and denial", meaning: "A claim that bounces before the payer decides, and one the payer decides against." },
+        { term: "Financial policy", meaning: "The signed document saying who owes what, and when." },
+        { term: "Patient statement", meaning: "The bill that goes out after insurance, with a cycle that ages the balance." },
+        { term: "ABN", meaning: "The Original Medicare notice that care may not be covered. It does not apply to Medicare Advantage." },
+      ],
+    },
+    {
+      type: "rules",
+      heading: "What the rules mean at the desk",
+      intro: "Each applies to practices differently. Your compliance contact has the last word.",
+      items: [
+        { title: "Estimates have to be labeled", body: "Industry guidance says to state it is an estimate, show the payer and patient split and explain what is not included. Coinsurance and deductible amounts are not final until the claim is processed." },
+        { title: "Medicare Advantage and prior authorization", body: "Starting in 2026 federal rules required faster decisions on standard and expedited requests for Medicare Advantage and Medicaid plans. Traditional Medicare is excluded, and the electronic authorization deadline is 2027." },
+        { title: "AHCCCS has its own rules", body: "Arizona's Medicaid agency expects eligibility to be checked for every visit and has its own third-party liability and ordering requirements." },
+        { title: "Medical debt in Arizona", body: "A 2022 ballot measure capped interest on medical debt at a low rate and changed collection protections. It shapes how a practice finances or follows up on patient balances." },
+        { title: "Waiving copays", body: "Routine waivers of insured patients' cost sharing are a long-standing federal concern and may breach payer contracts. A hardship-based approach differs from a standing discount." },
+        { title: "No-show fees", body: "A no-show fee has to be disclosed and applied evenly, and Medicare patients can be charged only if others are. Rules for Medicaid patients conflict across sources." },
+      ],
+    },
+    {
+      type: "cards",
+      heading: "Where Mint would look first",
+      items: [
+        { pillar: "operations", icon: "clipboard", title: "What is asked at scheduling", body: "A one-page checklist of the data the biller needs, with a way to see what was missed." },
+        { pillar: "operations", icon: "check", title: "Eligibility timing", body: "Whether checks happen at scheduling, a day ahead and at check-in, and who owns each." },
+        { pillar: "revenue", icon: "card", title: "A script for the money conversation", body: "Plain words for copay, estimate and balance, practiced by the people who say them." },
+        { pillar: "revenue", icon: "search", title: "Open patient balances", body: "Balances that are still collectible and a respectful way to reach the patient." },
+        { pillar: "marketing", icon: "pin", title: "Accurate listings of plans accepted", body: "Which plans you take, stated the same on the site, Google and the plan's own directory." },
+        { pillar: "marketing", icon: "message", title: "Outreach with consent", body: "Reminders and messages sent only to patients who agreed to them, with no health details in the text." },
+      ],
+    },
+    {
+      type: "compare",
+      heading: "The front desk, today and with Mint",
+      items: [
+        { today: "Eligibility is checked once, at scheduling.", mint: "At scheduling, again the day before, and at check-in for the changes." },
+        { today: "The patient hears an amount that turns out wrong.", mint: "An estimate labeled as an estimate, with the split explained." },
+        { today: "Collection happens when someone remembers.", mint: "A script and a checkout step that every visit goes through." },
+        { today: "The biller asks the desk what happened.", mint: "A shared checklist shows what was captured." },
+      ],
+    },
+  ],
+  faqs: [
+    { q: "Do you do billing or collections?", a: "No. Mint does not do billing, coding, claims or accounts receivable follow-up. We work on what is captured and said at the front desk." },
+    { q: "Can you reduce our denials?", a: "We can find the front-end causes: missing eligibility checks, referral gaps and registration errors. Denials with other causes are for your biller." },
+    { q: "Should we collect everything at check-in?", a: "Collect what you can state with confidence, like copays and known balances, and label the rest as an estimate. Over-collecting creates refunds." },
+    { q: "Do you work with Medicare Advantage and AHCCCS patients?", a: "Yes. Each plan type changes the checklist, and we write it for the mix your practice actually sees." },
+  ],
+  related: ["cash-pay-practices", "primary-care", "group-practices"],
+  reviewed: "November 2026",
+};

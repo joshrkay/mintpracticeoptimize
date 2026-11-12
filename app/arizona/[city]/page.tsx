@@ -184,14 +184,14 @@ export default async function CityPage({ params }: PageProps<"/arizona/[city]">)
             </ul>
           </div>
           <div>
-            <h2 className="font-display text-4xl leading-tight tracking-tight text-balance sm:text-5xl">Podiatry first</h2>
+            <h2 className="font-display text-4xl leading-tight tracking-tight text-balance sm:text-5xl">Your kind of practice</h2>
             <p className="mt-4 text-lg leading-relaxed text-muted">
-              Podiatry is the first specialty we built our process around, from orthotics handoffs
-              to recall for routine foot care.
+              Podiatry, chiropractic, physical therapy, dermatology, primary care and urgent care each go
+              wrong in their own way, and each has its own page.
             </p>
             <div className="mt-5">
-              <ButtonLink href="/podiatry" variant="outline">
-                Podiatry practices
+              <ButtonLink href="/practice-types" variant="outline">
+                All practice types
               </ButtonLink>
             </div>
           </div>

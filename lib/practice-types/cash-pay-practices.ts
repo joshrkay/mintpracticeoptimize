@@ -1,0 +1,102 @@
+import type { PracticeType } from "./schema";
+
+export const cashPayPractices: PracticeType = {
+  slug: "cash-pay-practices",
+  kind: "payment",
+  name: "Cash-pay practices",
+  short: "Cash-pay",
+  icon: "card",
+  summary: "Self-pay, direct-pay and membership practices: price lists, estimates, deposits and retention.",
+  title: "Practice Optimization for Cash-Pay Practices",
+  description:
+    "How Mint works with cash-pay and direct-pay practices in Arizona: price lists, Good Faith Estimates, deposits, memberships, retention and compliant outreach.",
+  h1: "Practice optimization for cash-pay practices.",
+  lede: "A cash-pay practice has no payer to blame or to wait for. The price, the estimate, the deposit and the reason to come back are all the practice's own, and so are the rules that come with them.",
+  blocks: [
+    {
+      type: "story",
+      heading: "What is different without insurance",
+      paragraphs: [
+        "A cash-pay practice has a different front end. There is no eligibility check, but there is a price list, a written estimate and a clear policy on deposits and cancellations. The patient is a buyer, and the first call is often a price question.",
+        "That does not mean no rules. Self-pay patients, and insured patients who choose not to use their insurance, are covered by the federal Good Faith Estimate rules. Direct primary care is a legal category in Arizona with its own statute. Texting, email and advertising all carry rules, and the FTC's review rule applies the same way it does to any business.",
+        "The retention problem is also different. An insured patient comes back because the schedule says so. A cash-pay patient comes back because it was worth it, and the practice has to make the next visit easy to book.",
+      ],
+    },
+    {
+      type: "journey",
+      heading: "From inquiry to the next visit",
+      steps: [
+        { title: "Inquiry", body: "By phone, web form, text or search. The first question is often what it costs, and whether the patient plans to use insurance.", leak: "A price question with no answer on the phone, and the caller moves on." },
+        { title: "The quote", body: "Staff quote from a price list or a package. If the service is scheduled, the federal estimate rules apply.", leak: "A phone booking with no written estimate sent." },
+        { title: "The Good Faith Estimate", body: "A written estimate sent to self-pay patients in the required time frame. It has to say that it is an estimate and describe the dispute process.", leak: "A service added at the visit that the estimate did not include." },
+        { title: "Deposit and policy", body: "A deposit or card on file, and a cancellation policy the patient has signed." },
+        { title: "Registration and agreement", body: "Forms and, for membership models, a written agreement. Arizona's direct primary care law requires one." },
+        { title: "The visit and payment", body: "Payment is taken at or before the visit, often by card or HSA card. An itemized receipt or superbill is available for patients who may seek out-of-network reimbursement.", leak: "A patient who needs an itemized receipt later and cannot get one." },
+        { title: "Retention", body: "Recall for recurring services, membership renewal and package balances.", leak: "A package paid for and not used, and no one asks." },
+      ],
+    },
+    {
+      type: "terms",
+      heading: "The words in a cash-pay office",
+      items: [
+        { term: "Self-pay and cash-pay", meaning: "The patient pays directly. It usually includes cards." },
+        { term: "Direct pay and DPC", meaning: "Practices that do not bill insurance, and direct primary care, where patients pay a periodic fee for access." },
+        { term: "Periodic fee", meaning: "The monthly or annual membership fee in a direct primary care agreement." },
+        { term: "Concierge", meaning: "Membership plus billing insurance for covered care. Different from DPC." },
+        { term: "Package", meaning: "A fixed price for a defined set of services. What is included has to be explicit." },
+        { term: "Good Faith Estimate", meaning: "A written estimate for self-pay patients." },
+        { term: "Convening provider", meaning: "The provider who schedules the service and gathers estimates from others involved." },
+        { term: "PPDR", meaning: "The federal dispute process when a bill is far above the estimate." },
+        { term: "Superbill", meaning: "An itemized receipt a patient can submit for possible out-of-network reimbursement. It is not a claim." },
+        { term: "Out-of-network", meaning: "Not contracted with the plan. Reimbursement depends on the patient's plan." },
+        { term: "Prepay and deposit", meaning: "Money taken ahead of service. Refundability should be in writing." },
+        { term: "Card on file", meaning: "A stored card, with the patient's written authorization." },
+        { term: "Interchange", meaning: "The card processing cost, commonly quoted at two to three percent." },
+        { term: "Sliding scale", meaning: "Income-based prices, which are different from discounts for insured patients." },
+      ],
+    },
+    {
+      type: "rules",
+      heading: "What the rules mean at the desk",
+      intro: "Rules and dates change. Confirm any piece of this with your attorney before it goes on paper or on your site.",
+      items: [
+        { title: "Good Faith Estimates", body: "Providers must give uninsured and self-pay patients an estimate for services scheduled ahead, and a cost discussion with an uninsured person can count as a request. A patient whose bill is hundreds of dollars over the estimate may start a federal dispute. The exact timing tiers are in the federal regulation. Confirm them there." },
+        { title: "Direct primary care in Arizona", body: "Arizona treats a direct primary care agreement as not insurance. It must be in writing, the practice may not bill insurance for the covered primary care, and the patient has a written notice period to end it." },
+        { title: "HSA and membership fees", body: "Federal rules changed in 2026 so qualifying direct primary care arrangements no longer disqualify HSA eligibility, with monthly fee limits. Patients may ask." },
+        { title: "Texting and email", body: "Appointment reminders fall under a narrow healthcare exemption. Anything promotional needs prior written consent, patients can opt out by many words, and Arizona has its own do-not-call rules. Email has its own opt-out requirements." },
+        { title: "Cash discounts for insured patients", body: "A cash discount for a genuinely uninsured patient is on firmer ground than a routine discount for an insured one, which can raise payer-contract and federal concerns." },
+        { title: "Reviews and testimonials", body: "The FTC's rule bans fake reviews and incentives conditioned on review sentiment. Posting a patient's photo or story needs their written authorization." },
+      ],
+    },
+    {
+      type: "cards",
+      heading: "Where Mint would look first",
+      items: [
+        { pillar: "operations", icon: "clipboard", title: "A price list the desk can say aloud", body: "Prices and packages written in plain words, with what is included." },
+        { pillar: "operations", icon: "mail", title: "The estimate step", body: "Who sends the written estimate, when, and how a service added at the visit is handled." },
+        { pillar: "revenue", icon: "repeat", title: "Membership and package use", body: "Who has paid and not used, and who is due to renew." },
+        { pillar: "revenue", icon: "calendar", title: "Deposit and no-show policy", body: "A written, evenly applied policy that explains the reason in plain words." },
+        { pillar: "marketing", icon: "pin", title: "Prices and process on the site", body: "Pages that answer the first call's question: what it costs and how a visit works." },
+        { pillar: "marketing", icon: "message", title: "Compliant outreach", body: "Consent captured, health details kept out of messages, and an opt-out that works." },
+      ],
+    },
+    {
+      type: "compare",
+      heading: "A cash-pay front desk, today and with Mint",
+      items: [
+        { today: "A price question gets a vague answer.", mint: "A written price list and a script for the first call." },
+        { today: "The estimate is sent when someone remembers.", mint: "A step in the booking, with a named owner and a record." },
+        { today: "Packages go unused.", mint: "A monthly list of balances with a friendly reminder." },
+        { today: "Messages go out to everyone.", mint: "Only to patients who agreed, with no health details." },
+      ],
+    },
+  ],
+  faqs: [
+    { q: "Do cash-pay practices need Good Faith Estimates?", a: "For self-pay and uninsured patients with scheduled services, yes. Insured patients who choose not to use insurance are covered too. Timing and content are in the federal regulation, and your attorney should confirm them." },
+    { q: "Can you help me run a membership model?", a: "We help with the operations: agreements on file, renewals and use. The legal form, in Arizona, is a written agreement that your attorney should draft." },
+    { q: "Can I discount for patients who pay in cash?", a: "It depends on who the patient is. Check with your attorney, especially for insured patients." },
+    { q: "Can you text my patients about promotions?", a: "Only with the right consent. We set up the consent step before any message is sent." },
+  ],
+  related: ["insurance-based-practices", "dermatology", "solo-practices"],
+  reviewed: "November 2026",
+};
