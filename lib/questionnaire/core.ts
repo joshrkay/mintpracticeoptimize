@@ -69,7 +69,7 @@ export const coreSections: Section[] = [
     questions: [
       { id: "patient_email", label: "Do you email your existing patients?", type: "single", options: ["Regularly", "Occasionally", "Never"] },
       { id: "google_reviews", label: "About how many Google reviews do you have, and what is your rating?", type: "text" },
-      { id: "review_ask", label: "How do you ask for reviews?", type: "multi", options: ["We don't", "QR code or sign in the office", "Staff ask in person", "Text or email with a link"] },
+      { id: "review_ask", label: "How do you ask for reviews?", type: "multi", options: ["We don't", "QR code or sign in the office", "Staff ask in person", "Text or email with a link to every patient", "Text or email to selected patients only"] },
       { id: "new_patient_sources", label: "Where do new patients come from?", type: "multi", options: ["Physician referrals", "Word of mouth", "Google search or Maps", "Insurance directory", "Social media", "Booking marketplace (e.g. Zocdoc)", "Not sure"] },
       { id: "social", label: "Which social channels are active?", type: "multi", options: ["Facebook", "Instagram", "YouTube", "TikTok", "None"] },
       { id: "marketing_owner", label: "Who handles marketing today?", type: "single", options: ["Nobody", "The doctor or owner", "A staff member", "An outside agency"] },
