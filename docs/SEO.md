@@ -53,7 +53,7 @@ on `/arizona`. Descriptions are kept under 160 characters so search results show
    needed: a street address or city for the Google Business Profile.
 4. **Publish proof.** A case study with real numbers is the most-cited kind of page.
 5. **Write long-form articles**, one topic each, in the doctor's language: "How to
-   collect copays at check-in", "Why QR codes get you bad Google reviews", "What to do
+   collect copays at check-in", "How to ask every patient for a Google review, the right way", "What to do
    when orthotics sit uncollected". The plan already notes AI search favors long-form,
    locally relevant content; the same applies to Mint's own site. A `/insights` section
    is the next thing to build once there are two or three drafts.

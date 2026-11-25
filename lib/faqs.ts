@@ -55,6 +55,6 @@ export const faqs = [
   },
   {
     q: "How does Mint help a practice get more Google reviews?",
-    a: "Mint identifies your most loyal patients and invites them by text with a direct link to your Google review page, then follows up politely a few times. A QR code on the counter tends to reach mostly unhappy patients, so we ask the patients most likely to say something good.",
+    a: "Mint sets up a simple routine to ask every patient for a review after a visit, by text or in person, with a direct link to your Google review page and the same wording for everyone. Google and the FTC both discourage asking only the patients likely to be happy, setting staff review quotas, or offering rewards for reviews, so we do none of those. We also help you reply to reviews without confirming anything about a patient.",
   },
 ];

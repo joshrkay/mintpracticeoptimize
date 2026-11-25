@@ -37,8 +37,8 @@ const symptoms: Symptom[] = [
     mint: "Eligible patients hear from the practice directly.",
   },
   {
-    today: "Your Google rating reflects your three angriest patients.",
-    mint: "Reviews from the patients who have stayed for years.",
+    today: "Reviews arrive when someone is angry or someone remembers.",
+    mint: "Every patient is asked after a visit, the same way, so the rating reflects everyone.",
   },
 ];
 

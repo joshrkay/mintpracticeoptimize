@@ -38,7 +38,7 @@ export const cities: City[] = [
       },
       {
         title: "Standing out on Google Maps",
-        body: "In a crowded market, patients compare ratings side by side. We invite your most loyal patients to review you, so your rating reflects the people who stay.",
+        body: "In a crowded market, patients compare ratings side by side. We ask every patient for a review after a visit, the same way and with no screening, so your rating reflects the people you actually see.",
       },
       {
         title: "Staying on referring doctors' minds",
@@ -182,8 +182,8 @@ export const cities: City[] = [
         body: "Email to your existing patients, one useful topic at a time, so a family thinks of you first when something comes up.",
       },
       {
-        title: "Reviews from loyal patients",
-        body: "Parents ask other parents, and then they check Google. We invite the patients who know you best to say so.",
+        title: "Reviews from every family",
+        body: "Parents ask other parents, and then they check Google. We help you ask every family after a visit, the same way, and answer reviews without sharing patient details.",
       },
       {
         title: "Care patients do not know you offer",
@@ -215,8 +215,8 @@ export const cities: City[] = [
         body: "Orthotics and devices pulled and waiting at the front desk before the patient arrives. It is the kind of detail patients notice and remember.",
       },
       {
-        title: "Reviews that reflect your regulars",
-        body: "We invite your most loyal patients to review you by text, so the rating a new patient sees was written by the people who know you.",
+        title: "Reviews that reflect everyone you see",
+        body: "We help you ask every patient for a review after a visit, by text or in person, with the same wording for everyone, so the rating a new patient sees is an honest picture.",
       },
     ],
   },

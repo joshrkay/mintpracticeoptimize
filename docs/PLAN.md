@@ -66,9 +66,11 @@ Three pillars: Operations, Revenue Opportunities, Marketing.
 - Remarketing to the existing patient base by email.
 - Health newsletters: one topic per send. Two tracks, timely (illness alerts) and evergreen
   (condition-specific).
-- Google reviews: no bare QR codes, since only angry patients self-select. Take the top 150
-  loyal patients from the census and run a drip text campaign with a direct review link.
-  Follow up after 3 to 5 days without a click; stop after about 4 reminders.
+- Google reviews: ask every patient after a visit, the same way (text or in person, with a
+  direct review link). Do not screen for happy patients, set staff quotas or offer rewards;
+  Google bans selective solicitation and the FTC rule (16 CFR 465) covers sentiment-based
+  incentives. A short reminder after 3 to 5 days without a click is fine; stop after about
+  2 reminders. (Changed from the earlier "top 150 loyal patients" plan, which was selective.)
 - Boots on the ground plus digital (SEO, Google Maps, social).
 - Social: hyper-local quality over frequency. A monthly 3 to 5 minute video from the doctor
   beats generic holiday posts. AI search favors long-form, locally relevant content.

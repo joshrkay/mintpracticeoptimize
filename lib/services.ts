@@ -78,7 +78,7 @@ export const pillars: Pillar[] = [
       },
       {
         title: "Google reviews",
-        body: "A QR code on the counter mostly reaches unhappy patients. We invite your most loyal patients by text with a direct link, and follow up politely.",
+        body: "We help you ask every patient after a visit, the same way, with a direct link to your Google page. No screening for who is happy, no staff quotas, no rewards, and replies that never confirm a patient.",
       },
       {
         title: "Local presence",
